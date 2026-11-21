@@ -1,0 +1,31 @@
+//Not working
+#management_report_switcher {
+
+    li[aria-expanded="true"] {
+        border-right: 2px solid #39f;
+    }
+
+    .uk-accordion-content[aria-hidden="false"] {
+        // /width: 100%;
+        border-left: 5px #39f !important;
+    }
+
+    // .uk-accordion-content[aria-expanded="true"]
+    //      {
+    //     border-left :5px solid    #39f;
+    //     }
+
+    // > li.uk-open{
+    //     border-left: 5px #39f  !important;
+    // }
+    .confirm.unsaved-changes {
+        background-color: #9c27b0 !important;
+        /* بنفش */
+        color: white !important;
+        border: none;
+    }
+
+    .confirm.unsaved-changes:hover {
+        background-color: #7b1fa2 !important;
+    }
+}

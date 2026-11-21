@@ -1,0 +1,211 @@
+.details-report-wrapper {
+    padding-right: 20px;
+}
+
+.filter-conteiner {
+    width: 80px;
+    position: fixed;
+    right: 0px;
+    margin-right: calc(((100% - 1200px) / 2) - 90px);
+
+    @media only screen and (max-width: 1360px) {
+        display: none;
+    }
+}
+
+#main_tab_switcher {
+    @media only screen and (max-width: 960px) {
+        align-items: center;
+    }
+
+    // #detail_report_tab>a:not(.uk-active) {
+    //     color: #fccc91 !important;
+    // }
+    // #detail_report_tab>p:not(.uk-active) {
+    //     line-height: .875rem;
+    //     @media only screen and (max-width: $break-device) {
+    //         line-height: 0vw;
+    //     }
+    // }
+    // #detail_report_tab.uk-active> :first-child {
+    //     border-radius: 5px;
+    //     background-color: darkorange !important;
+    //     color: white !important;
+    // }
+    // #detail_report_tab.uk-active {
+    //     >span>a{
+    //         color: darkorange !important
+    //     }
+    // }    
+
+    #detail_report_tab {
+        >a:not(.uk-active) {
+            color: #fccc91 !important;
+        }
+
+        >p:not(.uk-active) {
+            line-height: .875rem;
+
+            @media only screen and (max-width: $break-device) {
+                line-height: 0vw;
+            }
+        }
+
+        &.uk-active> :first-child {
+            border-radius: 5px;
+            background-color: darkorange !important;
+            color: white !important;
+        }
+
+        >span>a {
+            color: darkorange !important
+        }
+    }
+
+    #exam_creation {
+        >a:not(.uk-active) {
+            color: #c1c1ff !important;
+        }
+
+        &.uk-active> :first-child {
+            border-radius: 5px;
+            background-color: #8989fa !important;
+            color: white !important;
+        }
+
+        >span>a {
+            color: #8989fa !important
+        }
+    }
+
+    // #tickets_tab{
+    //     >a:not(.uk-active) {
+    //         color: rgb(252, 175, 175) !important;
+    //     }
+    //     &.uk-active> :first-child {
+    //         border-radius: 5px;
+    //         background-color: red !important;
+    //         color: white !important;
+    //     }
+    //     >span>a{
+    //         color: red !important
+    //     }
+    // }
+
+    #tickets_tab {
+        margin-right: 15px;
+
+        >a:not(.uk-active) {
+            color: #666 !important;
+            background-color: whitesmoke !important;
+
+        }
+
+        &.uk-active> :first-child {
+            border-radius: 5px;
+            background-color: #ff0000 !important;
+            color: white !important;
+        }
+
+        >span>a {
+            color: #ff0000 !important
+        }
+    }
+
+    #order {
+        margin-right: 24px;
+        display: flex;
+        align-items: center;
+        // gap: 10px;
+        flex-direction: row;
+
+        &::before {
+            content: '';
+            height: calc(100% - 20px);
+            background-color: whitesmoke;
+            position: absolute;
+            top: 10px;
+            right: -18px;
+            width: 2px;
+        }
+
+        @media only screen and (max-width: $break-device) {
+            margin-right: 24px !important;
+
+            &::before {
+                height: calc(100% - 10px);
+                background-color: whitesmoke;
+                position: absolute;
+                top: 5px;
+                right: -18px;
+                width: 2px;
+            }
+        }
+
+        >a:not(.uk-active) {
+            color: #666 !important;
+            background-color: whitesmoke !important;
+
+        }
+
+        &.uk-active> :first-child {
+            border-radius: 5px;
+            background-color: #39f !important;
+            color: white !important;
+        }
+
+        >span>a {
+            color: #39f !important
+        }
+
+        &.uk-active {
+            >span>a {
+                animation: glowEffect 1s ease-in-out 5s 3 !important;
+            }
+        }
+
+        @keyframes glowEffect {
+            0% {
+                box-shadow: 0 0 0px #00f;
+            }
+
+            50% {
+                box-shadow: 0 0 10px #00f, 0 0 20px #0ff;
+            }
+
+            100% {
+                box-shadow: 0 0 0px #00f;
+            }
+        }
+    }
+
+
+
+    @media only screen and (max-width: $break-device) {
+        width: max-content;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        >li {
+            margin: 0px 3px !important;
+        }
+    }
+}
+
+.fade-in-by-seconds {
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

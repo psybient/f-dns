@@ -1,0 +1,1532 @@
+#offcanvas-nav-container {
+  background-color: #bbb !important;
+}
+
+#wallet_manager_modal {
+  user-select: none;
+
+  >div {
+    width: 1000px;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+
+    >div {
+      display: flex;
+      width: 100%;
+      align-items: stretch;
+
+      @media only screen and (max-width: $break-device) {
+        font-size: 90%;
+      }
+
+      @media only screen and (max-width: $break-device-middle) {
+        flex-wrap: wrap;
+      }
+
+      .wallet-info {
+        // background-color: #33cc33;
+        // height: 400px;
+        width: 285px;
+        padding: 20px;
+        min-width: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        @media only screen and (max-width: $break-device-middle) {
+          width: 100%;
+          display: flex;
+          flex-direction: row-reverse;
+          height: auto;
+          // text-align: left;
+          align-items: flex-start;
+        }
+
+        @media only screen and (max-width: $break-device-medium) {
+          flex-wrap: wrap;
+          text-align: right;
+        }
+
+
+        >div:nth-child(1) {
+          background-color: #E2E9F6;
+          width: 100%;
+          border-radius: 10px;
+          color: #6394ec;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          position: relative;
+          min-width: 240px;
+
+          @media only screen and (max-width: $break-device-middle) {
+            width: 240px;
+          }
+
+          @media only screen and (max-width: $break-device-medium) {
+            width: 100%;
+          }
+
+          >img {
+            position: absolute;
+            width: 40px;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            opacity: 0.5;
+
+            @media only screen and (max-width: $break-device-middle) {
+              width: 60px;
+            }
+
+            @media only screen and (max-width: $break-device-medium) {
+              width: 70px;
+              margin: 20px;
+            }
+
+            @media only screen and (max-width: $break-device-medium) {
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              margin: 0 20px;
+            }
+          }
+
+          >p {
+            margin: 0;
+          }
+
+
+
+          .wallet-balance {
+            font-size: 200%;
+            padding: 0px 10px 5px 0px;
+            line-height: 55px;
+            text-align: right;
+
+            @media only screen and (max-width: $break-device-medium-mid) {
+              font-size: 180%;
+            }
+          }
+
+          .wallet-currency {
+            padding: 0px 10px;
+            position: relative;
+            top: -10px;
+            text-align: right;
+
+          }
+        }
+
+        >div:nth-child(2) {
+          background-color: #f6e2ed;
+          width: 100%;
+          border-radius: 10px;
+          color: #ec63cc;
+          position: relative;
+          min-width: 240px;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px 10px;
+          box-sizing: border-box;
+
+          @media only screen and (max-width: $break-device-middle) {
+            width: 240px;
+          }
+
+          @media only screen and (max-width: $break-device-medium) {
+            width: 100%;
+          }
+
+          .agency-debt {
+            font-size: 130%;
+
+            // padding: 0px 10px 5px 0px;
+            // line-height: 32px;
+            // text-align: right;
+            &::after {
+              content: "ریال";
+              font-size: 12px;
+              margin-right: 4px;
+            }
+
+            @media only screen and (max-width: $break-device-medium-mid) {
+              font-size: 180%;
+            }
+          }
+
+          .agency-label {
+            text-align: left;
+            background: #ec63cc;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 20px;
+          }
+        }
+
+        >div:nth-child(3) {
+          height: 280px;
+          margin-top: 15px;
+          position: relative;
+
+          @media only screen and (max-width: $break-device-middle) {
+            width: calc(100% - 170px);
+            margin-left: 20px;
+            margin-top: 0px;
+            height: auto;
+
+          }
+
+          @media only screen and (max-width: $break-device-medium) {
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 10px;
+          }
+
+          @media only screen and (max-width: $break-device-full) {
+            background: none !important;
+          }
+
+          &:has(ul>li:nth-child(1).uk-active) {
+            background: url("../../../wwwroot/dist/assets/sactivity/wallet-charge-border-1.svg");
+            background-size: cover;
+          }
+
+          &:has(ul>li:nth-child(2).uk-active) {
+            background: url("../../../wwwroot/dist/assets/sactivity/wallet-charge-border-2.svg");
+            background-size: cover;
+          }
+
+          &:has(ul>li:nth-child(3).uk-active) {
+            background: url("../../../wwwroot/dist/assets/sactivity/wallet-charge-border-3.svg");
+            background-size: cover;
+          }
+
+          &:has(ul>li:nth-child(4).uk-active) {
+            background: url("../../../wwwroot/dist/assets/sactivity/wallet-charge-border-4.svg");
+            background-size: cover;
+          }
+
+
+
+          >ul.uk-subnav {
+            display: flex;
+            margin: 0;
+            justify-content: space-around;
+
+            li {
+              padding: 0;
+              text-align: center;
+
+              a {
+                color: #dee7f9;
+                line-height: 28px;
+                padding: 3px 0px 0px 0px;
+              }
+
+              &.uk-active {
+                @media only screen and (max-width: $break-device-full) {
+                  margin-bottom: 1px;
+                }
+
+                a {
+                  color: #39f;
+                  background-color: transparent;
+
+                  @media only screen and (max-width: $break-device-full) {
+                    border: 2px solid #e7e5e5;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                  }
+                }
+              }
+
+              &:hover {
+                a {
+                  color: #b1c8f6;
+                  background-color: transparent;
+                }
+              }
+
+            }
+          }
+
+          >div.uk-switcher {
+            @media only screen and (max-width: $break-device-middle) {
+              height: 180px;
+              overflow: hidden;
+            }
+
+            >div {
+              >form#wallet_charge_credit_options {
+                margin-top: 16px;
+                margin-right: 12px;
+                height: calc(100% - 65px);
+                // overflow-y: auto;
+
+                @media only screen and (max-width: $break-device-full) {
+                  margin-right: 0;
+                }
+
+                @media only screen and (max-width: $break-device-middle) {
+                  display: inline-block;
+                  text-align: right;
+                  overflow-y: inherit;
+                  height: 160px;
+                }
+
+                >label {
+                  display: block;
+                  color: #b3b3b3;
+                  cursor: pointer;
+
+                  &::after {
+                    content: '(ريال)';
+                    font-size: 10px;
+                  }
+
+                  @media only screen and (max-width: $break-device-middle) {
+                    display: inline-block;
+                    width: 48%;
+                    overflow-y: inherit;
+                    margin: 2px 0;
+                  }
+
+                  @media only screen and (max-width: $break-device-medium-mid) {
+                    width: 48%;
+                  }
+
+                  // @media only screen and (max-width: $break-device-medium) {
+                  //   width: 98%;
+                  //   margin: 0;
+
+                  // }
+
+                  // @media only screen and (max-width: $break-device-modal) {
+                  //   width: 48%;
+                  // }
+
+                  >input {
+                    margin-left: 5px;
+                    position: relative;
+                    top: 2px;
+
+                    &:checked {
+                      background-color: #1e87f0;
+                    }
+                  }
+                }
+
+                >div {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  position: absolute;
+                  bottom: 0;
+                  width: calc(100% - 15px);
+
+                  @media only screen and (max-width: $break-device-full) {
+                    width: 100%;
+                    left: 0;
+                  }
+
+                  >input {
+                    height: 32px;
+                    border-radius: 10px;
+                    width: inherit;
+                  }
+
+                  >button {
+                    font-family: inherit;
+                    background-color: #1e87f0;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    margin: 10px;
+                    transition: all 0.3s;
+
+                    @media only screen and (max-width: $break-device-middle) {
+                      margin-left: 0;
+                    }
+
+                    &:hover {
+                      background-color: #105497;
+                    }
+                  }
+                }
+              }
+
+              @mixin switcher {
+                display: flex;
+                align-items: center;
+                padding-bottom: 10px;
+                margin-top: 5px;
+
+
+                input[type="radio"] {
+                  display: none;
+
+                  &:first-of-type {
+                    &+label {
+                      background: linear-gradient(to right, #6394ec 50%, #e2e9f6 50%);
+                      background-size: 200% 100%;
+                      background-position: 100% 0%;
+                    }
+
+                    &:checked+label {
+                      background-position: 0% 0%;
+                      color: white;
+                    }
+                  }
+
+                  &:last-of-type {
+                    &+label {
+                      background: linear-gradient(to right, #e2e9f6 50%, #6394ec 50%);
+                      background-size: 200% 100%;
+                      background-position: 0% 0%;
+                    }
+
+                    &:checked+label {
+                      background-position: 100% 0%;
+                      color: white;
+                    }
+                  }
+                }
+
+                label {
+                  display: block;
+                  width: calc(33.33% / 2);
+                  background-color: #e2e9f6;
+                  font-size: 10px;
+                  text-align: center;
+                  cursor: pointer;
+                  line-height: 16px;
+                  color: #a4c4ff;
+                  transition: .3s;
+                  width: 40px;
+
+                  &:first-of-type {
+                    border-radius: 0 20px 20px 0;
+                  }
+
+                  &:last-of-type {
+                    border-radius: 20px 0 0 20px;
+                  }
+                }
+              }
+
+              >div.cash-receipt-switcher {
+                @include switcher;
+
+                justify-content: center;
+                margin-left: 14px
+              }
+
+              >div.cheque-switcher {
+                @include switcher;
+
+                justify-content: flex-end;
+                padding-left: 3px;
+                margin-left: 43px;
+
+                @media only screen and (max-width: $break-device-full) {
+                  padding-left: 0px;
+                }
+              }
+
+              >div.refund-switcher {
+                @include switcher;
+
+                justify-content: flex-end;
+                padding-left: 3px;
+
+                @media only screen and (max-width: $break-device-full) {
+                  padding-left: 0px;
+                }
+              }
+
+              @mixin wallet-form {
+                box-sizing: border-box;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                column-gap: 5px;
+                row-gap: 8px;
+                line-height: 22px;
+                flex-wrap: wrap;
+
+                @media only screen and (max-width: $break-device-full) {
+                  padding: 0px;
+                }
+
+                .image-upload-section {
+                  width: calc(50% - 3px);
+                  box-sizing: border-box;
+                  position: relative;
+
+
+                  .upload-trigger {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    gap: 8px;
+                    width: 100%;
+                    height: 32px;
+                    box-sizing: border-box;
+                    border: 1px dashed #e5e5e5;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: .2s;
+                    font-size: 13px;
+                    flex-direction: row-reverse;
+                    color: #666;
+
+                    &:hover {
+                      background: rgba(255, 255, 255, .1);
+                    }
+
+                    & svg {
+                      pointer-events: none;
+                      /* ← prevents the SVG from eating clicks */
+                    }
+                  }
+
+                  .attached-files {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    overflow: hidden;
+                    color: #666;
+                    border: 1px dashed #e5e5e5;
+                    background-color: white;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+
+                    &:empty {
+                      display: none;
+                    }
+
+
+                    .file-item {
+                      line-height: 11px;
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      font-size: 11px;
+                      justify-content: space-between;
+                      width: 100%;
+                      height: 100%;
+                      box-sizing: border-box;
+                      padding: 0 10px;
+                      text-align: end;
+
+                      span[uk-icon="close"] {
+                        cursor: pointer;
+                        min-width: 17px;
+                      }
+
+                      >span.file-name {
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        min-width: 0;
+                        flex: 1;
+                        line-height: 14px;
+                      }
+
+                    }
+                  }
+                }
+
+                input[type="text"],
+                select {
+                  box-sizing: border-box;
+                  width: 100%;
+                  height: 32px;
+                  border-radius: 10px;
+                  transition: .3s;
+                  font-size: 13px !important;
+
+                  &::placeholder {
+                    visibility: hidden;
+                  }
+                }
+
+                select {
+                  appearance: none;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  background-position: 3% 50%;
+                  background-repeat: no-repeat;
+                  background-image: url("data:image/svg+xml;utf8,<svg height='10' viewBox='0 0 10 10' width='10' xmlns='http://www.w3.org/2000/svg'><polygon fill='rgb(190,190,190)' points='0,1 5,9 10,1'/></svg>");
+                  text-align-last: right;
+                  padding: 0 10px 0 20px;
+
+                  option {
+                    text-align: right;
+                  }
+                }
+
+                p {
+                  font-size: 90%;
+                  text-align: justify;
+                  color: var(--text-light);
+                  margin-bottom: 5px;
+                  padding: 0 5px;
+
+                  span {
+                    color: var(--theme-flashy);
+                  }
+                }
+
+                .input-wrapper {
+                  width: calc(50% - 3px);
+                  box-sizing: border-box;
+                  position: relative;
+
+                  &::before {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 13px;
+                    color: var(--text-more-light);
+                    pointer-events: none;
+                    transition: .3s;
+                  }
+
+                  &:has(input[type="text"]:focus),
+                  &:has(input[type="text"]:not(:placeholder-shown)) {
+                    &::before {
+                      font-size: 50%;
+                      right: -2px;
+                      top: 7%;
+                      color: #9b9898;
+                      line-height: 13px;
+                      padding: 0 5px;
+                      background: #e5e3e3;
+                      border-radius: 20px;
+                    }
+
+                    input {
+                      padding: 10px 10px 3px;
+                    }
+                  }
+                }
+
+                button {
+                  font-family: inherit;
+                  border: none;
+                  background: #1e87f0;
+                  color: #fff;
+                  padding: 4px 3px 3px 4px;
+                  border-radius: 15px;
+                  transition: .2s;
+                  cursor: pointer;
+                  width: auto;
+                  font-size: 70%;
+                  margin: 10px;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+
+                  @media only screen and (max-width: $break-device-middle) {
+                    margin: 5px 0px;
+                  }
+
+                  &:hover {
+                    filter: brightness(.9);
+                  }
+                }
+
+                .check-send {
+                  font-size: 80%;
+                  border: 1px solid #a4c4ff;
+                  color: #a4c4ff;
+                  padding: 3px 10px;
+                  border-radius: 15px;
+                  display: flex;
+                  flex-direction: row-reverse;
+                  align-items: center;
+                  gap: 10px;
+                }
+              }
+
+              >form#wallet_add_cach_receipt {
+                @include wallet-form;
+
+
+                .input-wrapper {
+                  &:nth-child(1)::before {
+                    content: "نام بانك";
+                  }
+
+                  &:nth-child(2)::before {
+                    content: "نام واريزكننده";
+                  }
+
+                  &:nth-child(3)::before {
+                    content: "تاريخ واريز";
+                  }
+
+                  &:nth-child(4)::before {
+                    content: "شماره فيش";
+                  }
+
+                  &:nth-child(6)::before {
+                    content: "مبلغ فيش (ریال)";
+                  }
+                }
+
+                .image-upload-section {
+                  @media only screen and (max-width: $break-device-middle) {
+                    width: calc(50% - 35px);
+                  }
+                }
+              }
+
+              >form#wallet_add_cheque {
+                @include wallet-form;
+
+                .input-wrapper {
+                  &:nth-child(1)::before {
+                    content: "نام و شعبه بانك";
+                  }
+
+                  &:nth-child(2)::before {
+                    content: "نام صاحب حساب";
+                  }
+
+                  &:nth-child(3)::before {
+                    content: "شماره صيادي";
+                  }
+
+                  &:nth-child(4)::before {
+                    content: "مبلغ چك (ریال)";
+                  }
+
+                  &:nth-child(6)::before {
+                    content: "تاريخ سررسيد";
+                  }
+                }
+
+
+              }
+
+              >form#wallet_add_refund {
+                @include wallet-form;
+
+                .input-wrapper {
+
+
+                  &:nth-child(1)::before {
+                    content: "مبلغ برداشت";
+                  }
+
+                  &:nth-child(2)::before {
+                    content: "شماره شبا";
+                  }
+
+                  &:nth-child(3)::before {
+                    content: "نام صاحب حساب";
+                  }
+
+                  &:nth-child(4)::before {
+                    content: "كد ملي / اقتصادی";
+                  }
+
+                  &:nth-child(5)::before {
+                    content: "نام بانك";
+                  }
+
+
+                  >input[name="iban"] {
+                    direction: ltr;
+
+                    &::placeholder {
+                      visibility: visible;
+                    }
+                  }
+                }
+              }
+
+              >div#list_cach_receipt,
+              >div#list_cheque,
+              >div#list_refund {
+                width: 100%;
+                height: 220px;
+                overflow: auto;
+                padding: 10px;
+                box-sizing: border-box;
+                scrollbar-gutter: stable both-edges;
+
+                @media only screen and (max-width: $break-device-full) {
+                  padding: 10px 0px;
+                }
+
+                @media only screen and (max-width: $break-device-middle) {
+                  padding: 0px;
+                  overflow: auto;
+                  height: 150px;
+                }
+
+                >ul {
+                  width: 100%;
+
+                  >li.uk-text-muted.uk-text-center {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #a5c1dd !important;
+                    font-size: 12px;
+                  }
+
+                  >li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 5px;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 13px;
+                    color: #333;
+                    position: relative;
+                    margin-top: 5px;
+
+                    >a[uk-icon] {
+                      width: 15px;
+                      position: absolute;
+                      top: 3.5px;
+                      left: 5px;
+                    }
+
+                    a.uk-accordion-title {
+                      background-color: #e2e9f6;
+                      width: 100%;
+                      padding: 2px 5px;
+                      border-radius: 7px;
+                      display: flex;
+                      justify-content: space-between;
+                      font-size: 13px;
+
+                      &:before {
+                        display: none;
+                      }
+
+                      >span:nth-of-type(2) {
+                        margin-left: 40px;
+                        position: relative;
+                        top: 1px;
+                      }
+                    }
+
+                    >div.uk-accordion-content {
+                      position: relative;
+                      width: 100%;
+
+                      >div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+
+                        >ul {
+                          padding: 0 20px 0 0;
+                          font-size: 12px;
+                          margin-bottom: 0;
+                          width: 100%;
+                          box-sizing: border-box;
+                        }
+                      }
+
+                      a.remove {
+                        width: 15px;
+                        position: absolute;
+                        top: 0;
+                        left: 5px;
+                      }
+
+                      div[uk-drop] {
+                        width: 120px;
+
+                        >div {
+                          background: #fff;
+                          padding: 7px 10px;
+                          border-radius: 15px;
+                          color: gray;
+                          width: 100%;
+                          text-align: left;
+                          box-shadow: 0 1px 4px gray;
+
+                          >div {
+                            width: 100%;
+                            text-align: right;
+                            margin-bottom: 5px;
+                          }
+                        }
+
+                        button {
+                          font-family: inherit;
+                          border: none;
+                          outline: none;
+                          border-radius: 10px;
+                          cursor: pointer;
+                          color: #fff;
+
+                          &.cancel {
+                            background: gray;
+                          }
+
+                          &.remover {
+                            background: #1e87f0;
+                          }
+                        }
+                      }
+
+                      span {
+                        color: #fff;
+                        padding: 0 5px;
+                        border-radius: 20px;
+                        margin: 3px 0;
+                        display: inline-block;
+                        font-size: 80%;
+
+                        &.confirmed {
+                          background: #6394ec;
+                        }
+
+                        &.canceled {
+                          background: lightgray;
+                        }
+
+                        &.pending {
+                          background: #b1c8f6;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+
+            }
+
+            >div.receipt {
+              &:has(#new-receipt:checked) {
+                #wallet_add_cach_receipt {
+                  display: flex;
+                }
+
+                #list_cach_receipt {
+                  display: none;
+                }
+              }
+
+              &:has(#list-receipt:checked) {
+                #wallet_add_cach_receipt {
+                  display: none;
+                }
+
+                #list_cach_receipt {
+                  display: flex;
+                }
+              }
+            }
+
+            >div.cheque {
+              &:has(#new-cheque:checked) {
+                #wallet_add_cheque {
+                  display: flex;
+                }
+
+                #list_cheque {
+                  display: none;
+                }
+              }
+
+              &:has(#list-cheque:checked) {
+                #wallet_add_cheque {
+                  display: none;
+                }
+
+                #list_cheque {
+                  display: flex;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .wallet-transactions {
+        // height: 400px;
+        width: 655px;
+        padding: 20px 0px 20px 20px;
+
+        @media only screen and (max-width: $break-device-middle) {
+          padding: 0px 20px 20px 20px;
+          width: 100%;
+          height: auto;
+        }
+
+        >div {
+          width: 100%;
+          height: 100%;
+          background: url("../../../wwwroot/dist/assets/freelanceteacher/wallet-transaction-border-top.svg"), url("../../../wwwroot/dist/assets/freelanceteacher/wallet-transaction-border-center.svg"), url("../../../wwwroot/dist/assets/freelanceteacher/wallet-transaction-border-bottom.svg");
+          background-repeat: no-repeat;
+          background-size: 100% auto, 100% auto, 100% auto;
+          background-position: top, center, bottom;
+
+          @media only screen and (max-width: $break-device-full) {
+            background: none;
+          }
+
+          >span {
+            color: #bdd0f3;
+            line-height: 38px;
+            width: 145px;
+            display: inline-block;
+            text-align: left;
+
+            >select {
+              display: inline-block;
+              width: 150px;
+              border: none;
+              line-height: 30px;
+              height: 30px;
+              color: #bdd0f3;
+              border-radius: 10px;
+              text-align-last: left;
+              padding-left: 16px;
+              background-position: 0% 50%;
+              background-image: url("data:image/svg+xml;utf8,<svg  height='10' viewBox='0 0 10 10' width='10' xmlns='http://www.w3.org/2000/svg'><polygon fill='rgb(189,208,243)' points='0,1 5,9 10,1'/></svg>");
+
+              @media only screen and (max-width: $break-device-full) {
+                width: 100%;
+                text-align-last: center;
+                background-position: 5% 50%;
+              }
+
+
+              >option {
+                color: #bdd0f3;
+                text-align: right;
+                text-align-last: right;
+              }
+            }
+
+            @media only screen and (max-width: $break-device-full) {
+              text-align: center;
+              border: 2px solid #e7e5e5;
+              border-radius: 10px;
+              line-height: 30px;
+              width: 30%;
+              margin-bottom: 5px;
+            }
+
+            @media only screen and (max-width: $break-device-middle) {
+              width: 100%;
+            }
+          }
+
+          .transactions-filter {
+            display: inline-flex;
+            width: calc(100% - 165px);
+            margin-right: 5px;
+            position: relative;
+            top: 5px;
+            justify-content: flex-end;
+            font-size: 90%;
+            align-items: center;
+
+            @media only screen and (max-width: $break-device-full) {
+              width: 100%;
+              vertical-align: middle;
+              top: 0;
+            }
+
+            @media only screen and (max-width: $break-device-middle) {
+              width: calc(100% - 7px);
+              margin-left: 7px;
+            }
+
+            @media only screen and (max-width: $break-device-modal) {
+              flex-wrap: wrap;
+            }
+
+            >div {
+              @media only screen and (max-width: $break-device-modal) {
+                width: 100%;
+                margin: 5px 0;
+              }
+
+              >label {
+                color: #bdd0f3;
+
+                >input {
+                  margin-left: 5px;
+                  border: none;
+                  border-radius: 4px;
+                  outline: 1px solid #bdd0f3;
+                  width: 14px;
+                  height: 14px;
+                  margin-right: 10px;
+                  position: relative;
+                  top: 2px;
+
+                  &:checked {
+                    background-color: #bdd0f3;
+                    background-image: none;
+                    border: 3px solid white;
+                  }
+                }
+              }
+
+              >select {
+                display: inline-block;
+                width: 150px;
+                border-color: #edf3fd;
+                line-height: 30px;
+                height: 30px;
+                color: #bdd0f3;
+                border-radius: 10px;
+                text-align-last: right;
+                padding-right: 5px;
+                background-position: 3% 50%;
+                background-image: url("data:image/svg+xml;utf8,<svg  height='10' viewBox='0 0 10 10' width='10' xmlns='http://www.w3.org/2000/svg'><polygon fill='rgb(189,208,243)' points='0,1 5,9 10,1'/></svg>");
+
+                @media only screen and (max-width: $break-device) {
+                  width: 110px;
+                }
+
+                @media only screen and (max-width: $break-device-modal) {
+                  width: calc(50% - 10px);
+                  margin: 0 4px;
+                }
+
+                >option {
+                  color: #bdd0f3;
+                  text-align: right;
+                  text-align-last: right;
+                }
+              }
+            }
+
+            .date-from-input {
+              width: 150px;
+
+              >span {
+                color: #ccccff;
+              }
+
+              >input {
+                border-radius: 5px;
+                height: 30px;
+                font-size: 85%;
+                border: 1px solid #ccccff;
+
+                &::placeholder {
+                  color: #ccccff;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+
+          .transactions-container {
+            width: calc(100% - 10px);
+            height: calc(100% - 56px);
+            padding: 5px;
+            overflow-y: auto;
+            padding-top: 0px;
+            margin-top: 5px;
+            max-height: 400px;
+
+            @media only screen and (max-width: $break-device-full) {
+              height: 330px;
+            }
+
+            @media only screen and (max-width: $break-device-middle) {
+              height: auto;
+              max-height: 200px;
+            }
+
+            >table {
+              direction: rtl;
+              width: 100%;
+              border-spacing: 5px;
+              font-size: 85%;
+
+              thead {
+                position: sticky;
+                top: 5px;
+                z-index: 2;
+              }
+
+              th {
+                background-color: #E2E9F6;
+                color: #91b6db;
+                font-weight: normal;
+                border-radius: 10px;
+                padding: 5px 0;
+                outline: 5px solid white;
+              }
+
+              td {
+                color: #cccccc;
+                position: relative;
+                vertical-align: top;
+
+                .student-transaction-in {
+                  color: #cccccc;
+                  position: absolute;
+                  right: -12px;
+                  top: 3px;
+                  border: 1px solid #cccccc;
+                  border-right: none;
+                  border-radius: 7px 0 0 7px;
+                  padding: 1px 3px;
+                }
+
+                .transaction-in {
+                  color: #0ca90c;
+                  position: relative;
+                  left: -6px;
+                  transform-origin: center;
+                  transform: scaleY(0.9) scaleX(1.2);
+                  text-shadow: 2px 2px;
+                  // > svg {
+                  //   > line {
+                  //     -webkit-filter: drop-shadow(0px 0px 1px #0ca90c);
+                  //     filter: drop-shadow(0px 0px 1px #0ca90c);
+                  //   }
+                  // }
+                }
+
+                .transaction-out {
+                  color: #cd5656;
+                  position: relative;
+                  left: -3px;
+                  transform-origin: center;
+                  transform: scaleY(0.9) scaleX(1.2);
+                  // > svg {
+                  //   > line {
+                  //     -webkit-filter: drop-shadow(0px 0px 1px #cd5656);
+                  //     filter: drop-shadow(0px 0px 1px #cd5656);
+                  //   }
+                  // }
+                }
+
+                .wallet-icon {
+                  position: relative;
+                  left: 10px;
+                  top: -1px;
+                  z-index: -1;
+                }
+
+                >div.caption {
+                  width: calc(100% - 50px);
+                  display: inline-block;
+                  vertical-align: top;
+                  font-size: 90%;
+                  line-height: 20px;
+                  height: 20px;
+                  overflow: hidden;
+                  transition: all 0.3s ease-in-out;
+
+                  >span {
+                    line-height: 1px;
+                    border: 1px solid silver;
+                    height: 5px;
+                    display: inline-block;
+                    padding: 1px 2px;
+                    border-radius: 13px;
+                    background-color: whitesmoke;
+                    position: relative;
+                    top: -1px;
+                    cursor: pointer;
+
+                    @media only screen and (max-width: $break-device-modal) {
+                      position: absolute;
+                      top: 20px;
+                      left: 0px;
+                    }
+                  }
+
+                  >div.description {
+                    font-size: 85%;
+                    line-height: 15px;
+                  }
+                }
+
+                .open {
+                  height: auto !important;
+
+                  >span {
+                    // display: none;
+                  }
+                }
+              }
+
+              tr>td:nth-child(n + 2) {
+                text-align: center;
+              }
+
+              tr>td:nth-child(n + 3) {
+                font-size: 80%;
+                line-height: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    >div.sales-plan {
+      >ul {
+        width: 100%;
+        padding: 0 20px;
+
+        >li {
+          >a.uk-accordion-title {
+            background-color: #E2E9F6;
+            border: 2px solid #E2E9F6;
+            text-align: center;
+            color: #6394EC;
+            font-size: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            // transition: all 0.2s ease-in-out;
+
+            &::before {
+              display: none;
+            }
+
+            &::after {
+              content: '';
+              display: inline-block;
+              background-image: url("data:image/svg+xml;utf8,<svg  height='10' viewBox='0 0 10 10' width='10' xmlns='http://www.w3.org/2000/svg'><polygon fill='rgb(99,148,236)' points='0,1 5,9 10,1'/></svg>");
+              width: 10px;
+              height: 10px;
+              margin-right: 10px;
+              vertical-align: middle;
+              transform: rotateX(0deg);
+              // transition: all 0.2s ease-in-out;
+            }
+          }
+
+          >div.uk-accordion-content {
+            padding: 10px;
+            margin-top: 0;
+            border: 2px solid #E2E9F6;
+            border-radius: 0 0 10px 10px;
+
+            >div.organization-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-start;
+              flex-direction: row;
+              max-height: 145px;
+              overflow-y: auto;
+              scrollbar-gutter: stable both-edges;
+              width: 100%;
+
+              >div.organization {
+                width: calc(25% - 15px);
+                // min-width: 217.5px;
+
+                @media only screen and (max-width: $break-device-mid) {
+                  width: calc(33% - 15px);
+                }
+
+                @media only screen and (max-width: $break-device-middle) {
+                  width: calc(50% - 15px);
+                }
+
+                @media only screen and (max-width: $break-device-modal) {
+                  width: 100%;
+                }
+
+                border-radius: 10px;
+                border: 1px solid #D2D3d5;
+                color: #848688;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin: 5px;
+                transition: all 0.2s ease;
+                cursor: pointer;
+
+                >img.logo {
+                  width: 40px;
+                  margin: 10px;
+                  transition: all 0.2s ease;
+                }
+
+                >span.title {
+                  font-size: 90%;
+                  transition: all 0.2s ease;
+                }
+
+                &:hover {
+                  background-color: whitesmoke;
+
+                  >img.logo {
+                    transform-origin: center;
+                    transform: scale(1.1);
+                  }
+
+                  >span {
+                    color: black;
+                    letter-spacing: 0.1px;
+                  }
+
+                }
+              }
+            }
+
+            >div {
+              width: 100%;
+
+              >div.request-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @media only screen and (max-width: $break-device-medium) {
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+
+                >div.organization {
+                  width: calc(25% - 15px);
+                  min-width: 217.5px;
+                  border-radius: 10px;
+                  border: 1px solid #D2D3d5;
+                  color: #848688;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  margin: 5px;
+                  background-color: whitesmoke;
+                  position: relative;
+
+                  @media only screen and (max-width: $break-device-medium) {
+                    width: calc(100% - 15px);
+                    min-width: unset;
+                    margin-bottom: 10px
+                  }
+
+                  >img.logo {
+                    width: 40px;
+                    margin: 10px;
+                  }
+
+                  >span.title {
+                    font-size: 90%;
+                  }
+
+                  >button {
+                    background-color: red;
+                    color: white;
+                    padding: 3px;
+                    width: 16px;
+                    border-radius: 50px;
+                    position: absolute;
+                    top: -3px;
+                    left: -7px;
+                  }
+                }
+
+                >div.request {
+                  width: calc(100% - 250px);
+                  margin: 0 10px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+
+                  @media only screen and (max-width: $break-device) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin: 0 20px 0 0;
+                  }
+
+                  @media only screen and (max-width: $break-device-medium) {
+                    width: 100%;
+                    margin: 0 8px 0 0;
+                  }
+
+                  >div {
+                    display: flex;
+                    flex-direction: column;
+
+                    @media only screen and (max-width: $break-device) {
+                      flex-direction: row;
+                      align-items: stretch !important;
+                      margin: 2px 0;
+                    }
+
+                    &::before {
+                      color: #6394EC;
+                      font-size: 80%;
+
+                      @media only screen and (max-width: $break-device) {
+                        margin-left: 10px;
+                        min-width: 60px;
+                        border-left: 3px solid #aabee3;
+                      }
+                    }
+                  }
+
+                  >div:first-child {
+                    align-items: flex-start;
+
+                    &::before {
+                      content: 'درخواست';
+                    }
+                  }
+
+                  >div:last-child {
+                    align-items: flex-end;
+
+                    // @media only screen and (max-width: $break-device) {
+                    //   align-items: flex-start;
+                    // }
+                    &::before {
+                      content: 'وضعيت';
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        >li.uk-open {
+          >a.uk-accordion-title {
+            border-radius: 10px 10px 0 0;
+
+            &::after {
+              transform: rotateX(180deg);
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+    .reg-loading {
+        display: block;
+        position: absolute;
+        // left:62% ;
+        top: 50%;
+        margin: -25px 0 0 -46px;
+        width: 120px;
+        padding: 10px;
+        background: linear-gradient(to bottom, #eee, #ccc);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.3);
+        border: 1px solid #888;
+        border-radius: 5px;
+        text-align: center;
+        opacity: 0.8;
+        z-index: 1000;
+        @media (min-width: 1024px) {
+            left: 62%;
+        }
+        @media (min-width: 1280px) {
+            left: 57%;
+        }
+        @media (min-width: 524px) and (max-width: 1024px) {
+            left: 64%;
+        }
+        div {
+            position: relative;
+            top: 2px;
+            text-transform: uppercase;
+            font: 10px/1.21 "iran_sans", helvetica, arial, sans-serif;
+            letter-spacing: 0.04em;
+            color: #888;
+        }
+        &.dark {
+            background: linear-gradient(to bottom, #555, #333);
+            border-color: #444;
+            border-bottom-color: #111;
+        }
+        &.dark .spinner {
+            border-color: rgba(255, 255, 255, 0.8);
+            border-left-color: rgba(255, 255, 255, 0.6);
+            border-bottom-color: rgba(255, 255, 255, 0.4);
+            border-right-color: rgba(255, 255, 255, 0.2);
+        }
+        &.loaded {
+            display: none;
+        }
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-left-color: rgba(0, 0, 0, 0.6);
+            border-bottom-color: rgba(0, 0, 0, 0.4);
+            border-right-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            -webkit-animation: rotate 600ms linear infinite;
+            animation: rotate 600ms linear infinite;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    
+    // file uploader:
+    span.uk-text-middle.uk-text-meta {
+        /* padding-top: 10px; */
+        /* top: -21px; */
+        position: static;
+        // right:-60px;
+        margin-top: -25px;
+        padding: -5px 10px 0 20px;
+        /* right: auto; */
+        /* left: auto; */
+    }
+    
+    .students-name-excel-dragdrop {
+        @media only screen and (max-width: 1200px) {
+            font-size: 1vw !important
+        }
+    }
+    
+    [js-lock-row="true"] {
+        //background-color: #333 !important;
+        >span {
+            position: absolute;
+            right: 12px;
+            margin-top: 8px;
+            width: 15px;
+            height: 15px;
+            //transform: scale(1.1)
+            @media screen and (max-width: 960px) {
+                right: 17px;
+            }
+            @media screen and (max-width: 530px) {
+                right: 5px;
+                transform: scale(0.7);
+            }
+        }
+        >td:first-child {
+            padding-right: 20px !important;
+            @media screen and (max-width: 960px) {
+                padding-right: 0px !important;
+                ;
+                text-align: left !important;
+                ;
+            }
+        }
+    }
+    
+    [class*="uk-float-"].excel-uploader-conteiner {
+        margin-top: -7px;
+    }
+    
+    // input[type=file][disabled=""]{
+    //   >span{
+    //     color:gray !important;
+    //   }
+    // }
+    //   .excel-uploader-conteiner{
+    //   border:3px solid chocolate;
+    //   color:gray !important;
+    //  &>a{ color:gray;}
+    //  fill:black
+    // }
+    // registration detail section reload sign
+    .reloadDouble {
+        border-color: transparent white;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.125em;
+        height: 1.5em;
+        margin: 0.25em;
+        width: 1.5em;
+        animation: spinIt 0.75s infinite linear;
+        &:before,
+        &:after {
+            border-style: solid;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        &:after {
+            border-color: transparent transparent transparent white;
+            border-width: 0.3125em 0 0.3125em 0.5em;
+            top: -0.3125em;
+            left: 0.0625em;
+        }
+        &:before {
+            border-color: transparent white transparent transparent;
+            border-width: 0.3125em 0.5em 0.3125em 0;
+            bottom: -0.3125em;
+            right: 0.0625em;
+        }
+    }
+    
+    @keyframes spinIt {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(359deg);
+        }
+    }
+    
+    .flip-arrow {
+        animation: fliparrow 0.5s;
+        //transform: rotate(-45deg);
+    }
+    
+    @keyframes fliparrow {
+        0% {
+            transform: rotateX(0deg);
+        }
+        25% {
+            transform: rotateX(45deg);
+            color: #2950a3;
+        }
+        50% {
+            transform: rotateX(90deg);
+            color: #2950a3;
+        }
+        75% {
+            transform: rotateX(45deg);
+            color: #2950a3;
+        }
+        100% {
+            transform: rotateX(0deg);
+            color: gray;
+        }
+    }
+    
+    .fade-in {
+        animation: fadein 0.75s;
+        //transform: rotate(-45deg);
+    }
+    
+    @keyframes fadein {
+        0% {
+            color: transparent;
+        }
+        90% {
+            color: gray
+        }
+    }
+    
+    .color-splash {
+        animation: colorsplash 0.75s;
+        //transform: rotate(-45deg);
+    }
+    
+    @keyframes colorsplash {
+        0% {
+            color: #2950a3;
+        }
+        100% {
+            color: gray
+        }
+    }
+    
+    #registration_grade_switcher {
+        @media screen and (max-width: 960px) {
+            min-width: 100%;
+            width: max-content;
+        }
+        >li :first {
+            margin-top: 60px;
+        }
+    }
+    
+    // todo : create classes
+    // .icon-file-excel{
+    //     // 
+    // }
+    .grade-lock-confirm {
+        div:nth-child(1) {
+            width: calc(50% - 15px);
+            @media screen and (max-width: 530px) {
+                width: calc(100% - 15px);
+                >span {
+                    padding: 0px 8px 10px 0px !important;
+                    display: block;
+                }
+            }
+        }
+        button:nth-child(n+1) {
+            width: calc(25% - 10px);
+            padding: 0px 0px 0px 25px !important;
+            margin-top: 10px;
+            @media screen and (max-width: 530px) {
+                width: calc(50% - 10px);
+                margin-right: 5px !important;
+                margin-left: 5px !important;
+            }
+        }
+        @media screen and (max-width: 960px) {
+            margin-bottom: 30px !important;
+        }
+    }

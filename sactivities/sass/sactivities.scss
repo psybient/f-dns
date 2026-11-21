@@ -1,0 +1,382 @@
+@import "../../common/styles/common";
+@import "../../common/styles/page-loder-spiner";
+@import "../../common/styles/progressbar";
+@import "../../common/styles/double-loader-blue";
+@import "../../common/styles/loading-dots";
+//@import '../../common/components/animationDownloadButton';
+@import "../../common/components/animationButtonPlayPause";
+//@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "./registration/student-registration";
+@import "./registration/registration_table";
+@import "./registration/registration_environment";
+@import "./registration/sidebar";
+@import "./registration/placeholder";
+@import "./registration/crop-logo";
+@import "./report/manager-report";
+@import "./report/detailed-report";
+@import "./report/detailed-report/report-accordion";
+@import "./report/detailed-report/exam_report";
+@import "./report/detailed-report/layout";
+@import "./report/report-modal";
+@import "./management/management_report_environment";
+@import "./navbar";
+@import "./ticketing";
+@import "./exam-creation";
+@import "./order";
+@import "./profile";
+@import "./teachers-list";
+@import "./exam-information";
+@import "./sactivities-responsive";
+@import "./custom-test";
+@import "./help-menu";
+@import "./custom-test-by-test";
+@import "./year-comonent";
+@import "~@majidh1/jalalidatepicker/dist/jalaliDatePicker.min.css";
+@import "../../common/styles/validation";
+
+html {
+  @media screen and (min-width: 240px) and (max-width: 960px) and (orientation: landscape) {
+    >body {
+      #page {
+        display: none;
+      }
+
+      #rotate-alarm {
+        display: block;
+      }
+    }
+  }
+}
+
+#rotate-alarm {
+  display: none;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background-image: linear-gradient(to bottom right, #3098f3, #45a4f9);
+  z-index: 1000000000;
+}
+
+body {
+  overflow: hidden;
+}
+
+.mr-padding-bit {
+  padding: 2px !important;
+}
+
+.mr-padding-tiny {
+  padding: 5px !important;
+}
+
+.mr-padding-small {
+  padding: 8px;
+}
+
+.report-buttons-padding {
+  padding: 3px 15px;
+  text-align: right;
+}
+
+.mr-border-default-thin {
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #ffffff !important;
+}
+
+.mr-border-default-med {
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: #ffffff !important;
+}
+
+.mr-ltr {
+  direction: ltr;
+}
+
+.mr-rtl {
+  direction: rtl;
+}
+
+.mr-sticky-z-index {
+  z-index: 980;
+}
+
+.tab-drop-position {
+  position: absolute;
+  bottom: -35px;
+  width: 140%;
+  left: -10%;
+}
+
+.tab-drop-position-hide {
+  visibility: hidden;
+}
+
+.height-header {
+  height: 47px;
+}
+
+// .workspace-width {
+//   width:100vw;//1200px;
+//   overflow-y:hidden;
+//   overflow-y:hidden;
+// }
+.workspace-width-inner {
+  // width:1200px;
+  width: 99vw; //1200px;
+  overflow-y: hidden;
+}
+
+//chrome Scrollball
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(199, 199, 199);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 135, 240, 0.5);
+}
+
+.uk-tab-right>*>a {
+  border-left: 3px solid transparent;
+}
+
+.percent-height {
+  height: 23px;
+}
+
+.top-corner-rounded {
+  border-radius: 5px 0px 0px 0px;
+}
+
+.empty-space-hight {
+  height: 30px !important;
+}
+
+.time-element-back {
+  background-color: whitesmoke;
+}
+
+.username-font {
+  font-family: "iran_sans";
+
+  @media only screen and (max-width: $break-device) {
+    font-size: 3.5vw;
+  }
+}
+
+a[href="#help-modal"] {
+  padding-top: 0.75em;
+  padding-right: 0.9em;
+}
+
+// #registration_table_conteiner {
+//     min-height: calc(64vh - 150px);
+// }
+// jdp-container {
+//     z-index: 99999999 !important;
+// }
+input:invalid {
+  border-color: red;
+
+  &:focus {
+    border-color: red;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: red;
+  }
+}
+
+select:invalid {
+  border-color: red;
+
+  &:focus {
+    border-color: red;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: red;
+  }
+}
+
+.profile-upload {
+  background-color: white !important;
+  color: #39f !important;
+  width: 21px;
+  height: 21px;
+  bottom: -22px;
+  left: -67px;
+  position: relative;
+}
+
+.profile-default {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.logo-text {
+  position: absolute;
+  width: 60px;
+  margin-top: 11px;
+  line-height: 17px;
+  text-align: center;
+  font-size: 74%;
+}
+
+.liquid-uplod {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  height: 58px;
+  width: 58px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid white;
+
+  &::before {
+    font-family: Arial;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    height: 200%;
+    width: 200%;
+    box-sizing: border-box;
+    background-color: #1e87f0;
+    border-radius: 40%;
+  }
+}
+
+.begin-liquid-uplod {
+  &::after {
+    animation: spinliquid 6s linear infinite;
+  }
+}
+
+@keyframes spinliquid {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-100%) rotate(360deg);
+  }
+}
+
+.school-name {
+  position: relative;
+  left: -35px;
+
+  @media only screen and (max-width: $break-device) {
+    width: auto;
+    left: 0;
+
+    >a>span {
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (max-width: $break-device-medium) {
+    >a {
+      border: none;
+      pointer-events: none;
+      padding: 0 !important;
+
+      >span {
+        font-size: 3vw;
+      }
+
+      >svg {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo-decision {
+  display: block !important;
+  width: 96px;
+
+  @media only screen and (max-width: $break-device) {
+    display: none !important;
+  }
+}
+
+.small-device {
+  @media only screen and (max-width: 300px) {
+    text-align: right;
+  }
+}
+
+.initial-notice-text-report {
+  margin: 0px !important;
+}
+
+.booklet-download {
+  color: lightseagreen !important;
+  border-color: lightseagreen !important;
+  background: #20b2aa1c !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: lightseagreen !important;
+    color: white !important;
+  }
+}
+
+.booklet-download-alternate {
+  color: lightseagreen !important;
+  border-color: lightseagreen !important;
+  background: #20b2aa1c !important;
+  transition: all 0.3s ease !important;
+}
+
+.lesson-small-device {
+  @media only screen and (max-width: 350px) {
+    flex: auto !important;
+    margin-bottom: 3px !important;
+  }
+}
+
+.percent-small-device {
+  @media only screen and (max-width: 350px) {
+    height: 25px;
+    margin-right: calc(100% - 140px);
+  }
+}
+
+.count-badge {
+  background-color: #39f;
+  color: white;
+  font-size: 76%;
+  line-height: 17px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0px 5px;
+  width: auto !important;
+  position: relative;
+  top: -5px;
+}
+
+input:invalid {
+  border-color: red !important;
+}

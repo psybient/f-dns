@@ -1,0 +1,502 @@
+$break-device: 960px;
+$break-device-modal: 530px;
+
+.manager-report {
+    .uk-accordion-title::before {
+        display: none;
+    }
+
+    .uk-open {
+        background-color: whitesmoke;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to bottom right, whitesmoke, #fcfcfc, whitesmoke);
+        /* Standard syntax (must be last) */
+        margin-bottom: 10px !important;
+        padding: 10px 0px 15px 0px !important;
+        border-left: 3px solid #1e87f0 !important;
+
+        @media only screen and (max-width: $break-device) {
+            margin: 0px !important;
+            //padding: 0px !important;
+            border: 1px solid gray !important;
+            border-radius: 5px;
+        }
+
+        >a {
+            >span {
+                color: orange !important;
+            }
+
+            ;
+            color: #39f !important;
+        }
+
+        ;
+    }
+
+    .uk-tab {
+        @media only screen and (max-width: $break-device) {
+            margin-left: 0px !important;
+            display: block;
+        }
+    }
+}
+
+#management_report_section {
+    .uk-accordion>li {
+        @media only screen and (max-width: $break-device) {
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+    }
+}
+
+.padder {
+    overflow-y: scroll !important;
+    scrollbar-color: rgba(30, 135, 240, 0.50) rgb(199, 199, 199);
+    scrollbar-width: thin;
+
+    @media only screen and (max-width: $break-device) {
+        padding-bottom: 200px;
+    }
+}
+
+.Percent90-font {
+    font-size: 90% !important;
+}
+
+.Percent70-font {
+    font-size: 70% !important;
+}
+
+.mr-Rank-Backcolor {
+    background-color: rgba(0, 0, 0, .3);
+    font-size: 70% !important;
+    color: #efefef
+}
+
+.mr-padding-tinyNotForced {
+    padding: 10px 5px;
+}
+
+.progress-height {
+    height: 10px;
+}
+
+.initial-image {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin-bottom: 5px;
+}
+
+.Generated-Image {
+    -webkit-filter: grayscale(0%) !important;
+    filter: grayscale(0%) !important;
+    margin-bottom: 5px;
+}
+
+.top-margin-none {
+    margin-top: 0px !important;
+}
+
+.button-font-size {
+    font-size: 80% !important;
+}
+
+.mr-padding-small-medium {
+    padding: 23px;
+}
+
+.rol-text-color {
+    color: #0d6cb6;
+    font-size: 70%;
+}
+
+.uk-subnav-pill>.uk-active>div {
+    background-color: white;
+}
+
+.uk-subnav-pill>.uk-active>div>a {
+    color: #39f !important;
+    pointer-events: none !important;
+}
+
+.uk-subnav-pill>li>div>a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 100%;
+}
+
+.treebox {
+    //background-color: rgba(53, 154, 255, 0.05);
+    //border: 1px solid rgba(0,0,0,0.05);
+    font-size: 70%;
+    padding: 5px !important;
+}
+
+#management_report_switcher {
+    height: 250%;
+
+    @media only screen and (max-width: $break-device) {
+        padding: 5px;
+        height: 100%;
+    }
+
+    >li>a {
+        border: none !important;
+    }
+
+    >li>div>ul {
+        .uk-active {
+            border: none !important;
+        }
+    }
+}
+
+.descriptive {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: $break-device) {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    >div:nth-child(1) {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 480px;
+
+        @media only screen and (max-width: $break-device) {
+            width: 100%;
+            align-items: center;
+            padding-bottom: 0px !important;
+        }
+
+        @media only screen and (max-width: $break-device-modal) {
+            flex-direction: column;
+        }
+
+        >div {
+            width: 240px;
+
+            @media only screen and (max-width: $break-device) {
+                width: 50%;
+            }
+
+            @media only screen and (max-width: $break-device-modal) {
+                width: 100% !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+        }
+
+        >div:nth-child(1) {
+            border-right: 1px solid #e5e5e5;
+
+            @media only screen and (max-width: $break-device) {
+                box-sizing: border-box;
+                padding: 15px 20px 15px 0;
+                margin-top: 35px;
+            }
+        }
+
+        >div:nth-child(2) {
+            margin-left: 15px;
+
+            @media only screen and (max-width: $break-device) {
+                width: 50%;
+                margin: 0;
+                box-sizing: border-box;
+                padding: 20px 0px 20px 20px;
+                margin-top: 35px;
+
+                >div.bottons-width {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+
+    >div:nth-child(2) {
+        flex: 1;
+
+        @media only screen and (max-width: $break-device) {
+            width: 100%;
+            margin-top: 35px;
+            border: none;
+            padding-left: 0px;
+
+        }
+    }
+}
+
+.descriptive-booklets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px 0px 10px 15px;
+    gap: 7px;
+    border-left: 1px solid #e5e5e5;
+
+
+    >a {
+        flex: 0 0 calc((100% - (14px)) / 3);
+        min-height: 70px;
+        position: relative;
+        transition: all 0.3s ease;
+        font-size: 12px;
+        box-sizing: border-box;
+        border: 1px solid;
+        padding: 7px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: lightgray;
+        border-color: lightgray;
+        border: 1px dotted;
+
+        &::after {
+            content: 'در انتظار برگزاري';
+            position: absolute;
+            font-size: 80%;
+            bottom: 0;
+            right: 0px;
+            width: 100%;
+            background-color: lightgray;
+            height: 0px;
+            line-height: normal;
+            border-radius: 0px 0px 4px 4px;
+            color: white;
+            transform-origin: bottom;
+            height: 17px;
+            line-height: 17px;
+            transform: scaleY(0);
+            transition: transform 0.2s ease;
+        }
+
+        >svg {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 13px;
+        }
+
+
+        &[uk-icon] {
+            color: lightseagreen;
+            border-color: lightseagreen;
+            background: #20b2aa1c;
+            pointer-events: all;
+            border: 1px solid;
+
+            &::after {
+                content: 'دانلود فيلم‌ پاسخ تشريحي';
+                background-color: #0e615d96;
+            }
+
+
+            &:hover {
+                background-color: lightseagreen;
+                color: white;
+            }
+        }
+
+        &[uk-spinner] {
+            color: lightseagreen;
+            border-color: lightseagreen;
+            background: #20b2aa1c;
+            filter: grayscale(1);
+            opacity: 0.8;
+            pointer-events: all;
+            border: 1px solid;
+
+            &::before {
+                content: 'تصحيح';
+                position: absolute;
+                font-size: 70%;
+                top: 0;
+                right: 24px;
+                line-height: 22px;
+                opacity: 0.7;
+            }
+
+            &::after {
+                content: 'دانلود فيلم‌ پاسخ تشريحي';
+            }
+
+            &:hover {
+                background-color: lightseagreen;
+                color: white;
+            }
+        }
+
+        @media only screen and (max-width: $break-device-mid) {
+            flex: 0 0 calc((100% - (7px)) / 2);
+        }
+
+
+        @media only screen and (max-width: $break-device) {
+            flex: 0 0 calc((100% - (28px)) / 5);
+
+        }
+
+        @media only screen and (max-width: $break-device-middle) {
+            flex: 0 0 calc((100% - (21px)) / 4);
+        }
+
+
+        @media only screen and (max-width: $break-device-modal) {
+            flex: 0 0 calc((100% - (7px)) / 2);
+        }
+
+        &:hover {
+            &::after {
+                transform: scaleY(1);
+            }
+        }
+    }
+}
+
+.not-all-corrected-control {
+    @media only screen and (max-width: $break-device) {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    div.not-all-corrected-charts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        @media only screen and (max-width: $break-device) {
+            margin-bottom: 30px;
+        }
+
+        @media only screen and (max-width: $break-device-medium-mid) {
+            flex-direction: column;
+        }
+
+
+        &::after {
+            content: ' ';
+            position: absolute;
+            background-color: #0000006b;
+            height: 100%;
+            top: 0;
+            right: 0;
+            width: 100%;
+            filter: blur(1px);
+            border-radius: 5px;
+        }
+
+        &::before {
+            content: 'بخش نمودارهاي رتبه و تراز پس از اتمام تصحيح همه مدارس در دسترس خواهد بود.';
+            position: absolute;
+            width: 250px;
+            color: white;
+            z-index: 3;
+            font-size: 75%;
+            border: 1px dotted white;
+            height: auto;
+            padding: 10px;
+            right: 50%;
+            top: 50%;
+            transform: translate(+50%, -50%);
+            text-align: center;
+
+            @media only screen and (max-width: $break-device-middle) {
+                width: 250px;
+            }
+
+            @media only screen and (max-width: $break-device-small) {
+                width: 180px;
+            }
+        }
+
+        >div {
+            transform: scale(.75);
+            filter: blur(3px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+    }
+
+    div.descriptive {
+        @media only screen and (max-width: $break-device) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    div.descriptive-booklets {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    div.results-container {
+        position: relative;
+
+        @media only screen and (max-width: $break-device) {
+            >div {
+                margin-top: 0 !important;
+            }
+        }
+
+        &::after {
+            content: ' ';
+            position: absolute;
+            background-color: #0000006b;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            filter: blur(1px);
+            border-radius: 5px;
+        }
+
+        &::before {
+            content: 'بخش رتبه‌ها و گزارشات پس از اتمام تصحيح همه مدارس در دسترس خواهد بود.';
+            position: absolute;
+            width: 250px;
+            color: white;
+            z-index: 3;
+            font-size: 75%;
+            border: 1px dotted white;
+            height: auto;
+            padding: 10px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            @media only screen and (max-width: $break-device-middle) {
+                width: 250px;
+            }
+
+            @media only screen and (max-width: $break-device-small) {
+                width: 180px;
+            }
+        }
+
+        >div:nth-child(1) {
+            transform: scale(.9);
+            filter: blur(3px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        >div:nth-child(2) {
+            transform: scale(.9);
+            filter: blur(3px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,232 @@
+.mr-padding-bit {
+    padding: 2px;
+}
+
+// .mr-padding-tinyNotForced {
+//   padding: 5px 5px;
+// }
+.mr-padding-tiny {
+    padding: 5px !important;
+}
+
+.mr-padding-left {
+    padding-left: 37px !important;
+}
+
+.mr-table-tiny th,
+.mr-table-tiny td {
+    padding: 5px 5px !important;
+}
+
+.mr-table-tiny2 th {
+    padding: 5px 5px !important;
+    font-size: 85%;
+}
+
+.mr-table-tiny2 td {
+    padding: 5px 5px !important;
+    font-size: 85%;
+}
+
+.mr-table-tiny2 tfoot {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 5px !important;
+    font-size: 100% !important;
+    color: #efefef;
+}
+
+.mr-question-table {
+    width: 100%;
+    height: 32px;
+}
+
+.mr-question-table td {
+    width: 25%;
+}
+
+.mr-questions-table {
+    color: darkgray;
+}
+
+.mr-questions-table td {
+    padding: 3px !important;
+}
+
+.mr-questions-table th {
+    width: 60px;
+    padding: 5px !important;
+}
+
+.uk-padding-xlarge {
+    padding: 45px;
+}
+
+.mr-questions-table th {
+    border-bottom: 1pt solid darkgray;
+    font-weight: normal;
+}
+
+.mr-padding-small {
+    padding: 8px;
+}
+
+.mr-padding-medium {
+    padding: 10px;
+}
+
+.mr-border-primary {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1e87f0;
+}
+
+.mr-border-default-thin {
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: #ffffff !important;
+}
+
+.mr-border-default-med {
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-color: #ffffff !important;
+}
+
+.mr-height-tiny {
+    height: 80px;
+}
+
+.mr-ltr {
+    direction: ltr;
+}
+
+.mr-rtl {
+    direction: rtl;
+}
+
+.mr-sticky-z-index {
+    z-index: 980;
+}
+
+.mr-border-primary-thin {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1e87f0;
+}
+
+.mr-border-muted-thin {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+}
+
+.mr-text-diagram-title {
+    font-size: 60%;
+    width: 34px;
+    height: 11px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.mr-text-title-primary {
+    font-size: 135%;
+    margin-left: 15px;
+}
+
+.mr-text-title-secondary {
+    font-size: 115%;
+}
+
+.mr-block-empty {
+    width: 72px;
+}
+
+.mr-block-default {
+    background-color: #e6e7e8;
+}
+
+.mr-block-weak {
+    background-color: #f0b2b2;
+}
+
+.mr-block-medium {
+    background-color: #f0e1b1;
+}
+
+.mr-block-good {
+    background-color: #beb1f0;
+}
+
+.mr-block-excellent {
+    background-color: #7ebd89;
+}
+
+.tab-drop-position {
+    position: absolute;
+    bottom: -35px;
+    width: 140%;
+    left: -10%;
+}
+
+.tab-drop-position-hide {
+    visibility: hidden;
+}
+
+.height-header {
+    height: 47px;
+}
+
+.student-level-height {
+    height: 27px;
+}
+
+//chrome Scrollball
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(199, 199, 199);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(30, 135, 240, 0.5);
+}
+
+.mr-position-DrawCanvas {
+    position: absolute;
+    top: -100;
+    right: 0;
+}
+
+.mr-Rank-Backcolor {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 100% !important;
+    color: #efefef;
+    height: 30px;
+}
+
+.close-back {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.bar-padding {
+    padding-top: 6px !important;
+}
+
+.progress-height {
+    height: 10px;
+}
+
+.exam-tab-margin {
+    margin: 7px 0px !important;
+}
+
+.uk-tab-right>*>a {
+    border-left: 3px solid transparent;
+}
+
+.no-wrap-conteiner {
+    white-space: nowrap;
+    //padding-top: -5px;
+}

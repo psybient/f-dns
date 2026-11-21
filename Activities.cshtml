@@ -1,0 +1,3154 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    string bundleVersion = MeraatWebApplication.Helpers.Utilities.StaticMethods.packageJsonVersion;
+}
+
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Environment 
+@using Microsoft.Extensions.Hosting
+@{
+
+    bool isDeveloper = Environment.IsDevelopment();
+    var baseUri = isDeveloper ?
+    MeraatWebApplication.Helpers.Utilities.StaticMethods.webpackServerAddress :  
+    MeraatWebApplication.Helpers.Utilities.StaticMethods.serviceAddress;;
+}
+
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+	<title>کارپوشه مدیر</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="@($"{baseUri}/dist/sactivities.bundle" + bundleVersion + ".css")" />
+</head>
+
+<body class="uk-background-muted">
+	  <!-- Help Menu -->
+  @* <div id="rotate-alarm">
+         <img class="logo-light uk-position-center" src="~/dist/assets/firstpage/rotate-disable.svg">
+    </div>   *@
+	<nav class="btn-pluss-wrapper uk-animation-slide-left">
+		<div href="#" class="btn-pluss">
+			<ul>
+				<li><a href="https://s3.ir-thr-at1.arvanstorage.com/meraat/school-guide.pdf"
+						target="_blank">
+						<div class="text-lines-icon"><span></span><span></span><span></span></div>راهنمای جامع سیستم سنجش و ارزشیابی ویژه مدرسه
+					</a>
+				</li>
+				<li><a href="/Services/SchoolFolder#Page3" target="_blank">
+						<div class="text-lines-icon"><span></span><span></span><span></span></div>برنامه سنجش و ارزشیابی
+					</a>
+				</li>
+
+
+
+				<li>
+					<a href="#modal-media-video-0-1"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_order.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> ثبت سفارش در كارپوشه
+					</a>
+				</li>
+
+				<li>
+					<a href="#modal-media-video-0-2"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_complete_info.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> تكميل اطلاعات مدرسه
+					</a>
+				</li>
+
+				<li>
+					<a href="#modal-media-video-0-3"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/order_activation.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> فعال‌سازي سفارش
+					</a>
+				</li>
+
+
+				<li>
+					<a href="#modal-media-video-0-4"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_ticket.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> ثبت تیكت
+					</a>
+				</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<li>
+					<a href="#modal-media-video-1"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/sabteAsamiDaneshAmooz_madrese.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> ثبت اسامی دانش‌آموزان جهت فعال‌سازی كارپوشه اختصاصی
+					</a>
+				</li>
+				<li>
+					<a href="#modal-media-video-2"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/faalSaziKarpoosheMoalem_madrese.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> ثبت اسامی معلمان جهت فعال‌سازی كارپوشه اختصاصی
+					</a>
+				</li>
+				<li>
+					<a href="#modal-media-video-3"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/azmoonSaaz_madrese.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> آزمون‌سازی مدرسه و معلمان در كارپوشه اختصاصی
+					</a>
+				</li>
+				<li>
+					<a href="#modal-media-video-4"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/nasboHamgamsazi.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> نصب و همگام‌سازی اپلیكیشن دانش‌آموز
+					</a>
+				</li>
+				<li>
+					<a href="#modal-media-video-5"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/khodArzyabi.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> خودارزیابی مستمر و آزمون آنلاین در اپلیكیشن دانش‌آموز
+					</a>
+				</li>
+				<!-- <li>
+					<a href="#modal-media-video-6"
+						expected-link="" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> تنظیم ساعت و كنترل آزمون هماهنگ آنلاین
+					</a>
+				</li> -->
+				<li>
+					<a href="#modal-media-video-7"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/gozareshAzmoon_madrese.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> گزارش آزمون هماهنگ
+					</a>
+				</li>
+				<li>
+					<a href="#modal-media-video-8"
+						expected-link="https://s3.ir-thr-at1.arvanstorage.ir/meraat/gozareshKhodarzyabi_madrese.mp4" uk-toggle>
+						<span class="video-play" uk-icon="icon: play-circle; ratio: 1.3"> </span> گزارش خودارزیابی‌های مستمر مبتنی بر واحدهای یادگیری
+					</a>
+				</li>
+				<li>
+					<a id="chatChange" style="color:yellow"
+						href="https://support.meraat.ir/webchat.html?gatetype=وب&usertype=مدیر&schoolname=@(User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)&schoolid=@(User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.SerialNumber)?.Value)&name=@(User.Identity.Name)&schoolsectioncode=@(User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.GroupSid)?.Value)"
+						target="_blank">
+						<img class="" src="~/dist/assets/sactivity/chat-outline.svg" alt="" width="25">
+						پشتیبانی آنلاین
+						<div class="dot-speech"><span>.</span><span>.</span><span>.</span></div>
+					</a>
+
+				</li>
+			</ul>
+			<img class="tooltip" src="~/dist/assets/sactivity/help-svg.svg" width="30">
+		</div>
+	</nav>
+
+	<!-- side-bar-->
+	<div id="offcanvas-nav" uk-offcanvas="flip: true; overlay: true" class="" style="display: none">
+		<div id="offcanvas-nav-container" class="uk-offcanvas-bar uk-padding">
+			<ul class="uk-nav uk-nav-default ">
+				<div class="uk-inline uk-width-1-1 uk-text-center uk-padding uk-padding-remove-bottom">
+					<span class="uk-margin-small-right" uk-icon="icon: meraatffmpeg; ratio:5">
+				</div>
+				<div class="uk-inline uk-width-1-1 uk-text-center uk-padding uk-padding-remove-top">
+					<img src="~/dist/assets/sactivity/Logo2.svg" width="130" uk-svg>
+				</div>
+
+				<li class="uk-nav-divider"></li>
+				<li>
+				
+					<a id="freelancer_profile_manager_link" href="#profile" uk-toggle>
+                        <span class="uk-margin-small-left" uk-icon="icon:  user"></span>اطلاعات كاربری
+                    </a>
+                    
+                    <a id="wallet_modal_button_from_sidebar" >
+                        <span class="uk-margin-small-left" uk-icon="icon:  tablet-landscape"></span>كیف پول
+                    </a>	
+				
+					<a href="#" id="sidebar_logout_link"><span class="uk-margin-small-left"
+							uk-icon="icon:  sign-out"></span>خروج 
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+
+	<!-- HEADER Navbar -->
+	<div class="main-loader">
+		<div class="loader"></div>
+	</div>
+	<div class="uk-section-primary uk-preserve-color mr-height-tiny mr-sticky-z-index uk-overflow-hidden"
+		uk-sticky="bottom: #offset">
+		<nav class="uk-navbar-container">
+			<div class="uk-container uk-container-expand uk-section-primary">
+				<div uk-navbar class="mr-ltr">
+					<div class="uk-navbar-left">
+						<div id="profile-image-container" class="uk-inline" style="display:none">
+
+							<div class="js-upload uk-inline" uk-form-custom>
+								<input id="logoinput" accept=".jpg,.png" type="file" name="logo" multiple>
+								<div id="liquiduplod" class="liquid-uplod"></div>
+								<div class="logo-text">لوگو<br>مدرسه</div>
+								<img id="logoImg" class="disable-on-school-activation uk-border-pill profile-default"
+									src="~/dist/assets/sactivity/school-profile.png">
+								<a id="logoImgArrow" class="uk-icon-button uk-margin-small-right profile-upload"
+									uk-icon="arrow-up"></a>
+							</div>
+
+
+							<div id="logoCropModal" class="logo-crop-modal ">
+								<div class="logo-crop-dialog uk-animation-fade">
+									<div class="logo-crop-header">
+										<span>تنظیم و برش لوگوی مدرسه</span>
+										<button type="button" id="logoCropClose" uk-icon="close"></button>
+									</div>
+
+									<div class="logo-crop-content">
+										<div id="logoCropArea" class="logo-crop-area">
+											<img id="logoCropImage" draggable="false">
+											<div class="logo-crop-circle"></div>
+										</div>
+
+										<div class="logo-crop-zoom">
+											<input id="logoCropZoom" type="range" min="25" max="1000" value="100">
+										</div>
+									</div>
+
+									<div class="logo-crop-footer">
+										<button type="button" id="logoCropCancel">انصراف</button>
+										<button type="button" id="logoCropConfirm">تأیید برش</button>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="uk-navbar-item mr-rtl school-name">
+							<a id="header_logout_button" asp-action="logout" asp-controller="account"
+								class="uk-padding-small uk-padding-remove-vertical uk-button uk-button-default uk-border-pill"
+								uk-icon="icon: sign-out; ratio:1.3"><span id="school_id"
+									class="uk-margin-small-left username-font">@User.FindFirst(claim => claim.Type ==
+									System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+								</span></a>
+						</div>
+						<div class="uk-navbar-item uk-hidden@m"></div>
+
+					</div>
+					<div class="uk-navbar-right">
+						<div class="uk-navbar-item">
+							<img class="uk-hidden@m" src="~/dist/mreport/Logo2.svg" width="70" style="" uk-svg>
+							<img class="uk-visible@m" src="~/dist/mreport/Logo2.svg" width="130" style="" uk-svg>
+
+						</div>
+						<div id="root"></div>
+						<div class="hamburger uk-navbar-item">
+							<a uk-toggle="target: #offcanvas-nav" uk-icon="icon:table; ratio:1"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</nav>
+
+	</div>
+
+	</span>
+	<!-- header: "سالها" and "کارنامه‌ها" -->
+	<div class="uk-flex uk-flex-center height-control fade-in-by-seconds">
+		<div class="uk-inline uk-box-shadow-small midhead-width">
+			<div dir="ltr" class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-background-default "
+				uk-grid>
+				<div dir="rtl" class="uk-inline uk-width-auto mr-padding-tiny ">
+					<select id="yearComponent" class="uk-select"  >
+					</select>
+				</div>
+
+				<div dir="rtl" class="uk-width-expand switch-tabs">
+					<ul id="main_tab_switcher" class="uk-subnav uk-subnav-pill"
+						uk-switcher="connect: .switcher-container;swiping: false;">
+						@* <li id="student_register" class="tabs-switcher mr-padding-small report-tabs" disabled="true"><a
+								class="uk-border-rounded uk-animation-fast" href="#">دانش‌آموزان</a></li>
+						<li id="" class="tabs-switcher uk-inline mr-padding-small report-tabs"><a
+								class="uk-border-rounded uk-animation-fast" href="#">
+								نمایش آزمون هماهنگ</a>
+						</li>
+
+						<li id="" class="tabs-switcher uk-inline mr-padding-small report-tabs"><a
+								class="uk-border-rounded uk-animation-fast" href="#">گزارش
+								آزمون هماهنگ</a>
+						</li>
+
+
+						<li id="teachers_tab" class="tabs-switcher mr-padding-small report-tabs"><a
+								class="uk-border-rounded uk-animation-fast" href="#">
+								معلمان</a>
+						</li>
+						<li id="detail_report_tab" style="min-width: 35px"
+							class="tabs-switcher mr-padding-small loading-dot-dot-dot report-tabs">
+
+							<p class="saving-dot-loader"><span>.</span><span>.</span><span>.</span></p>
+
+							<a style="margin: 0px 0px ;
+										border-radius: 5px;
+										background-color: darkorange ;
+										color: white;" class="uk-border-rounded uk-hidden" href="#">گزارش
+								واحدهای یادگیری</a>
+						</li>
+
+						<li id="exam_creation" class="tabs-switcher uk-inline mr-padding-small report-tabs" >
+							<a class="uk-border-rounded uk-animation-fast violet-button" href="#">آزمون‌ساز</a>
+						</li>
+
+						<li id="order" class="tabs-switcher uk-inline mr-padding-small report-tabs" >
+							<a class="uk-border-rounded uk-animation-fast" href="#">سفارش</a>
+						</li> *@
+
+					</ul>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- space between header and body-->
+	<div class="uk-flex uk-flex-center uk-padding-small uk-padding-remove-top"></div>
+	<!-- body-->
+
+	<ul id="karpooshe_main_section" class="uk-switcher switcher-container fade-in-by-seconds">
+
+		<li id="student_registration_section">
+
+			<div uk-height-viewport="offset-top: true" class="uk-flex uk-flex-center hidescroll">
+
+				<div uk-height-viewport="offset-top: true"
+					class="uk-overflow-auto uk-inline uk-box-shadow-small uk-background-default uk-height-small workspace-width">
+					
+					<p id="student_registration_empty_text" class="initial-notice-text uk-inline" hidden>
+						<span>محتوايي براي نمايش وجود ندارد.<br>براي ثبت‌نام دانش‌آموزان نخست در بخش سفارش تعداد دانش‌آموزان را ثبت نماييد.</span>
+					</p>
+
+					<div id="reportProgress" class="report-loader">
+						<progress id="js-progressbar" class="uk-progress" value="0" max="100"></progress>
+					</div>
+					<div id="student_registration_container" class="uk-width-1-1 uk-grid-collapse" uk-grid>
+						<div class="uk-inline right-panel-width">
+							<ul id="registration_grade_switcher" class="uk-tab-right uk-background-muted"
+								uk-tab="animation: uk-animation-fade;">
+
+								<!--Rendered-->
+
+							</ul>
+						</div>
+						<div
+							class="uk-width-expand uk-padding-small uk-padding-remove-vertical uk-margin-top table-part">
+							<div
+								class="[ js-registration-upload ] uk-placeholder uk-text-right uk-padding-remove  uk-visible@m">
+								<div class=" uk-padding-small uk-vertical-center">
+									<span uk-icon="icon: cloud-upload"></span>
+									<span class="uk-text-middle uk-text-meta students-name-excel-dragdrop" style="color:gray">
+										با کشیدن و رها کردن فایل اکسل، اسامی دانش​‌آموزان را بارگذاری نمایید
+									</span>
+
+									<div class="uk-float-left excel-uploader-conteiner">
+										<div uk-form-custom>
+											<label for="xls_file_uploader" class="mr-button-text uk-link"
+												style="font-size: 85%">
+												بارگذاری اکسل اسامی
+												<span
+													class="uk-icon-button uk-background-primary uk-light icon-file-excel "
+													uk-icon="icon:excel; ratio: 1.3">
+												</span>
+
+											</label>
+											<input id="xls_file_uploader" class="js-xls-reg_uploader" type="file"
+												multiple>
+										</div>
+									</div>
+									<progress id="js_reg_progressbar" class="uk-progress" value="0" max="100"
+										hidden></progress>
+								</div>
+							</div>
+
+							<p class="notice-text uk-inline">
+								برای تسهیل اتصال اطلاعاتی دانش آموز با مدرسه از طریق اپلیکیشن (همگام‌سازی) می‌توانید کد
+								ملی
+								دانش‌آموزان را وارد نموده و در هنگام ثبت با نام کاربری و رمز عبور دانش‌آموز جایگزین
+								نمایید؛
+								تا دیگر نیازی به ارسال نام کاربری و رمز عبور برای تک‌ تک دانش‌آموزان نداشته باشید.</p>
+
+
+
+
+							<div id="registration_table_conteiner"
+								class="uk-inline uk-width-1-1 uk-overflow-auto uk-height-small">
+
+								<table id="registration_table"></table>
+							</div>
+							<div class="uk-grid-small uk-width-1-1 uk-margin-top grade-lock-confirm" uk-grid>
+
+
+								<div id="registration_footer" class="uk-inline uk-padding-remove-buttom">
+									<!--Rendered-->
+								</div>
+
+								<button id="lock_and_save_button"
+									class=" uk-button uk-button-default uk-margin-small-left uk-inline uk-text-center uk-border-rounded uk-text-success">
+									<span class="uk-form-icon uk-text-muted uk-text-success "
+										uk-icon="icon: lock"></span>
+									تأیید و قفل
+								</button>
+								<button id="register_save_button"
+									class="disable-button uk-button uk-button-default uk-inline uk-text-center uk-border-rounded uk-text-primary">
+									<span class="uk-form-icon uk-text-muted uk-text-primary"
+										uk-icon="icon: save"></span>
+									ثبت
+								</button>
+							</div>
+						</div>
+						<div id="side_panel" class="side-panel-width">
+							<div class="uk-overflow-auto alarm-back uk-light uk-inline uk-text-center uk-padding-small">
+
+								<div id="guide_text" class="text-area">
+
+									<p class="uk-text-justify alarm-text">
+										1. <a href="https://www.meraat.ir/dist/assets/sample/StudentListSample.xlsx"
+											style="color:yellow" uk-tooltip="title: دانلود فایل اکسل نمونه"
+											download>«نمونه اکسل اسامی دانش‌آموزان» </a>
+										را دانلود کرده و مطابق با راهنمای پایین صفحه، اسامی دانش‌آموزان را بارگذاری
+										نمایید.
+									</p>
+									<p class="uk-text-justify alarm-text">
+										2. پس از تکمیل، بارگذاری و یا اعمال هرگونه تغییر دکمه ثبت را بزنید.
+									</p>
+									<p class="uk-text-justify alarm-text">
+										3. پس از حصول اطمینان از صحت لیست دانش‌آموزان دکمه تأیید و قفل را بزنید.
+										توجه داشته باشید که پس از تأیید و قفل امکان اصلاح لیست وجود ندارد.
+									</p>
+								</div>
+
+								<div class="registration_status-conteiner">
+									<table id="registration_status_table" class="alarm-table">
+										<thead>
+											<tr class="alarm-text">
+												<td class="uk-width-expand">پایه/رشته</td>
+												<td>ثبت‌نامی</td>
+												<td>تکمیل‌شده</td>
+												<td>تأیید</td>
+											</tr>
+										</thead>
+										<tbody>
+											<!--Rendered-->
+										</tbody>
+									</table>
+								</div>
+								<hr>
+								<div class="registration_hint-conteiner uk-padding-remove-vertical">
+									<span id="anim_button_container" class="uk-text-center uk-width-1-1 "></span>
+
+									<a class="split-help uk-margin-small-right" uk-icon="question"
+										uk-toggle="target: #toggle-split-def; animation: uk-animation-fade"></a>
+
+
+									<div id="toggle-split-def" hidden>
+										<p class="uk-text-justify">
+											برای جداسازی فایل هر دانش‌آموز، بعد از دانلود و جایگذاری فایل در یک پوشه
+											خالی،
+											آن را در Adobe Acrobat باز کنید و از طریق مسیر ابزار زیر عمل نمایید:
+										</p>
+										<p dir="ltr" class="uk-text-left">
+											Tools > Split Document > Top-Level bookmarks > <span>Output Options > Use
+												bookmark names for file names</span> > OK
+
+										</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		@* exam-informtion-start*@
+		<li>
+			<div uk-height-viewport="offset-top: true" class="uk-flex uk-flex-center ">
+				<div uk-height-viewport="offset-top: true"
+					class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width" style="overflow-y: scroll">
+
+					<p id="exam_history_empty_text" class="initial-notice-text uk-inline" hidden>
+						<span>محتوايي براي نمايش وجود ندارد.<br>آزموني سفارش داده نشده است.</span>
+					</p>
+
+					<div id="exam_history_container" class="exam-information-section">
+					<p id="exam_history_none_empty_text_descriptive" hidden class="initial-notice-definition uk-inline">
+						در اين بخش امكان دانلود سؤالات و پاسخ‌هاي آزمون‌هاي تشريحي فراهم مي‌باشد.</p>
+
+					<div id="descriptiveExam_download">
+						<!-- در صورتي كه آزموني در ليست آزمون‌هاي گذشته باشد بايد has-old-exams به المان زير داده شود. -->
+						@* <div class="has-old-exams">
+							<div class="grade-name">همه پايه‌ها<br>آزمون 1 تشريحي</div>
+							<!-- در صورتي كه شمارش به پايان رسيده باشد و زمان دانلود رسيده باشد كلاس available به المان زير بايد بدهيم. -->
+							<div id="q_dl" class="download">
+								<div class="title">دانلود سؤالات آزمون</div>
+								<div class="date">
+									<span>سه‌شنبه 1 ارديبهشت</span>
+									<span uk-icon="info" class="info"></span>
+									<ul class="drop-tooltip" uk-drop="mode: click">
+											<li>يازدهم رياضي - هندسه 2</li>
+											<li>يازدهم تجربي - زيست 2</li>
+											<li>يازدهم انساني - تاريخ 2</li>
+											<li>دوازدهم رياضي - فيزيك 3</li>
+											<li>دوازدهم تجربي - فيزيك 3</li>
+											<li>دوازدهم انساني - جغرافيا 3</li>
+									</ul>
+								</div>
+								<div class="count-down">48:25:13</div>
+								<div class="phone">كد ارسالي به شماره 0912xxxx543 <br>را وارد نماييد</div>
+								<div class="download-area">
+									<a class="download" uk-icon="icon: download; ratio: 1" uk-toggle="target: #q_dl; cls: confirming"></a>
+									<a class="confirm" uk-icon="icon: check; ratio: 1" uk-toggle="target: #q_dl; cls: confirming"></a>
+									<input class="uk-input" type="text" min="0" max="5" placeholder="_ _ _ _ _">
+								</div>
+							</div>
+							<div id="a_dl" class="download">
+								<div class="title">دانلود پاسخ آزمون</div>
+								<div class="date">
+									<span>سه‌شنبه 1 ارديبهشت</span>
+									<span uk-icon="info" class="info"></span>
+									<ul class="drop-tooltip" uk-drop="mode: click">
+											<li>يازدهم رياضي - هندسه 2</li>
+											<li>يازدهم تجربي - زيست 2</li>
+											<li>يازدهم انساني - تاريخ 2</li>
+											<li>دوازدهم رياضي - فيزيك 3</li>
+											<li>دوازدهم تجربي - فيزيك 3</li>
+											<li>دوازدهم انساني - جغرافيا 3</li>
+									</ul>
+								</div>
+								<div class="count-down">72:12:15</div>
+								<div class="phone">كد ارسالي به شماره 0912xxxx543 <br>را وارد نماييد</div>
+								<div class="download-area">
+									<a class="download" uk-icon="icon: download; ratio: 1" uk-toggle="target: #a_dl; cls: confirming"></a>
+									<a class="confirm" uk-icon="icon: check; ratio: 1" uk-toggle="target: #a_dl; cls: confirming"></a>
+									<input class="uk-input" type="text" min="0" max="5" placeholder="_ _ _ _ _">
+								</div>
+							</div>
+							<div class="expired-exams">
+								<span>آزمون‌هاي<br>گذشته</span>
+
+								<div class="header">آزمون‌هاي گذشته</div>
+								<div class="list">
+									<div>
+										<div>
+											<span>1405/2/1</span>
+											<span uk-icon="icon: info; ratio: 0.8" class="info"></span>
+											<ul class="drop-tooltip" uk-drop="mode: click">
+													<li>يازدهم رياضي - هندسه 2</li>
+													<li>يازدهم تجربي - زيست 2</li>
+													<li>يازدهم انساني - تاريخ 2</li>
+													<li>دوازدهم رياضي - فيزيك 3</li>
+													<li>دوازدهم تجربي - فيزيك 3</li>
+													<li>دوازدهم انساني - جغرافيا 3</li>
+											</ul>
+										</div>
+										<a uk-icon="icon: download; ratio: 0.8" uk-tooltip="سؤال"></a>
+										<a class="answer" uk-icon="icon: download; ratio: 0.8" uk-tooltip="پاسخ"></a>
+									</div>
+									<div>
+										<div>
+											<span>1405/2/2</span>
+											<span uk-icon="icon: info; ratio: 0.8" class="info"></span>
+											<ul class="drop-tooltip" uk-drop="mode: click">
+													<li>يازدهم رياضي - هندسه 2</li>
+													<li>يازدهم تجربي - زيست 2</li>
+													<li>يازدهم انساني - تاريخ 2</li>
+													<li>دوازدهم رياضي - فيزيك 3</li>
+													<li>دوازدهم تجربي - فيزيك 3</li>
+													<li>دوازدهم انساني - جغرافيا 3</li>
+											</ul>
+										</div>
+										<a uk-icon="icon: download; ratio: 0.8" uk-tooltip="سؤال"></a>
+										<a class="answer" uk-icon="icon: download; ratio: 0.8" uk-tooltip="پاسخ"></a>
+									</div>										
+									<div>
+										<div>
+											<span>1405/2/3</span>
+											<span uk-icon="icon: info; ratio: 0.8" class="info"></span>
+											<ul class="drop-tooltip" uk-drop="mode: click">
+													<li>يازدهم رياضي - هندسه 2</li>
+													<li>يازدهم تجربي - زيست 2</li>
+													<li>يازدهم انساني - تاريخ 2</li>
+													<li>دوازدهم رياضي - فيزيك 3</li>
+													<li>دوازدهم تجربي - فيزيك 3</li>
+													<li>دوازدهم انساني - جغرافيا 3</li>
+											</ul>
+										</div>
+											<a uk-icon="icon: download; ratio: 0.8" uk-tooltip="سؤال"></a>
+										<a class="answer" uk-icon="icon: download; ratio: 0.8" uk-tooltip="پاسخ"></a>
+									</div>	
+									<div>
+										<div>
+											<span>1405/2/5</span>
+											<span uk-icon="icon: info; ratio: 0.8" class="info"></span>
+											<ul class="drop-tooltip" uk-drop="mode: click">
+													<li>يازدهم رياضي - هندسه 2</li>
+													<li>يازدهم تجربي - زيست 2</li>
+													<li>يازدهم انساني - تاريخ 2</li>
+													<li>دوازدهم رياضي - فيزيك 3</li>
+													<li>دوازدهم تجربي - فيزيك 3</li>
+													<li>دوازدهم انساني - جغرافيا 3</li>
+											</ul>
+										</div>
+										<a uk-icon="icon: download; ratio: 0.8" uk-tooltip="سؤال"></a>
+										<a class="answer" uk-icon="icon: download; ratio: 0.8" uk-tooltip="پاسخ"></a>
+									</div>																			
+									<div>
+										<div>
+											<span>1405/2/7</span>
+											<span uk-icon="icon: info; ratio: 0.8" class="info"></span>
+											<ul class="drop-tooltip" uk-drop="mode: click">
+													<li>يازدهم رياضي - هندسه 2</li>
+													<li>يازدهم تجربي - زيست 2</li>
+													<li>يازدهم انساني - تاريخ 2</li>
+													<li>دوازدهم رياضي - فيزيك 3</li>
+													<li>دوازدهم تجربي - فيزيك 3</li>
+													<li>دوازدهم انساني - جغرافيا 3</li>
+											</ul>
+										</div>
+										<a uk-icon="icon: download; ratio: 0.8" uk-tooltip="سؤال"></a>
+										<a class="answer" uk-icon="icon: download; ratio: 0.8" uk-tooltip="پاسخ"></a>
+									</div>										
+								</div>
+							</div>																
+						</div> *@
+					</div>
+
+					<p id="exam_history_none_empty_text_regular" hidden class="initial-notice-definition uk-inline">
+						می‌توانید ساعت شروع آزمون‌های پیش‌رو را در اپلیکیشن مشخص نمایید و وضعیت دانش‌آموزان را حین
+						برگزاری آزمون بررسی کنید.
+					</p>
+						<ul id="regularExam_container" uk-accordion>
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li id="management_report_section" class="manager-report">
+
+			<div uk-height-viewport="offset-top: true" class="uk-flex uk-flex-center ">
+				<div uk-height-viewport="offset-top: true"
+					class="uk-inline uk-box-shadow-small uk-background-default uk-height-small workspace-width">
+
+
+
+					<p id="exam_empty_text" class="initial-notice-text uk-inline">
+						<span>محتوايي براي نمايش وجود ندارد.<br>در آزموني شركت نكرده‌ايد.</span>
+					</p>
+					<div id="exam_report_container">
+						<div class="uk-width-1-1 uk-grid-collapse" uk-grid>
+							<div class="uk-overflow-auto mr-ltr management-report-switcher" style="min-height: auto;">
+								<ul id="management_report_switcher"
+									class="uk-overflow-auto uk-tab-right uk-padding-remove-bottom uk-height-auto"
+									uk-tab="connect: #management_report_content;swiping: false"
+									uk-accordion="collapsible: false">
+								</ul>
+							</div>
+							<div uk-height-viewport="offset-top: true"
+								class="uk-height-small uk-width-expand@m uk-padding-small uk-overflow-auto management-containert-report">
+
+								<ul id="management_report_content" class="uk-switcher">
+									<!-- Content Loads Here -->
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</li>
+
+		@* teachers-list-start *@
+		<li>
+			<div uk-height-viewport="offset-top: true" class="uk-flex uk-flex-center ">
+				<div uk-height-viewport="offset-top: true"
+					class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width padder ">
+
+					<p class="initial-notice-definition uk-inline">
+						با ثبت مشخصات معلمان و وارد کردن درس‌ها و کلاس‌هایی که تدریس می‌کنند امکان نمایش فعالیت
+						دانش‌آموزان در اپلیکیشن را برای معلمان مهیا کنید.</p>
+
+
+					<form id="addTeacherRecord_Form" class="uk-width-1-1 uk-inline">
+						<label class="field field_v2 topfix" style="width: calc(18% - 26px)">
+							<select name="genderId" class="field__input select__input" name="prefixSelect"
+								data-custom-validation="select">
+								<option disabled selected hidden>جناب آقای / سرکار خانم</option>
+								<option value="4">جناب آقای</option>
+								<option value="5">سرکار خانم</option>
+							</select>
+							<span class="field__label-wrap">
+								<span class="field__label"></span>
+							</span>
+						</label>
+
+						<label class="field field_v2" style="width: calc(26% - 26px)">
+							<input name="firstName" class="field__input" type="text" placeholder="&nbsp">
+							<span class="field__label-wrap">
+								<span class="field__label">نام</span>
+							</span>
+						</label>
+
+						<label class="field field_v2" style="width: calc(31% - 26px)">
+							<input name="lastName" class="field__input" type="text" placeholder="&nbsp">
+							<span class="field__label-wrap">
+								<span class="field__label">نام خانوادگی</span>
+							</span>
+						</label>
+
+						<label class="field field_v2 phonenumber">
+							<input name="cellPhoneNo" class="field__input" type="text" placeholder="09123456789"
+								data-custom-validation="phone">
+							<span class="field__label-wrap">
+								<span class="field__label">شماره همراه</span>
+							</span>
+						</label>
+
+						<input id="insertTeacherInfo_button" type="submit" placeholder="  "
+							class="submit-teachers-info">
+
+					</form>
+					<div class="teachers-list-section">
+						<ul id="teachersList_accordion" uk-accordion>
+							<li class="">
+								<a class="uk-accordion-title uk-inline" href="#">
+									<div class="teachers-name">سرکار خانم سهیلا یاری</div>
+								</a>
+								<div class="uk-inline teachers-link">
+									<span>ارسال لینک کارپوشه</span>
+									<button uk-icon="commenting" uk-tooltip="پیامک"></button>
+									<button uk-icon="copy" uk-tooltip="کپی"></button>
+								</div>
+								<div class="uk-accordion-content">
+									<div class="lesson-input-selects">
+										<select>
+											<option disabled selected>پایه</option>
+											<option>هفتم</option>
+											<option>هشتم</option>
+											<option>نهم</option>
+										</select>
+										<select>
+											<option disabled selected>درس</option>
+											<option>فارسی</option>
+											<option>ریاضی</option>
+											<option>علوم</option>
+											<option>مطالعات</option>
+											<option>پیام​های آسمان</option>
+										</select>
+										<div class="dropdown-miltiple-button" type="button">کلاس‌ها</div>
+										<div class="dropdown-miltiple" uk-drop="mode: click; offset: 0">
+											<label><input class="uk-checkbox" type="checkbox"> 1</label>
+											<label><input class="uk-checkbox" type="checkbox"> 2</label>
+											<label><input class="uk-checkbox" type="checkbox"> 3</label>
+											<label><input class="uk-checkbox" type="checkbox"> 4</label>
+										</div>
+										<button href="" uk-icon="icon: plus-circle; ratio: 1.3"></button>
+
+									</div>
+									<div class="uk-inline teachers-lessons-classes">
+										<div>عربی 1 | دهم ریاضی | کلاس‌های 1 - 2 - 3 <button uk-icon="trash"></button>
+										</div>
+										<div>عربی 1 | دهم تجربی | کلاس 3<button uk-icon="trash"></button></div>
+										<div>پیام‌های آسمان 1 | دهم انسانی | کلاس‌های 2 - 3<button
+												uk-icon="trash"></button></div>
+										<div>پیام‌های آسمان 2 | یازدهم انسانی | کلاس‌های 3 - 4<button
+												uk-icon="trash"></button></div>
+										<div>عربی 3 | دوازدهم تجربی | کلاس 1<button uk-icon="trash"></button></div>
+									</div>
+									<div class="uk-inline teachers-activity-info">
+										<span>هفته چهارم (1400/7/21 تا 1400/8/28)</span>
+										<span>دفعات ورود به کارپوشه: <span>25</span></span>
+										<span>دفعات ساخت گزارش: <span>10</span></span>
+										<span>09194218881 <span uk-icon="receiver"></span></span>
+									</div>
+								</div>
+							</li>
+							<li class="">
+								<a class="uk-accordion-title uk-inline" href="#">
+									<div class="teachers-name">جناب آقای یاران رزمی</div>
+								</a>
+								<div class="uk-inline teachers-link">
+									<span>ارسال لینک کارپوشه</span>
+									<button uk-icon="commenting" uk-tooltip="پیامک"></button>
+									<button uk-icon="copy" uk-tooltip="کپی"></button>
+								</div>
+								<div class="uk-accordion-content">
+									<div class="lesson-input-selects">
+										<select>
+											<option disabled selected>پایه</option>
+											<option>هفتم</option>
+											<option>هشتم</option>
+											<option>نهم</option>
+										</select>
+										<select>
+											<option disabled selected>درس</option>
+											<option>فارسی</option>
+											<option>ریاضی</option>
+											<option>علوم</option>
+											<option>مطالعات</option>
+											<option>پیام​های آسمان</option>
+										</select>
+										<div class="dropdown-miltiple-button-exam" type="button">کلاس‌ها</div>
+										<div class="dropdown-miltiple" uk-drop="mode: click; offset: 0">
+											<label><input class="uk-checkbox" type="checkbox"> 1</label>
+											<label><input class="uk-checkbox" type="checkbox"> 2</label>
+											<label><input class="uk-checkbox" type="checkbox"> 3</label>
+											<label><input class="uk-checkbox" type="checkbox"> 4</label>
+										</div>
+										<button href="" uk-icon="icon: plus-circle; ratio: 1.3"></button>
+
+									</div>
+									<div class="uk-inline teachers-lessons-classes">
+									</div>
+									<div class="uk-inline teachers-activity-info">
+										<span>هفته چهارم (1400/7/21 تا 1400/8/28)</span>
+										<span>دفعات ورود به کارپوشه: <span>25</span></span>
+										<span>دفعات ساخت گزارش: <span>10</span></span>
+										<span>09194218881 <span uk-icon="receiver"></span></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li id="detail_report_tab_container">
+			<div uk-height-viewport="offset-top: true" class="uk-flex uk-flex-center ">
+				<div uk-height-viewport="offset-top: true"
+					class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width padder ">
+
+
+					<!-- سؤییچ بین مدیر، معلم و مشاور به همراه ترتیب درخت ------------------------------------------------------------>
+
+
+					<div class="uk-grid-collapse uk-child-width-expand@s uk-background-muted uk-text-center"
+						style="height: 20px;" uk-grid>
+						<div class="uk-width-1-1 uk-text-center uk-padding-remove">
+
+
+
+							<ul class="uk-switcher switcher-container uk-inline" data-uk-switcher>
+
+								<li uk-filter="target: .js-filter">
+									<ul class="uk-subnav uk-subnav-pill uk-margin-small-right"
+										uk-switcher="connect: .switcher-inner-container; animation: uk-animation-fade"
+										uk-scrollspy="cls: uk-animation-slide-right-small; target: .position; delay: 75; repeat: true"
+										hidden>
+										<li class="position mr-padding-small uk-padding-remove-horizontal"
+											uk-filter-control=".filtermanager">
+											<div class="uk-border-pill uk-background-muted">
+												<a class="" href="#">
+													<img src="~/dist/assets/sactivity/manager-active.svg" width="20"
+														uk-svg>
+													مدیر
+												</a>
+											</div>
+										</li>
+
+										<li class="position mr-padding-small uk-padding-remove-horizontal"
+											uk-filter-control=".filteradvisor">
+											<div class=" uk-border-pill uk-background-muted">
+												<a class="" href="#">
+													<img src="~/dist/assets/sactivity/advisor-active.svg" width="20"
+														uk-svg>
+													مشاور
+												</a>
+											</div>
+										</li>
+									</ul>
+									<ul class="js-filter uk-text-center uk-grid-collapse mr-ltr uk-height-small filter-conteiner"
+										uk-grid>
+										<li class="filtermanager filteradvisor uk-width-1-1">
+											<div
+												class="treebox uk-border-rounded uk-inline uk-width-1-1 uk-margin-remove">
+												پایه</div>
+											<span uk-icon="icon: arrow-down; ratio:1"
+												class="uk-text-primary uk-inline"></span>
+										</li>
+										<li class="filtermanager uk-width-1-1 flowchart-toggler">
+											<div
+												class="treebox uk-border-rounded uk-inline uk-width-1-1 uk-margin-remove">
+												درس
+												<br />
+												به ترتیب
+												<br />
+												درصد عملکرد
+											</div>
+											<span uk-icon="icon:arrow-down; ratio:1"
+												class="uk-text-primary uk-inline "></span>
+										</li>
+
+										<li class="filtermanager filteradvisor uk-width-1-1">
+											<div
+												class="treebox uk-border-rounded uk-inline uk-width-1-1 uk-margin-remove">
+												دانش‌آموزان
+												<br />
+												به ترتیب
+												<br />
+												تعداد سنجش
+												<br />
+												درصد عملکرد
+												<br />
+												مدت مطالعه
+											</div>
+											<span uk-icon="icon:arrow-down; ratio:1"
+												class="uk-text-primary uk-inline"></span>
+										</li>
+
+
+										<li class="filtermanager filteradvisor uk-width-1-1">
+											<div
+												class="treebox uk-border-rounded uk-inline uk-width-1-1 uk-margin-remove">
+												<span class="no-wrap-conteiner">
+													کارپوشه <br>
+													دانش آموز
+												</span>
+											</div>
+										</li>
+
+									</ul>
+
+								</li>
+							</ul>
+						</div>
+						<div>
+						</div>
+					</div>
+
+					<!-- پایان ------------------------------------------------------------>
+
+
+					<ul class="uk-switcher switcher-inner-container ">
+						<!-- Manager -->
+						<li>
+							<div id="managerReportDiv" class="uk-padding-small">
+								<div class="loading-dots-inner uk-position-center">
+									<h1 class="dot one">.</h1>
+									<h1 class="dot two">.</h1>
+									<h1 class="dot three">.</h1>
+								</div>
+								<!--Rendered-->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</li>
+
+		@* exam-creator-start *@
+		<li id="exam_maker_wrapper">
+			<div class="uk-flex uk-flex-center ">
+				<div id="exam_maker_empty_text" class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width-examcreator uk-padding-small" hidden>
+					<p  class="initial-notice-text uk-inline">
+						<span>محتوايي براي نمايش وجود ندارد.</span>
+					</p>
+				</div>
+				<div id="exam_maker_container" class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width-examcreator uk-padding-small toggle-panes">
+
+					<ul id="quize_maker_tab_switcher" class="uk-subnav uk-subnav-pill exam-type-switcher"
+						uk-switcher="connect: .define-content">
+						<li><a data-tab-id="10011" data-tab-index="0">آنلاین</a></li>
+						<li><a data-tab-id="10012" data-tab-index="1">حضوری</a></li>
+						<li><a data-tab-id="10013" data-tab-index="2">اختصاصی</a></li>
+					</ul>
+
+					<ul class="define uk-switcher define-content">
+						<li>آزمون آنلاین پس از انتخاب درس‌ها و سؤال‌های آزمون، براساس انتخاب تاریخ برگزاری، برای دانش‌آموزان در قسمت آزمون هماهنگ اپلیکیشن، در
+							دسترس خواهد بود. پس از برگزاری آزمون، نتایج در قسمت آزمون‌های ساخته شده نمایش داده می‌شود.</li>
+						<li>دفترچه آزمون حضوری پس از انتخاب درس‌ها و سؤال‌های آزمون، ساخته شده و همراه با پاسخ‌برگ‌های آزمون در
+							دسترس قرار می‌گیرد. پس از برگزاری آزمون و جمع‌آوری پاسخ‌برگ‌ها و خوانش، نتایج در قسمت آزمون‌های ساخته شده نمایش داده می‌شود.</li>
+						<li>این سرویس فقط برای تصحیح و صدور کارنامه کاربرد دارد و سؤالات این آزمون توسط مسئولین آموزشی مدرسه یا معلمان آماده می‌شود.</li>
+					</ul>
+
+						<button id="exam_list_switcher" class="exam-list-switcher"
+							uk-toggle="target: .toggle-panes;">
+							<img  src="~/dist/assets/sactivity/exam-list-maker-switcher.svg" alt="" /></button>
+					<div class="exam-inputs">
+					<select id="school_grade_list" class="uk-select grade-input">
+						@* <option disabled selected hidden>پایه</option> *@
+					</select>
+
+					<input id="quizName" class="uk-input exam-name" type="text" placeholder="نام آزمون">
+
+					@* MY1 *@
+					<div class="uk-select class-select-input">کلاس‌ها</div>
+					<fieldset id="quizClassList" name="classSelect" data-select-component="checkbox"
+						class="dropdown-miltiple" uk-drop="mode: click; offset: 0"  uk-accordion>
+
+						@* <label><input class="uk-checkbox" type="checkbox"> 1</label>
+							<label><input class="uk-checkbox" type="checkbox"> 2</label> *@
+					</fieldset>
+
+					<div class="uk-inline date-time-input">
+						<span class="uk-form-icon" uk-icon="icon: calendar"></span>
+						<input id="quizDate" class="uk-input" data-jdp type="text" placeholder="تاریخ آزمون"
+							autocomplete="false">
+					</div>
+
+
+					@* MY2 *@
+					<div class="uk-inline time-input">
+						<span class="uk-form-icon" uk-icon="icon: clock"></span>
+            			<div>ساعت<br>شروع</div>
+						<select id="quizStartTime" class="uk-select" type="time">
+							<option class="uk-animation-fade">08:00</option>
+							<option>09:00</option>
+							<option selected="selected">10:00</option>
+							<option>11:00</option>
+							<option>12:00</option>
+							<option>13:00</option>
+							<option>14:00</option>
+							<option>15:00</option>
+							<option>16:00</option>
+							<option>17:00</option>
+							<option>18:00</option>
+							<option>19:00</option>
+							<option>20:00</option>
+							<option>21:00</option>
+							<option>22:00</option>
+							<option>23:00</option>
+						</select>
+					</div>
+
+					<div class="uk-inline time-input">
+						<span class="uk-form-icon" uk-icon="icon: clock"></span>
+            			<div>ساعت<br>پایان</div>
+						<select  id="quizEndTime" class="uk-select" type="time">
+							<option>09:00</option>
+							<option>10:00</option>
+							<option selected="selected">11:00</option>
+							<option>12:00</option>
+							<option>13:00</option>
+							<option>14:00</option>
+							<option>15:00</option>
+							<option>16:00</option>
+							<option>17:00</option>
+							<option>18:00</option>
+							<option>19:00</option>
+							<option>20:00</option>
+							<option>21:00</option>
+							<option>22:00</option>
+							<option>23:00</option>
+							<option>23:59</option>
+						</select>
+					</div>
+
+					<div class="uk-inline duration-input">
+						<div><br>30</div>
+						<input id="quizDuration" class="js-range-input" type="range" value="30" min="10" max="240"
+							step="10" oninput="this.previousElementSibling.innerHTML = this.value">
+					</div>
+				</div>
+
+				<div id="uk_template_modal_component" class="template-design" uk-modal="bg-close: false">
+					<div id="template_modal" class="uk-modal-dialog uk-box-shadow-small">
+						<div class="templates">
+							<label class="firstpage-indicator">
+								<input id="separate_first_page" class="uk-checkbox" type="checkbox" uk-toggle="target: .halfpage; cls: fullpage">
+								صفحه اول مجزا</label>
+							<ul id="templateId_component" data-selected-template-id="10001" class="uk-subnav uk-subnav-pill halfpage" uk-switcher>
+								<li><a href="#" data-template-id="1"><img  src="~/dist/assets/sactivity/templateAH.jpg" alt=""/><img  src="~/dist/assets/sactivity/templateA.jpg" alt=""/></a></li>
+								<li><a href="#" data-template-id="2"><img  src="~/dist/assets/sactivity/templateBH.jpg" alt=""/><img  src="~/dist/assets/sactivity/templateB.jpg" alt=""/></a></li>
+								<li><a href="#" data-template-id="3"><img  src="~/dist/assets/sactivity/templateCH.jpg" alt=""/><img  src="~/dist/assets/sactivity/templateC.jpg" alt=""/></a></li>
+							</ul>
+
+
+						</div>
+
+						<div class="content-options">
+							<label><input id="questionNumberRGB" type="color" value="#ff0000"> شماره سؤال</label>
+
+							<label class="options"><input id="optionNumberRGB" type="color" value="#00B050"
+									oninput="document.getElementById('options_face').style.backgroundColor=this.value"> گزینه</label>
+
+							<ul id="options_face" data-selected-option-number-form="1" class="uk-subnav uk-subnav-pill" uk-switcher>
+								<li><a href="#" data-option-number-form="1"><img  src="~/dist/assets/sactivity/NoR.svg" alt=""/></a></li>
+								<li><a href="#" data-option-number-form="2"><img  src="~/dist/assets/sactivity/NoS.svg" alt=""/></a></li>
+								<li><a href="#" data-option-number-form="3"><img  src="~/dist/assets/sactivity/NoP.svg" alt=""/></a></li>
+								<li><a href="#" data-option-number-form="4"><img  src="~/dist/assets/sactivity/NoC.svg" alt=""/></a></li>
+							</ul>
+
+							<label class="no-options" uk-tooltip="مناسب برای برگزاری آزمون تشریحی"><input id="hasJustQuestionFace" class="uk-checkbox" type="checkbox" >فقط صورت سؤال</label>
+							<!-- <label class="has-cover" uk-tooltip="ریز مشخصات سؤالات"><input id="hasCover" class="uk-checkbox" type="checkbox" >روكش كنترل محتوای آزمون</label> -->
+							<label class="movie-qr-links" ><input id="hasMediaLink" class="uk-checkbox" type="checkbox" checked>لینك فیلم پاسخنامه</label>
+
+						</div>
+						<div class="collector">
+							<input id="collectorName" class="uk-input collector-name" type="text" placeholder="گردآورنده (اختیاری)">
+						</div>
+						@* <button id="getCoverState">Get State</button>    *@
+						<div class="confirm-close">
+							<a href="#" id="quiz_submit_template_modal_accept_buttom"
+							class="uk-icon-link confirm-icon" uk-icon="icon: check; ratio: 1.3"></a>
+							<a href="#" id="quiz_submit_template_modal_reject_buttom" class="uk-icon-link close-icon uk-modal-close" uk-icon="icon: close; ratio: 1.3"></a>
+						</div>
+					</div>
+				</div>
+
+				<div id="uk_multi_answersheet_select_modal_component" class="answersheet-design" uk-modal="bg-close: false">
+					<div id="answersheet_modal" class="uk-modal-dialog uk-box-shadow-small">
+						<button class="uk-modal-close-default" type="button" uk-close></button>
+
+						<label class="definition-text">اندازه پاسخبرگ موردنظر خود را  با توجه به تعداد سوال‌های آزمون و  اندازه کاغذی که در اختیار دارید، انتخاب کنید.
+						</label>
+
+						<div>
+							<img  src="~/dist/assets/sactivity/answersheetA4light.png" alt=""/>
+							<span><span>A4</span></span>
+							<button data-multi-sheet-download-type="0" uk-icon="icon: download; ratio: .9">
+								<div uk-spinner="ratio: 0.3"></div>
+							</button>
+							<div>حداكثر <span>315</span> سؤال</div>
+						</div>
+
+						<div>
+							<img  src="~/dist/assets/sactivity/answersheetA5light.png" alt=""/>
+							<span><span>A5</span></span>
+							<button data-multi-sheet-download-type="2"  class="A5"  uk-icon="icon: download; ratio: .9">
+								<div uk-spinner="ratio: 0.3"></div>
+							</button>
+							<div>حداكثر <span>105</span> سؤال</div>
+						</div>
+							
+						<a class="uk-inline dc-download-linkB" href="https://meraatdc.s3.ir-thr-at1.arvanstorage.ir/MeraatDC14.4.1.zip" download>
+						دانلود نرم‌افزار خوانش پاسخ‌برگ مرآت <span uk-icon="icon: download" class="uk-icon"></span></a>
+					
+					<label class="definition-text-end">
+							<span>توجه: </span>
+							<div>
+							1. پاسخ‌برگ‌ها را در <span>اندازه واقعي </span>چاپ كنيد.<br>
+							<span class="smaller">مثلاً هنگام پرينت در نرم‌افزارهاي مختلف از گزينه‌هاي resize: none و يا scale: default و يا scale: 100% و actual size استفاده كنيد و از گزينه‌هايي همچون fit يا shrink استفاده نكنيد.</span>
+							<br>
+							2. پاسخ‌برگ‌ها را با رزلوشن 
+							<span>200dpi</span>
+							اسكن نمایید.
+							
+							
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div  id="quizMaker_submit_block" class="submit-block">
+					<div>
+						<button id="submit_quize_button">
+							<span class="button-text">ثبت آزمون</span>
+						</button>
+						@* MY add 'editmode' class to 'cancel_quize_editing' in edit mode *@
+						<button id="cancel_quize_editing" class="editmode">لغو</button>
+					</div>
+						@* MY3 *@
+					<div id="quiz_server_settings">
+						<label class="options-switch">محاسبه ضرایب کنکور
+							<label class="sharp-violet-switch">
+								<input id="" type="checkbox" checked>
+								<span class="sharp-violet-slider"></span>
+							</label>
+						</label>
+						<label class="options-switch">محاسبه نمره منفی
+							<label class="sharp-violet-switch">
+								<input id="" type="checkbox" checked>
+								<span class="sharp-violet-slider"></span>
+							</label>
+						</label>
+					</div>
+						<div id="selection_questions_entrance" class="selections-pane-toggle disable-entrance" href=".selections-part" uk-toggle="target: .selections-part; cls: showpane">سؤال
+						<span id="question_count_badge"></span>
+						</div>
+					</div>
+
+					<ul class="uk-switcher define-content define-container">
+						<li class="question-box exam-meraat">
+							<div class="lesson-select-entranc" uk-toggle="target: #grade_lesson_container; cls: show-lessons-pane">دروس</div>
+							<div class="options-part">
+								<div>
+									<button id="prepared_quizes_modal_toggler" class="defualt-booklets" type="button" uk-toggle="target: .default-exams">آزمون‌های آماده</button>
+
+									<div class="default-exams" uk-modal="bg-close: false">
+										<div class="uk-modal-dialog uk-box-shadow-small">
+											<select  class="uk-select">
+												<option selected>آزمون‌های مرآت</option>
+												@* <option>آزمون‌های مدارس تیزهوشان</option>
+												<option>آزمون‌های ورودی مدارس</option> *@
+											</select>
+											<ul id="prepared-quizes_accordion_container" uk-accordion>
+												<!-- <li class="">
+													<a class="uk-accordion-title" href="#">
+														<span>آزمون 1 مرآت</span>
+														<span>32000 نفر<br>1402/01/13</span>
+													</a>
+													<button class="add-question-button uk-icon" uk-icon="icon: triangle-right; ratio: .9"></button>
+													<div class="uk-accordion-content">
+														<div>
+															<table>
+															<tbody>
+																<tr><td>فارسی</td><td>10 سؤال</td><td>ستایش و درس‌های 1 تا 7</td></tr>
+																<tr><td>عربی</td><td>10 سؤال</td><td>درس‌های 1 و 2</td></tr>
+																<tr><td>پیام‌های آسمان</td><td>10 سؤال</td><td>درس‌های 1 تا 5</td></tr>
+																<tr><td>انگلیسی</td><td>10 سؤال</td><td>درس‌های 1 و 2</td></tr>
+																<tr><td>ریاضی</td><td>15 سؤال</td><td>فصل‌های 1 تا 3</td></tr>
+																<tr><td>علوم تجربی</td><td>15 سؤال</td><td>فصل‌های 1 تا 4</td></tr>
+																<tr><td>مطالعات اجتماعی</td><td>10 سؤال</td><td>درس‌های 1 تا 8</td></tr>
+																<tr><td>فارسی</td><td>10 سؤال</td><td>ستایش و درس‌های 1 تا 7</td></tr>
+																<tr><td>عربی</td><td>10 سؤال</td><td>درس‌های 1 و 2</td></tr>
+																<tr><td>پیام‌های آسمان</td><td>10 سؤال</td><td>درس‌های 1 تا 5</td></tr>
+																<tr><td>انگلیسی</td><td>10 سؤال</td><td>درس‌های 1 و 2</td></tr>
+																<tr><td>ریاضی</td><td>15 سؤال</td><td>فصل‌های 1 تا 3</td></tr>
+																<tr><td>علوم تجربی</td><td>15 سؤال</td><td>فصل‌های 1 تا 4</td></tr>
+																<tr><td>مطالعات اجتماعی</td><td>10 سؤال</td><td>درس‌های 1 تا 8</td></tr>
+															</tbody>
+															</table>
+														</div>
+													</div>
+												</li> -->
+											</ul>
+											<p  class="uk-modal-close">بستن</p>
+										</div>
+									</div>
+
+									<button class="defualt-booklets" type="button" uk-toggle="target: .random-questions">سؤالات اتفاقی</button>
+
+									<div id="randomQuestionsModalWrapper" class="random-questions" uk-modal="bg-close: false">
+										<!-- rendered  -->
+									</div>
+
+									<button class="defualt-booklets" type="button" uk-toggle="target: .teachers-questions">سؤالات معلمان</button>
+									<div id="teachers_questions_modal_wrapper" class="teachers-questions" uk-modal="bg-close: false">
+										<!-- rendered  -->
+									</div>
+									<button class="search-button" type="button" uk-toggle="target: .search-questions" uk-icon="icon: search; ratio: 1"></button>
+									<div id="question_search_modal_wrapper" class="search-questions" uk-modal="bg-close: false">
+										@* <div class="uk-modal-dialog uk-box-shadow-small">
+											<button class="add-searched-question-button uk-icon" data-quiz-number="1707" uk-icon="icon: triangle-right; ratio: 1"></button>
+											<div class="uk-search uk-search-default uk-width-1-1 uk-border-rounded">
+											<a href="" uk-search-icon="true" class="uk-icon uk-search-icon"></a>
+											<input class=" uk-search-input uk-box-shadow-small uk-border-rounded uk-text-small" type="search" placeholder="جستجوی سؤال ... , ... , ..." value="">
+											</div>
+											<div class="search-result">
+											<ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+												<li><a href="#">354789</a></li>
+												<li><a href="#">123456</a></li>
+												<li><a href="#">6549</a></li>
+											</ul>
+											<ul class="uk-switcher uk-margin">
+												<li>
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/350063.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/350064.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/350065.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/350066.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/350067.jpg">
+												</li>
+												<li>
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/137059.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/137060.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/137061.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/137062.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/137063.jpg">
+												</li>
+												<li>
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/103933.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/103934.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/103935.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/103936.jpg">
+													<img src="https://meraat-fsdata-qa.s3.ir-thr-at1.arvanstorage.ir/103937.jpg">
+												</li>
+											</ul>
+											</div>
+											<p class="uk-modal-close">بستن</p>
+										</div> *@
+									</div>
+								</div>
+
+								<div>
+									<div id="quize_options_container">
+										<!-- rendered  -->
+									</div>
+								</div>
+
+								<div id="grade_lesson_container" class="grade-lesson-container">
+									<ul id="lesson_unit_tree" class="uk-list">
+										<!-- rendered  -->
+									</ul>
+								</div>
+							</div>
+							<div class="questions-source-selected">
+								<div id="quize_maker_question_section" class="questions-part">
+									<!-- rendered  -->
+								</div>
+								<div class="selections-part">
+									<div id="scroll-animation">
+										<a id="scroller"><span></span></a>
+									</div>
+									<div class="scroll-place"> </div>
+									<div class="selected-questions drop-target">
+										<button id="close_questions_list" type="button" uk-toggle="target: .selections-part; cls: showpane" uk-close></button>
+
+										<a id="quiz_sheet_collapse_toggle_on" class="selected-list-expand" uk-toggle="target: .questions-source-selected; cls: expand">
+											<img  src="~/dist/assets/sactivity/expand.svg" alt="" />
+										</a>
+										<a id="quiz_sheet_collapse_toggle_off" class="selected-list-collapse" uk-toggle="target: .questions-source-selected; cls: expand">
+											<img  src="~/dist/assets/sactivity/collapse.svg" alt="" />
+										</a>
+
+										<ul id="quiz_sheet_section" >
+										<!-- rendered  -->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li></li>
+						<li class="question-box exam-teacher">
+							<div class="lessons-part">
+								<p>
+									دروس موردنظر خود را به پاسخ‌برگ اضافه کرده سپس تعداد سؤالات درس را مشخص نمایید و در
+									نهایت پاسخ‌برگ را با گزینه‌های صحیح پر کنید.
+								</p>
+
+								<div id="specialQuizLessonContainer">
+									<div>فارسی<a></a></div>
+									<div>عربی<a></a></div>
+									<div>پیام‌های آسمان<a></a></div>
+									<div>انگلیسی<a></a></div>
+									<div>ریاضی<a></a></div>
+									<div>علوم<a></a></div>
+									<div>مطالعات اجتماعی<a></a></div>
+								</div>
+							</div>
+							<div class="options-list-part">
+								<div id="scroll-animation2">
+									<a id="scroller"><span></span></a>
+								</div>
+								<div class="scroll-place2"> </div>
+								<ul id="specialQuizSheetContainer">
+									<!-- rendered  -->
+								</ul>
+							</div>
+						</li>
+					</ul>
+			
+					@* questions image modal *@
+					<div id="mobileModalImages" class="image-modal" uk-modal>
+						<img src="">
+						<img src="">
+						<img src="">
+						<img src="">
+						<img src="">
+						<button class="uk-modal-close-default" type="button" uk-close></button>
+					</div>
+				</div>
+	
+				<div uk-height-viewport="offset-top: true" class="uk-inline uk-box-shadow-small uk-background-default uk-height-small workspace-width uk-padding-small toggle-panes" style="overflow-y: scroll;" hidden>
+					<a id="exam_history_switchback" uk-toggle="target: .toggle-panes;" href="#" class="exam-list-switcher-back">
+						<img src="~/dist/assets/sactivity/exam-list-maker-switcher-back.svg">
+					</a>
+
+					<a href="#" class="exams-filter" uk-icon="icon: settings; ratio: 1.3" uk-toggle="target: .exams-filter-options"></a>
+					<div id="exam_history_filter_modal_wrapper" class="exams-filter-options" uk-modal>
+						<div  class="uk-modal-dialog uk-box-shadow-small">
+
+							<div class="filter-exam-type">
+								<div class="inp action">
+								<label>
+									<input class="exam-type-input-js-filter" type="checkbox" value="10011" checked><span>آنلاین</span>
+								</label>
+								</div>
+								<div class="inp action">
+								<label>
+									<input class="exam-type-input-js-filter" type="checkbox" value="10012" checked><span>حضوری</span>
+								</label>
+								</div>
+								<div class="inp action">
+								<label>
+									<input class="exam-type-input-js-filter" type="checkbox" value="10013" checked><span>اختصاصی</span>
+								</label>
+								</div>
+							</div>
+
+							<div id="exam_history_Filter_grades_wrapper" class="filter-grade">
+							</div>
+
+
+							<div class="filter-date">
+								<label>از تاریخ</label>
+								<input id="examp_history_filter_date_from_picker" class="uk-input" data-jdp="" type="text" placeholder="" autocomplete="false">
+								<label>تا تاریخ</label>
+								<input id="examp_history_filter_date_to_picker" class="uk-input" data-jdp="" type="text" placeholder="" autocomplete="false">
+							</div>
+
+							<a class="uk-modal-close">بستن</a>
+						</div>
+					</div>
+
+					<ul id="exam_history_list" class="exam-history-list" uk-accordion="multiple: true">
+					</ul>
+				</div>
+			</div>
+		</li>
+
+		<li id="order_tab_container">
+			<div class="uk-flex uk-flex-center ">
+				<div class="uk-inline workspace-width">
+					
+					<div class="order-type-select">
+						<ul class="uk-subnav uk-subnav-pill uk-box-shadow-small" uk-switcher="connect: .order-types-container">
+							<li><a href="#">سیستم سنجش و ارزشیابی</a></li>
+							<li><a href="#">كتاب</a></li>
+						</ul>
+					</div>
+
+					<div class="uk-switcher order-types-container">
+						<div uk-height-viewport="offset-top: true" class="uk-height-small exam-order">
+
+							<table id="contracts_table_wrapper" class="order-table">
+								<colgroup>
+									<col><col><col><col><col><col><col><col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th>پایه</th>
+										<th>تعداد<br>دانش‌آموز</th>
+										<th>خدمات</th>
+										<th>
+											<div class="col-legend">
+												<span>در انتظار پرداخت</span>
+												<span>تأیید</span>
+											</div>
+										</th>
+										<th>قیمت<span>(ریال)</span></th>
+										<th>جمع ناخالص<span>(ریال)</span></th>
+										<th>تخفیف كل <button href="#discount_modal" uk-icon="icon: info; ratio: 0.85" uk-toggle></button></th>
+										<th>جمع خالص<span>(ریال)</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="error">
+										<td>
+											<span uk-icon="icon: warning; ratio: 2"></span>
+											<span>خطايي رخ داده است!</span>
+										</td>
+										
+									<tr>
+									<!-- <tr>
+										<td>هفتم</td>
+										<td uk-scrollspy="cls: uk-animation-slide-top; target: .confirm-buttons7; delay: 70; repeat: true">
+											<input type="number" value="1" min="0" onfocus="this.select();" uk-toggle="target: .confirm-buttons7">
+											<div class="confirmation" dir="ltr">
+												<span class="confirm-buttons7 uk-animation-fast" uk-icon="check" hidden></span>
+												<span class="confirm-buttons7 uk-animation-fast" uk-icon="close" hidden></span>
+											</div>
+										</td>
+										<td colspan="6">
+
+
+											<div class="row">
+												<div class="cell">آزمون آنلاین</div>
+												<div class="cell">
+													<div class="exam" href="#exam_student_list_selection_modal" uk-toggle><span>0</span></div>
+													<div class="exam"><span>1</span></div>
+													<div class="exam"><span>2</span></div>
+													<div class="exam"><span>3</span></div>
+													<div class="exam"><span>4</span></div>
+													<div class="exam"><span>5</span></div>
+													<div class="exam"><span>6</span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون حضوری</div>
+												<div class="cell">
+													<div class="exam"><span>0</span></div>
+													<div class="exam selected"><span>1</span></div>
+													<div class="exam confirmed"><span>2</span></div>
+													<div class="exam sience-sep"><span>3</span></div>
+													<div class="exam sience-sep selected"><span>4</span></div>
+													<div class="exam sience-sep confirmed"><span>5</span></div>
+													<div class="exam"><span>6</span></div>												
+												</div>
+												<div class="cell">850,000</div>
+												<div class="cell">107,950,000</div>
+												<div class="cell">
+													<span>%30</span>
+													<ul class="drop-tooltip" uk-drop="pos: right-center">
+														<li>تسویه تا 24 ساعت پس از ثبت سفارش</li>
+														<li>عدر درخواست پرینت و ارسال گزارش</li>
+														<li>سفارش تك‌آزمون</li>
+													</ul>
+												</div>
+												
+												<div class="cell">75,565,000</div>
+											</div>
+											<div class="row">
+												<div class="cell">سنجش یادگیری</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون‌ساز</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											
+											<span class="calendar" uk-icon="icon: calendar" href="#exam_schedule_modal" uk-toggle></span>																																
+										</td>
+									</tr>
+									<tr>
+										<td>هشتم</td>
+										<td>
+											<input type="number" value="1" min="0" onfocus="this.select();">
+										</td>
+										<td colspan="6">
+
+
+											<div class="row">
+												<div class="cell">آزمون آنلاین</div>
+												<div class="cell">
+													<div class="exam"><span>0</span></div>
+													<div class="exam"><span>1</span></div>
+													<div class="exam"><span>2</span></div>
+													<div class="exam"><span>3</span></div>
+													<div class="exam"><span>4</span></div>
+													<div class="exam"><span>5</span></div>
+													<div class="exam"><span>6</span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون حضوری</div>
+												<div class="cell">
+													<div class="exam"><span>0</span></div>
+													<div class="exam"><span>1</span></div>
+													<div class="exam"><span>2</span></div>
+													<div class="exam"><span>3</span></div>
+													<div class="exam"><span>4</span></div>
+													<div class="exam"><span>5</span></div>
+													<div class="exam"><span>6</span></div>												
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">سنجش یادگیری</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون‌ساز</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>												
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											
+											<span class="calendar" uk-icon="icon: calendar"></span>																																
+										</td>
+									</tr>	
+									<tr>
+										<td>نهم</td>
+										<td>
+											<input type="number" value="1" min="0" onfocus="this.select();">
+										</td>
+										<td colspan="6">
+
+
+											<div class="row">
+												<div class="cell">آزمون آنلاین</div>
+												<div class="cell">
+													<div class="exam"><span>0</span></div>
+													<div class="exam"><span>1</span></div>
+													<div class="exam"><span>2</span></div>
+													<div class="exam"><span>3</span></div>
+													<div class="exam"><span>4</span></div>
+													<div class="exam"><span>5</span></div>
+													<div class="exam"><span>6</span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون حضوری</div>
+												<div class="cell">
+													<div class="exam"><span>0</span></div>
+													<div class="exam"><span>1</span></div>
+													<div class="exam"><span>2</span></div>
+													<div class="exam"><span>3</span></div>
+													<div class="exam"><span>4</span></div>
+													<div class="exam"><span>5</span></div>
+													<div class="exam"><span>6</span></div>												
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">سنجش یادگیری</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell">آزمون‌ساز</div>
+												<div class="cell">
+													<div class="exam"><span></span></div>												
+												</div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+												<div class="cell"></div>
+											</div>
+											
+											<span class="calendar" uk-icon="icon: calendar"></span>																																
+										</td>
+									</tr>									 -->
+								</tbody>
+							</table>
+
+							<div class="sum-table-container">
+								<table id = "contracts_summary_table_wrapper">
+									<colgroup>
+										<col><col><col><col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th>قابل پرداخت <span>(ریال)</span></th>
+											<th>مانده <span>(ریال)</span></th>
+											<th>پرداخت‌شده <span>(ریال)</span></th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- <tr>
+											<td>75,656,000</td>
+											<td>75,656,000</td>
+											<td>0</td>
+											<td>
+												<button href="#payment_activation_modal" uk-toggle>فعال‌سازی</button>
+											</td>
+										</tr> -->
+									</tbody>
+								</table>
+
+								<div id="student_selection_entrance_container" class="student-selection-entrance-container">
+									<ul uk-accordion>
+										<li>
+											<a class="uk-accordion-title" href>
+												پرداخت دانش‌آموزی <span class="def">(در صورت تمایل به پرداخت توسط دانش‌آموزان پس از باز نمودن این قسمت كلید انتخاب دانش‌آموزان را بزنید.)</span>
+											</a>
+											<span uk-icon="icon: info; ratio: .9" class="info" uk-tooltip="title: در صورت تمایل به پرداخت توسط دانش‌آموزان پس از باز نمودن این قسمت كلید انتخاب دانش‌آموزان را بزنید."></span>
+											<div id="contract_refer_payment_toggler_wrapper" class="uk-accordion-content">
+												<button id="contract_refer_payment">انتخاب دانش‌آموزان</button>
+											</div>
+										</li>
+									</ul>								
+								</div>
+							</div>
+
+						</div>
+						
+						<div uk-height-viewport="offset-top: true" class="uk-height-small">
+						
+							<p id="exam_empty_text" class="initial-notice-text uk-inline">
+								<span>محتواي اين بخش به زودي در دسترس خواهد بود.</span>
+							</p>
+						
+						</div>
+						
+					</div>	
+
+				</div>
+			</div>
+		</li>
+
+
+		@* teachers-list-start *@
+		<li id="tickets_tab_container">
+			<div class="uk-flex uk-flex-center ">
+				<div class="uk-inline uk-overflow-auto uk-box-shadow-small uk-background-default uk-height-small workspace-width">
+					<div id="tickets_wrapper" class="tickets-wrapper">
+						<div id="tickets_area">
+							<div class="ticket-header">
+								<div class="ticket-filters">
+									<div class="fresher">
+										<span id="refresh_ticket_list_button" tabindex="0" class="refresh-ticket-list" uk-icon="refresh" onClick="setTimeout(() => (this.blur()), 1000)"></span>
+									</div>
+
+									<select id="filter_ticket_list_select" class="ticket-type uk-select">
+										<option value="">همه تيكت‌ها</option>
+										<option value="باز">تيكت‌هاي باز</option>
+										<option value="بسته">تيكت‌هاي بسته</option>
+									</select>
+
+									<div class="uk-inline ticket-id-title-search">
+										<span class="uk-form-icon" uk-icon="icon: search"></span>
+										<input id="filter_ticket_list_input" class="uk-input" type="text" aria-label="Not clickable icon" placeholder="جستجو موضوع يا شناسه">
+									</div>
+								</div>
+								<div class="ticket-new">
+									<button id="goto_new_ticket_tab" class="uk-button uk-button-secondary">تيكت جديد</button>
+								</div>
+							</div>
+							<div id="ticket_list_content_wrapper" class="ticket-list">
+								<div class="list-header">
+									<div class="cell cell-1">موضوع</div>
+									<div class="cell cell-2">شناسه</div>
+									<div class="cell cell-3">وضعيت</div>
+									<div class="cell cell-4">آخرين بروزرساني</div>
+									<div class="cell cell-5"></div>
+								</div>
+																		<div class="list-content">
+    										<div class="cell cell-1">اطلاعات كاربري دانش‌آموزان دانلود نمي‌شود</div>
+    										<div class="cell cell-2">3635587</div>
+    										<div class="cell cell-3">باز</div>
+    										<div class="cell cell-4">
+    											<span>15:02</span>
+    											<span>1403/07/06</span>
+    										</div>
+    										<div class="cell cell-5">
+    											<span class=""></span>
+    										</div>
+    									</div>
+    									<div class="list-content">
+    										<div class="cell cell-1">قسمت نمايش آزمون هماهنگ امكان اسكرول كردن نداريم</div>
+    										<div class="cell cell-2">3590548</div>
+    										<div class="cell cell-3">بسته</div>
+    										<div class="cell cell-4">
+    											<span>05:09</span>
+    											<span>1403/07/03</span>
+    										</div>
+    										<div class="cell cell-5">
+    											<span class="dislike"></span>
+    										</div>
+    									</div>
+    									<div class="list-content selected-ticket">
+    										<div class="cell cell-1">در قسمت سفارش امكان حذف دانش‌آ«وز را ندارم</div>
+    										<div class="cell cell-2">5440271</div>
+    										<div class="cell cell-3">بسته</div>
+    										<div class="cell cell-4">
+    											<span>17:48</span>
+    											<span>1403/07/02</span>
+    										</div>
+    										<div class="cell cell-5">
+    											<span class=""></span>
+    										</div>
+    									</div>
+    									<div class="list-content">
+    										<div class="cell cell-1">چرا آزمون‌ساز براي من رايگان نيست ولي براي مدرسه ديگر رايگان است؟</div>
+    										<div class="cell cell-2">3026622</div>
+    										<div class="cell cell-3">بسته</div>
+    										<div class="cell cell-4">
+    											<span>15:01</span>
+    											<span>1403/07/01</span>
+    										</div>
+    										<div class="cell cell-5">
+    											<span class="like"></span>
+    										</div>
+    									</div>
+    																
+							</div>
+						</div>
+
+						<div id="chat_area">
+							<div class="back">
+								<a id="back_to_tickets_tab" href="#" class="uk-icon-link" uk-icon="icon: arrow-left; ratio: 1.5"></a>
+								<!-- <div id="ticket_chat_title" class="chat-title">
+									<span>در قسمت سفارش امكان حذف دانش‌آموز را ندارم</span>
+									<span>5440271</span>
+								</div> -->
+							</div>
+							<div id="ticket_chat_list" class="chats">
+								<div class="message user">
+									<div>
+										<h1 class="title">مركز جديد</h1>
+										<p>سلام،</p>
+										<p>در قسمت نمايش آزمون هماهنگ وقتي يكي از آزمون‌ها را باز مي‌كنم امكان اينكه صفحه پايين بيايد و من بتوانم محتواي آن را ببينم وجود ندارد.</p>
+										<span class="date">
+											1403/07/03     5:09
+										</span>
+										<a class="link" uk-icon="link">نام دانش‌آموزان.xls</a>
+										<a class="link" uk-icon="link">logo.png</a>
+									</div>
+								</div>
+								<div class="message meraat">
+									<div>
+										<h1 class="title">مرآت</h1>
+										<p>سلام،</p>
+										<p>ساعت پاسخ روزهاي كاري از ساعت 8 صبح تا 8 شب مي‌باشد.</p>
+										<p>در اولين روز كاري مورد شوا بررسي مي‌گردد و نتيجه اعلام مي‌شود.</p>
+										<span class="date">
+											1403/07/03     5:10
+										</span>
+										<div class="like-button">
+											<input  type="checkbox" id="check">
+											<label for="check">
+											<svg class="unchecked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" stroke="none" stroke-width="1.5" fill="#d8dce0">
+												<path d="m17.5,29.71c-.55,0-1.02-.2-1.41-.59-.39-.39-.59-.86-.59-1.41v-10.18c0-.27.05-.52.16-.76.11-.24.25-.45.44-.64l5.43-5.4c.25-.23.55-.38.89-.42.34-.05.67,0,.99.17.32.17.55.4.69.7.14.3.17.61.09.92l-1.12,4.6h5.45c.53,0,1,.2,1.4.6.4.4.6.87.6,1.4v2c0,.12-.01.24-.04.38-.02.13-.06.26-.11.38l-3,7.05c-.15.33-.4.62-.75.85-.35.23-.72.35-1.1.35h-8Zm-6,0c-.55,0-1.02-.2-1.41-.59-.39-.39-.59-.86-.59-1.41v-9c0-.55.2-1.02.59-1.41.39-.39.86-.59,1.41-.59s1.02.2,1.41.59c.39.39.59.86.59,1.41v9c0,.55-.2,1.02-.59,1.41-.39.39-.86.59-1.41.59Z"/>
+											</svg>
+											<svg class="checked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+												<circle class="circle-1" cx="8.85" cy="7.44" r="1.5"/>
+												<circle class="circle-2" cx="33.2" cy="33.67" r="1"/>
+												<circle class="circle-3" cx="32.08" cy="8.25" r=".75"/>
+												<circle class="circle-3" cx="8.33" cy="35.38" r=".75"/>
+												<path class="flower-1" d="m9.1,5.37c-.24.14-.54.06-.68-.18s-.06-.54.18-.68.54-.06.68.18.06.54-.18.68Zm-2.42.32c-.28,0-.5.22-.5.5,0,.28.22.5.5.5s.5-.22.5-.5c0-.28-.22-.5-.5-.5Zm-.43,2.75c-.14.24-.06.54.18.68s.54.06.68-.18.06-.54-.18-.68-.54-.06-.68.18Zm2.17,1.75c.14.24.44.32.68.18s.32-.44.18-.68-.44-.32-.68-.18-.32.44-.18.68Zm2.6-1c.28,0,.5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5Zm.43-2.75c.14-.24.06-.54-.18-.68s-.54-.06-.68.18-.06.54.18.68.54.06.68-.18Z"/>
+												<path class="flower-2" d="m7.83,33.13c0-.28.22-.5.5-.5s.5.22.5.5c0,.28-.22.5-.5.5s-.5-.22-.5-.5Zm-1.02,1.38c.14-.24.06-.54-.18-.68s-.54-.06-.68.18-.06.54.18.68.54.06.68-.18Zm0,1.75c-.14-.24-.44-.32-.68-.18s-.32.44-.18.68.44.32.68.18.32-.44.18-.68Zm1.52.88c-.28,0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5Zm1.52-.87c-.14.24-.06.54.18.68s.54.06.68-.18.06-.54-.18-.68-.54-.06-.68.18Zm0-1.75c.14.24.44.32.68.18s.32-.44.18-.68-.44-.32-.68-.18-.32.44-.18.68Z"/>
+												<path class="flower-3" d="m32.7,36.17c0-.28.22-.5.5-.5s.5.22.5.5c0,.28-.22.5-.5.5s-.5-.22-.5-.5Zm3.1-1c.14-.24.06-.54-.18-.68s-.54-.06-.68.18-.06.54.18.68.54.06.68-.18Zm0-3c-.14-.24-.44-.32-.68-.18s-.32.44-.18.68.44.32.68.18.32-.44.18-.68Zm-2.6-1.5c-.28,0-.5.22-.5.5,0,.28.22.5.5.5s.5-.22.5-.5-.22-.5-.5-.5Zm-2.6,1.5c-.14.24-.06.54.18.68s.54.06.68-.18.06-.54-.18-.68-.54-.06-.68.18Zm0,3c.14.24.44.32.68.18s.32-.44.18-.68-.44-.32-.68-.18-.32.44-.18.68Z"/>
+												<path class="flower-2" d="m32.58,6c0,.28-.22.5-.5.5s-.5-.22-.5-.5.22-.5.5-.5.5.22.5.5Zm-2.88.87c-.14.24-.06.54.18.68s.54.06.68-.18.06-.54-.18-.68-.54-.06-.68.18Zm0,2.75c.14.24.44.32.68.18s.32-.44.18-.68-.44-.32-.68-.18-.32.44-.18.68Zm2.38,1.38c.28,0,.5-.22.5-.5,0-.28-.22-.5-.5-.5s-.5.22-.5.5c0,.28.22.5.5.5Zm2.38-1.37c.14-.24.06-.54-.18-.68s-.54-.06-.68.18-.06.54.18.68.54.06.68-.18Zm0-2.75c-.14-.24-.44-.32-.68-.18s-.32.44-.18.68.44.32.68.18.32-.44.18-.68Z"/>
+												<line class="line line-1" x1="33.2" y1="33.67" x2="37.16" y2="37.63"/>
+												<line class="line line-4" x1="32.08" y1="8.25" x2="36.74" y2="3.59"/>
+												<line class="line line-3" x1="8.73" y1="7.3" x2="4.63" y2="3.2"/>
+												<line class="line line-2" x1="8.33" y1="35.38" x2="5.72" y2="37.99"/>
+												<path class="line line-2" d="m24.47,8.03c-1.32-1.84,1.6-5.11,2.06-2.97.37,1.74-4.2,0-2.68-2.97"/>
+												<path class="line line-6" d="m27.15,32.66c.75,1.37-2.07,5.62-2.82,3.96-.64-1.42,3.02-1.3,3.76,1.36"/>
+												<line class="line line-7" x1="33.46" y1="29.71" x2="37.97" y2="29.71"/>
+												<line class="line line-5" x1="7.56" y1="13.99" x2="2.91" y2="13.99"/>
+												<path class="hand" d="m17.5,29.71c-.55,0-1.02-.2-1.41-.59-.39-.39-.59-.86-.59-1.41v-10.18c0-.27.05-.52.16-.76.11-.24.25-.45.44-.64l5.43-5.4c.25-.23.55-.38.89-.42.34-.05.67,0,.99.17.32.17.55.4.69.7.14.3.17.61.09.92l-1.12,4.6h5.45c.53,0,1,.2,1.4.6.4.4.6.87.6,1.4v2c0,.12-.01.24-.04.38-.02.13-.06.26-.11.38l-3,7.05c-.15.33-.4.62-.75.85-.35.23-.72.35-1.1.35h-8Zm-6,0c-.55,0-1.02-.2-1.41-.59-.39-.39-.59-.86-.59-1.41v-9c0-.55.2-1.02.59-1.41.39-.39.86-.59,1.41-.59s1.02.2,1.41.59c.39.39.59.86.59,1.41v9c0,.55-.2,1.02-.59,1.41-.39.39-.86.59-1.41.59Z"/>    
+											</svg>
+										</div>
+										</label>
+
+									</div>
+								</div>
+								<div class="message meraat">
+									<div>
+										<h1 class="title">مرآت</h1>
+										<p>سلام،</p>
+										<p>مورد بررسي شد و تا انتهاي وقت كاري امروز اصلاح مي‌شود.</p>
+										<span class="date">
+											1403/07/03     8:33
+										</span>
+									</div>
+								</div>
+								<div class="message meraat">
+									<div>
+										<h1 class="title">مرآت</h1>
+										<p>آيا تيكت بسته شود؟</p>
+										<div class="feedback">
+											<button>بله</button>
+											<button>خير</button>
+										</div>
+										<p>در صورت عدم پاسخگويي تيكت بعد از 3 روز به‌طور خودكار بسته خواهد شد.</p>
+										<span class="date">
+											1403/07/04     8:30
+										</span>
+									</div>																
+								</div>		
+								<div class="message meraat">
+									<div>
+										<h1 class="title">مرآت</h1>
+										<p>آيا تيكت بسته شود؟</p>
+										<div class="feedback yes">
+											<button>بله</button>
+											<button>خير</button>
+										</div>
+										<p>در صورت عدم پاسخگويي تيكت بعد از 3 روز به‌طور خودكار بسته خواهد شد.</p>
+										<span class="date">
+											1403/07/04     8:30
+										</span>
+									</div>																
+								</div>		
+								<div class="message meraat">
+									<div>
+										<h1 class="title">مرآت</h1>
+										<p>آيا تيكت بسته شود؟</p>
+										<div class="feedback No">
+											<button>بله</button>
+											<button>خير</button>
+										</div>
+										<p>در صورت عدم پاسخگويي تيكت بعد از 3 روز به‌طور خودكار بسته خواهد شد.</p>
+										<span class="date">
+											1403/07/04     8:30
+										</span>
+									</div>																
+								</div>																														
+							</div>
+							<div id="message_area" class="message-area">
+								<div id="ticket_chat_attachment_area" class="attachment-area">
+																	
+								</div>
+								<textarea id="ticket_chat_textarea" class="uk-textarea" rows="3" placeholder="پيام خود را اينجا بنويسيد ..." value=""></textarea>
+								<input id="ticket_chat_file_uploader" multiple accept="*" max="10000000" type="file" hidden className="file-input uk-hidden" />
+
+								<label for="ticket_chat_file_uploader" id="file-drag">
+									<a id="ticket_chat_file_uploader_ref"><img class="attach" src="~/dist/assets/sactivity/attach-file.svg"></a>
+								</label>
+								
+								<a id="ticket_chat_submit_button"><img class="send" src="~/dist/assets/sactivity/send-message.svg"></a>
+							</div>
+							<div id="ticket_is_close_wrapper" class="closed-message">
+								<div>بررسي اين تيكت به پايان رسيده است. اگر سؤال جديدي داريد لطفاً 
+								<a id="ticket_is_close_new_ticket_button">تيكت جديد</a>
+								 ايجاد كنيد.
+								</div>
+							</div>
+						</div>
+
+						<div id="form_area">
+							<div class="back">
+								<a id="back_to_tickets_list" href="#" class="uk-icon-link" uk-icon="icon: arrow-left; ratio: 1.5"></a>
+							</div>
+							<div class="form-container">
+								<form>
+									<fieldset class="uk-fieldset">
+										<legend class="uk-legend">ايجاد تيكت جديد</legend>
+
+										<label for="ticket-topic">موضوع</label>
+										<select id="ticket-topic" class="uk-select" aria-label="Select">
+											<option value="-1" disabled selected>موضوع تيكت را انتخاب كنيد</option>
+											
+										</select>
+
+										<label for="ticket-subject">عنوان</label>
+										<input
+										id="ticket-subject"
+										class="uk-input"
+										type="text"
+										placeholder="سؤال يا مشكل خود را در چند كلمه بيان نماييد"
+										aria-label="Input"
+										/>
+
+										<label for="ticket-description">شرح</label>
+										<textarea
+										id="ticket-description"
+										class="uk-textarea"
+										rows="5"
+										placeholder="وضعيت را با تمام جزئيات شرح دهيد"
+										aria-label="Textarea"
+										></textarea>
+										<input id="new_ticket_file_uploader" multiple accept="*" max="10000000" 
+                                                type="file" hidden className="file-input uk-hidden" />
+										<label for="new_ticket_file_uploader" id="file-drag" class="upload-label">
+											<a id="upload-button" class="uk-button uk-button-default upload">بارگذاري</a>
+											<span class="files-limit">نهايتاً 5 فايل هركدام 10 مگابايت</span>
+										</label>
+										
+										<div id="upload_list" class="upload-list">
+										<!-- Example files for demonstration -->
+											@* <div class="uploaded-file" uk-icon="file">
+												<div class="file-name">40115.png</div>
+												<span uk-icon="close"></span>
+											</div> *@
+										</div>
+										@* <div id="attachment_list" hidden class="upload-list"></div> *@
+										<button id="create_new_ticket_button" class="uk-button uk-button-secondary create-ticket">ايجاد تيكت</button>
+										<button id="cancel_new_ticket_button" class="uk-button uk-button-default cancel-ticket">لغو</button>
+									</fieldset>
+									</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+	</ul>
+	
+	@* student count change loading *@
+	<div id="Wait_For_Done">
+		<svg class = 'nig'>
+		<defs>
+			<filter id="poo">
+				<feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="4" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -8" result="goo" />
+				<feBlend in2="goo" in="SourceGraphic" result="mix" />
+			</filter>
+		</defs>
+			<mask id="mask">
+			<g id = "g" class="balls" style="-webkit-filter: url('#poo'); filter: url('#poo'); fill:white;">
+			<circle cx="25" cy="25" r="6" id = 'b1'></circle>
+			<circle cx="25" cy="25" r="6" id = 'b2'></circle>
+			</g>
+		</mask>
+		<rect x="0" y="0"  mask="url(#mask)" fill='white' width="50" height="50">
+			<animateTransform xlink:href="#g" attributeName="transform" attributeType="XML" type="rotate"
+					from="0 25 25"
+					to = "360 25 25"
+					dur=".5s" repeatCount="indefinite" />
+			<animate id = 'an1' xlink:href="#b1" attributeName="cx" calcMode="spline" keyTimes="0; 0.5; 1"
+					values="25; 18; 25"
+					keySplines=".6 .01 .36 .99; .6 .01 .36 .99;"
+					dur=".5s" repeatCount="indefinite" />
+			<animate id = 'an2' xlink:href="#b2" attributeName="cx"
+					values="25; 32; 25"
+					calcMode="spline"
+				keySplines=".6 .01 .36 .99; .6 .01 .36 .99;"
+					keyTimes="0; 0.5; 1" to="60" dur=".5s" repeatCount="indefinite" />
+			<animate xlink:href="#b1" attributeName="r"
+					values="6.4; 5; 6.4"
+					calcMode="spline"
+				keySplines=".6 .01 .36 .99; .6 .01 .36 .99;"
+					keyTimes="0; 0.5; 1" to="60" dur=".5s" repeatCount="indefinite" />
+			<animate xlink:href="#b2" attributeName="r"
+					values="6.4; 5; 6.4"
+					calcMode="spline"
+				keySplines=".6 .01 .36 .99; .6 .01 .36 .99;"
+					keyTimes="0; 0.5; 1" to="60" dur=".5s" repeatCount="indefinite" />
+		</svg>
+	</div>
+
+	@* order-modals *@	
+	<div id="discount_modal" class="uk-flex-top" uk-modal>
+
+	</div>
+
+	<div id="exam_schedule_modal" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+			<button class="uk-modal-close-default" type="button" uk-close></button>	
+			<div id="exam_schedule_modal_body">
+				<!-- <div class="exam-info">
+					<p>برنامه آزمون هفتم</p>
+					<p>1402-1403</p>
+					<a>دانلود برنامه آزمون</a>
+					<a>صفحه برنامه آزمون</a>
+				</div>
+				<div class="exam-items">
+					<p examNo="0">سنجش آغازین</p><p>2 مهر</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="1">1</p><p>17 مهر</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="2">2</p><p>11 آبان</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="3">3</p><p>22 آذر</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="4">4</p><p>3 دی</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="5">5</p><p>11 اسفند</p>
+				</div>
+				<div class="exam-items">
+					<p examNo="6">6</p><p>21 فروردین</p>
+				</div> -->
+			</div>								
+		</div>
+	</div>
+	
+	<div id="exam_student_list_selection_modal" class="uk-flex-top" uk-modal>
+		<div id="exam_student_list_selection_modal_body" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+			@* <button class="uk-modal-close-default" type="button" uk-close></button>	
+         	
+			<img class="check-all" src="~/dist/assets/sactivity/checkall.svg">
+
+			<ol class="student-list custom">
+				<li><input class="uk-checkbox" type="checkbox" checked>تینا احسانی</li>
+				<li><input class="uk-checkbox" type="checkbox" checked>پانیسا بهرامی</li>
+				<li><input class="uk-checkbox" type="checkbox" checked>السا حسنی</li>
+				<li><input class="uk-checkbox" type="checkbox" >لیندا حسنی</li>
+				<li><input class="uk-checkbox" type="checkbox" >ثنا خدمتی</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+				<li><input class="uk-checkbox" type="checkbox" >**</li>
+			</ol>
+
+			<div class="exam-information">
+				<p>شركت‌كنندگان</p>
+				<p>3 از 127 نفر</p>
+				<p>آزمون 1 <span>(حضوری)</span></p>
+				<p>هفتم</p>				
+				<div class="uk-animation-slide-left">
+					<select class="uk-select " aria-label="Select">
+						<option value="0">علوم </option>
+						<option value="1">علوم تفكیكی</option>
+					</select>
+					<span class="info" uk-icon="icon: info; ratio: 0.7" uk-tooltip="title: علوم تفكیكی مخصوص مدارسی است كه علوم تجربی را به صورت درس‌های جداگانه فیزیك، شیمی، زیست و زمین‌شناسی تدریسی می‌نمایند."></span>
+				</div>
+				<p>1403/07/05</p>
+			</div>
+
+			<button class="ok-button">تأیید</button>
+
+			<div class="icon-buttons">
+				<span uk-icon="icon: calendar" uk-tooltip="title: برنامه آزمون ; pos: left"></span>
+				<span uk-icon="icon: list" uk-tooltip="title: اصلاح لیست اسامی; pos: left"></span>
+			</div> *@
+
+		</div>
+	</div>	
+	
+	<div id="student_list_payment_modal" class="uk-flex-top" uk-modal="bg-close: false">
+		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+			<button class="uk-modal-close-default" type="button" uk-close></button>	
+
+			<div class="switcher-titles">
+				<ul id="student_list_payment_modal_switcher" uk-tab uk-switcher="connect: .switcher-containers">
+					@* <li><a href="#">هفتم</a></li>
+					<li><a href="#">هشتم</a></li>
+					<li><a href="#">نهم</a></li> *@
+				</ul>
+			</div>
+
+			<div id="student_list_payment_modal_switcher_container" class="switcher-containers uk-switcher uk-margin">
+				@* <div class="uk-active">
+					<div class="header-row">
+						<div class="exam-list">
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+							<div><span></span><span></span></div>
+						</div>
+						<div class="learning-assessment">
+							<div><span></span><span></span></div>
+						</div>						
+						<div class="payable-amount">قابل پرداخت<span>(ریال)</span></div>
+						<div class="remain">مانده<span>(ریال)</span></div>
+					</div>
+					<ol class="student-list custom">
+						<li class="row">
+							<span class="student-name">تینا احسانی</span>
+							<div class="exam-list">
+								<div class="exam">
+									<span>0</span>
+									<img src="~/dist/assets/sactivity/paid.svg">
+								</div>
+								<div class="exam selected"><span>1</span></div>
+								<div class="exam"><span>2</span></div>
+								<div class="exam sience-sep"><span>3</span></div>
+								<div class="exam sience-sep selected">
+									<span>4</span>
+									<img src="~/dist/assets/sactivity/paid.svg">
+								</div>
+								<div class="exam sience-sep"><span>5</span></div>
+								<div class="exam"><span>6</span></div>												
+							</div>
+							<div class="learning-assessment"> 
+								<div class="exam"></div>
+							</div>
+							<div class="payable-amount">2,700,000</div>
+							<div class="remain">2,700,000</div>
+						</li>
+						<li class="row">
+							<span class="student-name">پانیسا بهرامی بسحاق</span>
+							<div class="exam-list">
+								<div class="exam"><span>0</span></div>
+								<div class="exam"><span>1</span></div>
+								<div class="exam"><span>2</span></div>
+								<div class="exam sience-sep"><span>3</span></div>
+								<div class="exam sience-sep"><span>4</span></div>
+								<div class="exam sience-sep"><span>5</span></div>
+								<div class="exam"><span>6</span></div>												
+							</div>
+							<div class="learning-assessment"> 
+								<div class="exam"></div>
+							</div>
+							<div class="payable-amount">2,700,000</div>
+							<div class="remain">2,700,000</div>
+						</li>
+						<li class="row">
+							<span class="student-name">السا حسنی</span>
+							<div class="exam-list">
+								<div class="exam"><span>0</span></div>
+								<div class="exam"><span>1</span></div>
+								<div class="exam"><span>2</span></div>
+								<div class="exam sience-sep"><span>3</span></div>
+								<div class="exam sience-sep"><span>4</span></div>
+								<div class="exam sience-sep"><span>5</span></div>
+								<div class="exam"><span>6</span></div>												
+							</div>
+							<div class="learning-assessment"> 
+								<div class="exam"></div>
+							</div>
+							<div class="payable-amount">2,700,000</div>
+							<div class="remain">2,700,000</div>
+						</li>
+						<li class="row">
+							<span class="student-name">لیندا حسنی</span>
+							<div class="exam-list">
+								<div class="exam"><span>0</span></div>
+								<div class="exam"><span>1</span></div>
+								<div class="exam"><span>2</span></div>
+								<div class="exam sience-sep"><span>3</span></div>
+								<div class="exam sience-sep"><span>4</span></div>
+								<div class="exam sience-sep"><span>5</span></div>
+								<div class="exam"><span>6</span></div>												
+							</div>
+							<div class="learning-assessment"> 
+								<div class="exam"></div>
+							</div>
+							<div class="payable-amount">2,700,000</div>
+							<div class="remain">2,700,000</div>
+						</li>																																																						
+					</ol>
+				</div>
+				<div>هشتم هشتم هشتم</div>
+				<div>نهم نهم نهم</div> *@
+			</div>
+
+            <!-- <div class="legend">
+              <img src="/dist/assets/sactivity/paid.svg">
+              <span class="student">پرداخت شده توسط دانش‌آموز</span>
+			  <img src="/dist/assets/sactivity/paid-by-school.svg">
+			  <span class="school">پرداخت شده توسط مدرسه</span>
+            </div> -->
+
+
+			<div id="student_list_payment_modal_summary_container" class="summary">
+				<div class="title">جمع كل پرداخت دانش‌آموزی (ریال)</div>
+				<div class="selected-amount">مبلغ انتخاب‌شده<span></span></div>
+				<div class="paid-amount">مبلغ پرداخت‌شده<span></span></div>
+			</div>	
+			<span id="student_list_payment_modal_accept_payment_button_wrapper">
+				<button id="student_list_payment_modal_accept_payment_button" class="confirm">تأیید</button>
+			</span>
+		</div>
+	</div>
+
+	<div id="student_list_incomplete_modal" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+			<button class="uk-modal-close-default" type="button" uk-close></button>	
+			<p>برای فعال‌سازی پرداخت دانش‌آموزی باید لیست دانش‌آموزان تكمیل شده باشد.</p>
+			<span id="goto_student_list_from_incomplete_modal"><a>رفتن به صفحه دانش‌آموزان</a></span>
+		</div>
+	</div>
+	
+	<div id="payment_activation_modal" class="uk-flex-top" uk-modal>
+		<div id="payment_activation_modal_body" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+			<button class="uk-modal-close-default" type="button" uk-close></button>	
+			<div class="wallet-row">
+				<div  class="amount">
+					<span id="payment_wallet_main_fee">0</span>
+					<span id="decreament_amount">70,815,000-</span>
+				</div>
+				
+				<a id="wallet_modal_button_from_activation" class="">
+					<img src="~/dist/assets/sactivity/wallet-title.svg">
+				</a>
+			</div>
+
+			<div class="payment-table-list">
+				<div class="title"><span>لیست خدمات</span></div>
+				<div class="table-list-containter">
+					<table class="payment-activation-row">
+						<colgroup>
+							<col><col><col><col><col><col><col><col><col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>ردیف</th>
+								<th id="Filter_Test_Group_wrapper">
+									<select id="Filter_Test_Group">
+										
+									</select>
+									<span class="filter-caption">(فيلتر)</span>
+								</th>
+								<th class="price">فی</th>
+								<th>تعداد دانش‌آموز</th>
+								<th>تخفیف</th>
+								<th class="price">مبلغ كل</th>
+								<th>مهلت<br>پرداخت و سفارش</th>
+								<th>وضعیت</th>
+								<th>فعال‌سازی</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<!-- <tr>
+								<td></td>
+								<td>آزمون 1 - هفتم (1403/07/15)</td>
+								<td>850,000</td>
+								<td>127</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox">
+										<span class="slider round"></span>
+									</label>
+								</td>
+								<td>%10</td>
+								<td>97,155,000</td>
+								<td>1403/06/25</td>
+								<td class="status">در انتظار پرداخت</td>
+								<td class="payable">
+									<button>96,305,000</button>
+									<div uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>آیا از خرید خود اطمینان دارید؟</p>
+										<span uk-icon="icon: close"></span>
+										<span uk-icon="icon: check"></span>										
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>آزمون 2 - هفتم (1403/08/15)</td>
+								<td>850,000</td>
+								<td>127</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox">
+										<span class="slider round"></span>
+									</label>								
+								</td>
+								<td>%10</td>
+								<td>97,155,000</td>
+								<td>1403/06/25</td>
+								<td class="status">
+									در نتظار تكمیل<br>پرداخت دانش‌آموزان
+									<img src="~/dist/assets/sactivity/list.svg">
+									<div class="uk-box-shadow-small" uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>السا حسنی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>یاسمین دهقانی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>آوا رحیمی</p>
+									</div>
+								</td>
+								<td class="payable"><button>96,305,000</button></td>
+							</tr>
+							<tr class="confirmed">
+								<td></td>
+								<td>آزمون 2 - هفتم (1403/08/15)</td>
+								<td>850,000</td>
+								<td>127</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox">
+										<span class="slider round"></span>
+									</label>								
+								</td>
+								<td>%10</td>
+								<td>97,155,000</td>
+								<td>1403/06/25</td>
+								<td class="status">
+									تأیید
+									<img src="~/dist/assets/sactivity/list.svg">
+									<div class="uk-box-shadow-small" uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>السا حسنی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>یاسمین دهقانی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>آوا رحیمی</p>
+									</div>
+								</td>
+								<td class="payable">ارسال رایگان از طریق پیك تهران<br>تاریخ تحویل: 1403/07/28</td>
+							</tr>	
+							<tr class="rejected">
+								<td></td>
+								<td>آزمون 2 - هفتم (1403/08/15)</td>
+								<td>850,000</td>
+								<td>127</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox">
+										<span class="slider round"></span>
+									</label>								
+								</td>
+								<td>%10</td>
+								<td>97,155,000</td>
+								<td>1403/06/25</td>
+								<td class="status">
+									عدم تأیید
+									<img src="~/dist/assets/sactivity/list.svg">
+									<div class="uk-box-shadow-small" uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>السا حسنی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>یاسمین دهقانی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>آوا رحیمی</p>
+									</div>
+								</td>
+								<td class="payable">عدم ارسال</td>
+							</tr>	
+							<tr class="rejected">
+								<td></td>
+								<td>آزمون 2 - هفتم (1403/08/15)</td>
+								<td>850,000</td>
+								<td>127</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox">
+										<span class="slider round"></span>
+									</label>								
+								</td>
+								<td>%10</td>
+								<td>97,155,000</td>
+								<td>1403/06/25</td>
+								<td class="status">
+									عدم تأیید <br>عدم ارائه كارنامه
+									<img src="~/dist/assets/sactivity/list.svg">
+									<div class="uk-box-shadow-small" uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>السا حسنی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>یاسمین دهقانی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>آوا رحیمی</p>
+									</div>
+								</td>
+								<td class="payable"><button>96,305,000</button></td>
+							</tr>	
+							<tr>
+								<td></td>
+								<td>سنجش یادگیری - هفتم</td>
+								<td>1,000,000</td>
+								<td>127</td>
+								<td></td>
+								<td>%10</td>
+								<td>114,300,000</td>
+								<td>-</td>
+								<td class="status">
+									در انتظار پرداخت
+									<img src="~/dist/assets/sactivity/list.svg">
+									<div class="uk-box-shadow-small" uk-drop="mode: click; offset: 5; pos: bottom-center">
+										<p>السا حسنی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>یاسمین دهقانی <img src="~/dist/assets/sactivity/paid.svg"></p>
+										<p>آوا رحیمی</p>
+									</div>
+								</td>
+								<td class="payable"><button>114,300,000</button></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>آزمون‌ساز - هفتم</td>
+								<td>50,000,000</td>
+								<td>-</td>
+								<td></td>
+								<td>%10</td>
+								<td>50,000,000</td>
+								<td>-</td>
+								<td class="status">
+									در انتظار پرداخت
+								</td>
+								<td class="payable"><button>50,000,000</button></td>
+							</tr>																																									 -->
+						</tbody>
+					</table>
+					<div class="ptl-tbody-overlay visible" aria-hidden="true" role="status" aria-live="polite">
+						<div uk-spinner="ratio: 1"></div>
+						<div uk-spinner="ratio: 1.07"></div>
+						<div uk-spinner="ratio: 1.14"></div>
+					</div>
+				</div>
+				  <!-- Tbody-only overlay: place here as sibling to <table> -->
+  
+			</div>
+		</div>
+	</div>
+
+	<div id="wallet_manager_modal" class="uk-flex-top" uk-modal="bg-close: false">
+		<div class="uk-modal-dialog uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<div>
+				<div class="wallet-info">
+					<div>
+						<img id="wallet-sign" src="~/dist/assets/sactivity/wallet.svg" alt=""/>
+						<p id="wallet_current_blance_amount" class="wallet-balance">250,000</p>
+						<p class="wallet-currency">ريال</p>
+					</div>
+
+					<div>
+						<div id="agency_debt_amount" class="agency-debt">250,000</div>
+						<div class="agency-label">بدهي نمايندگي</div>
+					</div>					
+
+					<div>
+
+						<ul class="uk-subnav uk-subnav-pill" uk-switcher>
+							<li><a href="#">درگاه پرداخت</a></li>
+							<li><a href="#">فيش نقدي</a></li>
+							<li><a href="#">چك</a></li>
+							<li><a href="#">برداشت</a></li>
+						</ul>
+
+						<div class="uk-switcher">
+							<div>
+								<form id="wallet_charge_credit_options">
+									@* <fieldset name="wallet_charge_value"> *@
+									<label><input id="wallet_charge_amount_02" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="1,000,000" checked="checked">1,000,000 </label>
+									<label><input id="wallet_charge_amount_03" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="5,000,000" >5,000,000 </label>
+									<label><input id="wallet_charge_amount_04" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="10,000,000">10,000,000 </label>
+									<label><input id="wallet_charge_amount_05" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="20,000,000">20,000,000 </label>
+									<label><input id="wallet_charge_amount_06" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="50,000,000">50,000,000 </label>
+									<label><input id="wallet_charge_amount_07" class="uk-radio" type="radio" name="wallet_charge_value" data-wallet-charge-amount="100,000,000">100,000,000 </label>
+								@* </fieldset>   *@
+									<div>
+										<input id="credit_charge_value_input" class="uk-input" type="text" placeholder="مبلغ دلخواه">
+										<button id="wallet_charge_credit_gotobank">پرداخت</button>
+									</div>
+								</form>  							
+							</div>
+							<div class="receipt">
+								<div class="cash-receipt-switcher">
+									<input type="radio" id="new-receipt" name="switch" checked>
+									<label for="new-receipt">جديد</label>
+
+									<input type="radio" id="list-receipt" name="switch">
+									<label for="list-receipt">ليست</label>
+								</div>								
+								<form id="wallet_add_cach_receipt">
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="نام بانك"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="نام واريزكننده"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" data-jdp placeholder="تاريخ واريز"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="شماره فيش"></div>
+									<div class="input-wrapper" style="width: 100%">
+										<select dir="rtl" class="uk-select">
+											<option value="-1" disabled selected hidden>شماره شبا يا شماره حساب</option>
+											<option>حساب ملت: 1905906919</option>
+											<option>شبا ملت: IR38012000000000190596919</option>
+											<option>کارت ملت: &#x2066;6104-3389-7746-9648&#x2066;</option>
+											<option>حساب ملی: 0118289726007</option>
+											<option>شبا ملی: IR900170000000118289726007</option>
+											<option>کارت ملی: &#x2066;6037-9975-9987-5482&#x2069;</option>                         
+										</select>
+									</div>
+									<div class="input-wrapper"><input type="text" class="uk-input" placeholder="مبلغ فيش (ریال)"></div>
+									<div class="image-upload-section cash-receipt-upload">
+										<a class="upload-trigger" href="#" data-type="cash">
+											<span uk-icon="icon: clip; ratio: 1.2"></span>
+											الصاق تصویر
+										</a>
+										<input type="file" multiple accept="image/*,.pdf" class="file-uploader" data-type="cash" hidden>
+										<div class="attached-files cash-receipt-files"></div>
+									</div>
+									<button uk-icon="plus-circle" uk-tooltip="title: افزودن رسید"></button>
+								</form>
+								<div id="list_cach_receipt">
+
+									<ul class="uk-accordion-default" uk-accordion="animation: false">
+										<!-- list_cach_receipt -->
+									</ul>
+								</div>
+							</div>
+							<div class="cheque">
+								<div class="cheque-switcher">
+									<input type="radio" id="new-cheque" name="cheque-switch" checked>
+									<label for="new-cheque">جديد</label>
+
+									<input type="radio" id="list-cheque" name="cheque-switch">
+									<label for="list-cheque">ليست</label>
+								</div>	
+								<form id="wallet_add_cheque">
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="نام و شعبه بانك"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="نام صاحب حساب"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="شماره صيادي"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="مبلغ چك (ریال)"></div>
+									<div class="input-wrapper" style="width: 100%">
+										<select dir="rtl" class="uk-select">
+											<option>شناسله ملي جهت صدور چك: 10104021561</option>                         
+										</select>
+									</div>									
+									<div class="input-wrapper"><input class="uk-input" type="text" data-jdp placeholder="تاريخ سررسيد"></div>
+									<div class="image-upload-section check-upload">
+										<a class="upload-trigger" href="#" data-type="check">
+											<span uk-icon="icon: clip; ratio: 1.2"></span>
+											الصاق تصویر
+										</a>
+										<input type="file" multiple accept="image/*,.pdf" class="file-uploader" data-type="check" hidden>
+										<div class="attached-files check-files"></div>
+									</div>
+									<div class="check-send" uk-icon="mail" uk-tooltip="چك‌هاي ثبت‌شده را از طريق پست به آدرس دفتر مركزي مرآت، «تهران، خيابان كريم‌خان زند، خيابان خردمند شمالي، پلاك 80، كد پستي 1585814386 ارسال نماييد.">
+										ارسال پستي چك
+									</div>
+
+									<button uk-icon="plus-circle" uk-tooltip="title: افزودن چك" type="button"></button>
+
+									<button uk-icon="plus-circle" uk-tooltip="title: افزودن رسید" type="button"></button>
+								</form>
+								<div id="list_cheque">
+									<ul class="uk-accordion-default" uk-accordion="animation: false">
+										<!-- list_cheque -->
+									</ul>
+								</div>								
+							</div>
+							<div class="refund">
+								<div class="refund-switcher">
+									<input type="radio" id="new-refund" name="refund-switch" checked>
+									<label for="new-refund">جديد</label>
+
+									<input type="radio" id="list-refund" name="refund-switch">
+									<label for="list-refund">ليست</label>
+								</div>
+								<form id="wallet_add_refund">
+									<div class="input-wrapper" style="width: 100%"><input class="uk-input" type="text" placeholder="مبلغ برداشت"></div>
+									<div class="input-wrapper" style="width: 100%"><input class="uk-input" 
+											name="iban" type="text" inputmode="text" pattern="IR[0-9]{24}" maxlength="26" placeholder="IR000000000000000000000000"></div>
+									<div class="input-wrapper" style="width: 100%"><input class="uk-input" type="text" placeholder="نام صاحب حساب"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="كد ملي / اقتصادی"></div>
+									<div class="input-wrapper"><input class="uk-input" type="text" placeholder="نام بانك"></div>
+									
+									<button uk-icon="plus-circle" uk-tooltip="title: ثبت درخواست" type="button"></button>
+								</form>	
+
+								<div id="list_refund">
+									<ul class="uk-accordion-default" uk-accordion="animation: false">
+										<!-- list_refund -->
+									</ul>
+								</div>								
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="wallet-transactions">
+					<div>
+						<span>
+							<select id="wallet_manager_form_full-history-select" class="uk-select" id="form-stacked-select">
+								<option value="false">تراكنش‌ها</option>
+								<option value="true">تاريخچه</option>
+							</select>						
+						</span>
+						<div class="transactions-filter">
+							<div id="form-stacked-select-wrapper">
+								<select class="uk-select" id="form-stacked-select">
+									<option>همه پايه‌ها</option>
+									<option>هفتم</option>
+									<option>هشتم</option>
+									<option>نهم</option>
+								</select>	
+							</div>
+							<div>				
+								<label><input id="purchased_by_student_input" class="uk-checkbox" type="checkbox" checked>دانش‌آموز</label>
+								<label><input id="purchased_by_school_input" class="uk-checkbox" type="checkbox" checked>مدرسه</label>
+							</div>
+							<!-- <div>
+								<div class="uk-inline date-from-input">
+										<span class="uk-form-icon uk-icon" uk-icon="icon: calendar"></span>
+										<input class="uk-input" data-jdp="" type="text" placeholder="از تاریخ" autocomplete="false">
+								</div>
+								<div class="uk-inline date-from-input">
+										<span class="uk-form-icon uk-icon" uk-icon="icon: calendar"></span>
+										<input class="uk-input" data-jdp="" type="text" placeholder="تا تاریخ" autocomplete="false">
+								</div>                     
+							</div> -->
+						</div>
+						<div class="transactions-container">
+							<table id="transaction_history_table">
+								<colgroup>
+									<col style="width: 60%"/>
+									<col style="width: 20%" />
+									<col style="width: 20%" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>عنوان</th>
+										<th>مبلغ (ريال)</th>
+										<th>تاریخ</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+										<span class="transaction-in" uk-icon="icon: arrow-right; ratio: 0.9"></span>
+										<span class="wallet-icon" uk-icon="icon: tablet-landscape"></span>
+										شارژ هدیه</td>
+										<td>200,000</td>
+										<td>1403/01/15</td>
+									</tr>
+									<tr>
+										<td>
+										<span class="transaction-out" uk-icon="icon: arrow-left; ratio: 0.9"></span>
+										<span class="wallet-icon" uk-icon="icon: tablet-landscape"></span>
+										دفترچه آزمون (تست دفترچه)</td>
+										<td>15,000</td>
+										<td>1403/01/15</td>
+									</tr>   
+									<tr>
+										<td>
+										<span class="transaction-out" uk-icon="icon: arrow-left; ratio: 0.9"></span>
+										<span class="wallet-icon" uk-icon="icon: tablet-landscape"></span>
+										آزمون اختصاصی (علوم فصل سوم)</td>
+										<td>30,000</td>
+										<td>1403/01/16</td>
+									</tr>        
+									<tr>
+										<td>
+										<span class="student-transaction-in" uk-icon="icon: user; ratio: 0.6"></span>
+										<span class="transaction-in" uk-icon="icon: arrow-right; ratio: 0.9"></span>
+										<span class="wallet-icon" uk-icon="icon: tablet-landscape"></span>
+										السا حسنی - آزمون 1 هفتم</td>
+										<td>100,000</td>
+										<td>1403/01/17</td>
+									</tr>        
+								</tbody>                                                      
+							</table>                    
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sales-plan" hidden>
+				<ul id="sales_plan_accordion_component" uk-accordion="animation: false">
+					<li>
+						<a class="uk-accordion-title" href>طرح‌های اعتباری</a>
+						<div  class="uk-accordion-content">
+							 <div id="sales_plan_accordion_content" class="organization-container organ-switch">
+								<!-- <div class="organization" uk-toggle="target: .organ-switch ; animation: uk-animation-fade">
+									<img class="logo" src="~/dist/assets/sactivity/bonyad-mostazafan.png" alt=""/>
+									<span class="title">بنياد مستضعفان</span>
+								</div> -->
+							</div>
+							
+							<div id="sales_plan_accordion_content_requests" class="organ-switch" hidden>
+								<!--<div class="organization">
+									<img class="logo" src="~/dist/assets/sactivity/bonyad-mostazafan.png" alt=""/>
+									<span class="title">بنياد مستضعفان</span>
+									<button type="button" uk-toggle="target: .organ-switch ; animation: uk-animation-fade" uk-tooltip="title: حذف درخواست" uk-close></button>
+								</div>
+								<div class="request">
+									<div>عضويت در طرح اعتباري بنياد مستضعفان</div>
+									<div>در دست بررسي</div>
+								</div>  -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+@* start ---------------------------------- profile ------------- *@
+<div id="profile" class="uk-flex-top" uk-modal="bg-close: false">
+    <div class="uk-modal-dialog uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="columns-container">
+			<div class="columns" style="width: 340px">
+				<div class="profile-header">
+					<span>اطلاعات مدرسه</span>
+				</div>
+				<div class="fields-title">
+					<p>نام مدرسه</p>
+					<p>استان</p>
+					<p>شهر</p>
+					<p>مقطع</p>
+					<p>نوع مدرسه</p>
+					<p>جنسيت</p>
+					@* <p>نوبت</p> *@
+					<p><span class="required"> * </span>تلفن</p>
+					<p><span class="required"> * </span>كد پستي</p>
+					<p><span class="required"> * </span>آدرس</p>
+				</div>
+				<form class="form-fields" id="school_profile_form" >
+					<input id="edit_schoolname" name="edit_schoolname" class="uk-input" type="text" >
+					<select id="edit_state" name="edit_state" class="uk-select" aria-label="Select" dir="ltr" data-custom-validation="select">
+						 <option value="0" disabled="" selected=""></option>
+						@*<option value="1">تهران</option>
+						<option value="2">تبريز</option> *@
+					</select>
+					<select id="edit_city" name="edit_city" class="uk-select" aria-label="Select" data-custom-validation="select">
+						@* <option value="0" disabled="" selected=""></option>
+						<option value="1">تهران</option>
+						<option value="2">تبريز</option> *@
+					</select>
+					<select id="edit_section" name="edit_section" class="uk-select" aria-label="Select" disabled="disabled">
+						<option value="0" disabled="" ></option>
+						<option value="1">دوره اول دبستان</option>
+						<option value="2">دوره دوم دبستان</option>
+						<option value="3">دوره اول متوسطه</option>
+						<option value="4">دوره دوم متوسطه</option>
+					</select>	
+					<select id="edit_type" name="edit_type" class="uk-select" aria-label="Select" data-custom-validation="select">
+						<option value="0" disabled=""></option>
+						<option value="28">غیردولتی</option>
+						<option value="29">نمونه دولتی</option>
+						<option value="30">شاهد</option>
+						<option value="31">تیزهوشان</option>
+						<option value="32">ایثارگران</option>
+						<option value="33">هیات امنایی</option>
+						<option value="34">شبانه روزی</option>
+						<option value="35">استعدادهای درخشان</option>
+						<option value="111">سایر</option>
+						<option value="236">خیریه</option>
+						<option value="237">عام المنفعه</option>
+						<option value="238">عشایری</option>
+						<option value="239">وابسته</option>
+						<option value="378">نامشخص</option>
+					</select>	
+					<select id="edit_gender" name="edit_gender" class="uk-select" aria-label="Select" data-custom-validation="select">
+						<option value="0" disabled=""></option>
+						<option value="16">پسرانه</option>
+						<option value="17">دخترانه</option>
+						<option value="18">مختلط</option>
+						<option value="110">نامشخص</option>
+					</select>	
+					@* <select id="edit_trun" name="edit_trun" class="uk-select" aria-label="Select">
+						<option value="0" disabled="" selected=""></option>
+						<option value="1">صبع</option>
+						<option value="2">عصر</option>
+					</select>								 *@
+					<input id="edit_phone" name="edit_phone" class="uk-input" type="tel" 
+					@* pattern = "^([\u06F0]|[0])([\u06F9]|[9])(([\u06F0-\u06F9]|[0-9]){2})(([\u06F0-\u06F9]|[0-9]){3})(([\u06F0-\u06F9]|[0-9]){4})" *@
+					@* require 
+					data-custom-validation="phone" *@
+					>
+
+					<input id="edit_zipcode" name="edit_zipcode" class="uk-input" type="tel" 
+					pattern="[0-9]{10}" data-custom-validation="zip" maxlength="10">
+					<input id="edit_address" name="edit_address" class="uk-input" type="text">
+				</form>
+			</div>
+			<div class="columns">
+				<div class="profile-header">
+					<span>اطلاعات مدير</span>
+					<img  src="~/dist/assets/freelanceteacher/user-profile-icon.svg" alt=""/>
+				</div>
+				<div class="fields-title">
+					<p>جنسيت</p>
+					<p>نام</p>
+					<p>نام خانوادگي</p>
+					<p>تلفن همراه</p>
+					<p>ايميل</p>
+				</div>
+				<form id="manager_profile_form" class="form-fields">
+					<select id="edit_manager_gender" name="edit_manager_gender" class="uk-select" aria-label="Select">
+						<option value="0" disabled=""></option>
+						<option value="5">سركار خانم</option>
+						<option value="4">جناب آقاي</option>
+					</select>	
+					<input  id="edit_firstname" name="edit_firstname"  class="uk-input" type="text">
+					<input id="edit_lastname" name="edit_lastname" class="uk-input" type="text">
+					<input id="edit_cellphone" name="edit_cellphone" class="uk-input" type="tel" 
+							pattern = "^([\u06F0]|[0])([\u06F9]|[9])(([\u06F0-\u06F9]|[0-9]){2})(([\u06F0-\u06F9]|[0-9]){3})(([\u06F0-\u06F9]|[0-9]){4})"
+							data-custom-validation="phone">
+					<input id="edit_email" name="edit_email" class="uk-input" type="email">
+				</form>
+
+				<!-- <a class="user-pass-containter user-pass-toggle" uk-toggle="target: .user-pass-toggle">تغيير نام كاربري و رمز عبور</a> -->
+				<div class="pass-change">
+					<label class="user-pass-containter">
+					<input id="with_user_pass_change_toggler" class=" uk-checkbox" uk-toggle="target: .user-pass-toggle ; cls: user-pass-change" type="checkbox">
+					تغيير نام كاربري و رمز عبور</label>
+					<!-- <label><input type="checkbox" class="user-pass-containter user-pass-toggle" uk-toggle="target: .user-pass-toggle; cls: user-pass-change">تغيير نام كاربري و رمز عبور</label> -->
+					<div class="fields-title user-pass-toggle" style="background-color: aliceblue;">
+						<!-- <span uk-icon="icon: close; ratio: 0.7" uk-toggle="target: .user-pass-toggle"></span> -->
+						<p>نام كاربري</p>
+						<p>رمز عبور</p>
+						<p>تأييد رمز عبور</p>
+					</div>        
+					<form id="password_form" autocomplete="one-time-code"  class="form-fields user-pass-toggle">
+						<input id="edit_user_name" name="edit_user_name" class="uk-input" type="text" disabled="disabled">
+						<input id="edit_new_pass" name="edit_new_pass" class="uk-input" type="password" autocomplete="one-time-code">
+						<input id="edit_confirm_new_pass" name="edit_confirm_new_pass" class="uk-input" type="password" autocomplete="one-time-code"> 
+					</form>			
+					<div id="captcha_line" class="captcha-line">
+						<canvas id="myCanvas" dir="ltr" class="captcha" width="125" height="40"></canvas>
+						<span id="captcha_code_refresh_button" class="icon" uk-icon="icon: refresh"></span>
+						<input id="captcha_code_input" class="code-input uk-input" type="text" placeholder="كد تصويري" >
+						<button id="send_captcha_code_to_validate" 
+						class="button-sms-send" uk-icon="icon: commenting" uk-tooltip="ارسال پيامك تأييد"></button>
+						<a id="time" class="sms" href="#" hidden disabled></a>
+					</div>
+					<div id="sms_number_message" class="sms-number-message"></div>
+					<div id="verificationCodeSection" hidden>
+						<input id="sms_verification_input" class="sms uk-input" type="text" placeholder="كد پيامك شده را وارد نماييد">
+					</div>
+				</div>
+			</div>	
+			<div id="Agent" class="columns" style="width: 205px">
+				<div class="profile-header" style="text-align: right; padding-right: 30px !important; box-sizing: border-box">
+					<span>اطلاعات نماينده</span>
+					<img  src="~/dist/assets/freelanceteacher/user-profile-icon.svg" alt=""/>
+				</div>
+				<div class="fields-title" hidden>
+					<p>جنسيت</p>
+					<p>نام</p>
+					<p>نام خانوادگي</p>
+					<p>تلفن همراه</p>
+					<p>ايميل</p>
+				</div>
+				<form id="agent_profile_form" class="form-fields" style="width: calc(100% - 12px)">
+					<select id="edit_agent_gender" name="edit_agent_gender" class="uk-select" aria-label="Select">
+						<option value="0" disabled=""></option>
+						<option value="5">سركار خانم</option>
+						<option value="4">جناب آقاي</option>
+					</select>	
+					<input  id="edit_agent_firstname" name="edit_agent_firstname"  class="uk-input" type="text">
+					<input id="edit_agent_lastname" name="edit_agent_lastname" class="uk-input" type="text">
+					<input id="edit_agent_cellphone" name="edit_agent_cellphone" class="uk-input" type="tel" 
+							pattern = "^([\u06F0]|[0])([\u06F9]|[9])(([\u06F0-\u06F9]|[0-9]){2})(([\u06F0-\u06F9]|[0-9]){3})(([\u06F0-\u06F9]|[0-9]){4})"
+							data-custom-validation="phone">
+					<input id="edit_agent_email" name="edit_agent_email" class="uk-input" type="email">
+				</form> 
+			</div>				
+			<button id="submit_profile_edit" class="button-confirm uk-button" disabled="disabled">ثبت</button>					
+
+
+		</div>		
+    </div>
+</div>
+@* ----------------------------------profile ------------- end *@
+
+
+
+
+
+
+
+
+	@* answersheet-upload-help-modal *@
+
+	<div id="alarm-modal" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body" style="width: 900px">
+			<button class="uk-modal-close-default" style="left: 10px !important; right: auto !important" type="button" uk-close></button>
+				<a class="uk-inline dc-download-link" href="https://meraatdc.s3.ir-thr-at1.arvanstorage.ir/MeraatDC14.4.1.zip" download>
+				دانلود نرم‌افزار خوانش پاسخ‌برگ مرآت <span uk-icon="icon: download" class="uk-icon"></span></a>
+			<video src="https://s3.ir-thr-at1.arvanstorage.ir/meraat-webresources-schoolfolder-guides/ScanHelpCompressed.mp4"
+				controls loop muted playsinline uk-video="autoplay: inview"></video>
+		</div>
+	</div>
+
+	@* Video-Modals *@
+	<div id="modal-media-video-0-1" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_order.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-0-2" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_complete_info.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-0-3" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/order_activation.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>	
+
+	<div id="modal-media-video-0-4" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/school_ticket.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-1" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/sabteAsamiDaneshAmooz_madrese.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-2" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/faalSaziKarpoosheMoalem_madrese.mp4" controls playsinline
+				uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-3" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/azmoonSaaz_madrese.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-4" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/nasboHamgamsazi.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-5" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/khodArzyabi.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+	<!-- <div id="modal-media-video-6" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="" controls
+				playsinline uk-video></video>
+		</div>
+	</div> -->
+
+	<div id="modal-media-video-7" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/gozareshAzmoon_madrese.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+	<div id="modal-media-video-8" class="uk-flex-top" uk-modal>
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video class="video-fit" src="https://s3.ir-thr-at1.arvanstorage.ir/meraat/gozareshKhodarzyabi_madrese.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+
+	@* answer-video-moadal *@
+
+	<div id="answers-video-moadal" class="uk-flex-top" uk-modal="bg-close: false">
+		<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+			<button class="uk-modal-close-outside" type="button" uk-close></button>
+			<video id="answer_media_player_video_source" class="video-fit" src="https://meraat-fsdata-videocontent.s3.ir-thr-at1.arvanstorage.ir/46971.mp4" controls
+				playsinline uk-video></video>
+		</div>
+	</div>
+
+
+
+	<div id="reg_loader" style="display:none">
+		<div class="reg-loading">
+			<span class="spinner"></span>
+			<div>لطفا منتظر بمانید</div>
+		</div>
+	</div>
+
+	<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+		<symbol id="circle-correct" viewBox="0 0 20 20">
+			<circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle>
+			<polyline fill="none" stroke="#000000" stroke-width="1.1" points="4,10.768 7.385,15 15,5.691 ">
+			</polyline>
+		</symbol>
+
+		<symbol viewBox="0 0 20 20" id="circle-wrong">
+			<circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle>
+			<path fill="none" stroke="#000000" stroke-width="1.06" d="M14.417,14.417L5.583,5.583"></path>
+			<path fill="none" stroke="#000000" stroke-width="1.06" d="M14.417,5.583l-8.834,8.834"></path>
+		</symbol>
+
+		<symbol viewBox="0 0 20 20" id="circle-blank">
+			<circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle>
+		</symbol>
+
+		<symbol viewBox="0 0 20 20" id="circle-question">
+			<circle fill="none" stroke="#000" stroke-width="1.1" cx="10" cy="10" r="9"></circle>
+			<circle cx="10.44" cy="14.42" r="1.05"></circle>
+			<path fill="none" stroke="#000" stroke-width="1.2"
+				d="M8.17,7.79 C8.17,4.75 12.72,4.73 12.72,7.72 C12.72,8.67 11.81,9.15 11.23,9.75 C10.75,10.24 10.51,10.73 10.45,11.4 C10.44,11.53 10.43,11.64 10.43,11.75">
+			</path>
+		</symbol>
+
+
+		<symbol viewBox="0 0 338.426 441.683" id="answer-sheet">
+			<g fill="none" stroke="#000000">
+				<rect stroke="#999999" stroke-width="10" x="5" y="5" rx="45" ry="45" width="327" height="432" />
+				<line stroke-width="11" stroke-linecap="round" stroke-miterlimit="10" x1="132.5" y1="78.167" x2="302"
+					y2="78.167" />
+				<line stroke-width="11" stroke-linecap="round" stroke-miterlimit="10" x1="186" y1="45.167" x2="302"
+					y2="45.167" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="33.996" y1="297.29" x2="33.996" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="53.496" y1="297.29" x2="53.496" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="111.246" y1="297.29" x2="111.246" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="129.745" y1="297.29" x2="129.745" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="149.495" y1="297.29" x2="149.495" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="177.745" y1="297.29" x2="177.745" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="263.745" y1="297.29" x2="263.745" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="283.495" y1="297.29" x2="283.495" y2="398.29" />
+				<line stroke-width="10" stroke-miterlimit="10" x1="302.245" y1="297.29" x2="302.245" y2="398.29" />
+				<line stroke-width="19" stroke-miterlimit="10" x1="77.746" y1="297.29" x2="77.746" y2="398.29" />
+				<line stroke-width="19" stroke-miterlimit="10" x1="202.246" y1="297.29" x2="202.246" y2="398.29" />
+				<line stroke-width="19" stroke-miterlimit="10" x1="229.746" y1="297.29" x2="229.746" y2="398.29" />
+				<rect stroke="#39F" stroke-width="6" x="32" y="123" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="32" y="177" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="32" y="231" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="104" y="123" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="104" y="177" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="104" y="231" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="176" y="123" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="176" y="177" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="176" y="231" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="248" y="123" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="248" y="177" rx="13" ry="13" width="57" height="34" />
+				<rect stroke="#39F" stroke-width="6" x="248" y="231" rx="13" ry="13" width="57" height="34" />
+			</g>
+		</symbol>
+
+
+
+	</svg>
+	<script src="@($"{baseUri}/dist/sactivities.bundle" + bundleVersion + ".js")"></script>
+	@* <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> *@
+</body>
+
+</html>

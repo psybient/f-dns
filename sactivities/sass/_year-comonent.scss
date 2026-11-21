@@ -1,0 +1,50 @@
+#yearComponent {
+    border-radius: 0px 10px 10px 0px;
+    color: #39f;
+    background-position-x: 94%;
+    padding: 0px 15px 0px 3px;
+    background-position-y: 50%;
+    background-size: 9%;
+    margin-left: auto;
+    background-image: url("data:image/svg+xml;utf8,<svg width='6' height='4' viewBox='0 0 6 4' xmlns='http://www.w3.org/2000/svg'><polygon fill='rgb(51,153,255)' points='0 0 6 0 3 4'></polygon></svg>");
+    width: 88px;
+    transition: all 0.3s;
+    position: relative;
+    top: 1.5px;
+    border: none;
+    left: -6px;
+    background-color: #eef6ff;
+    height: 33px;
+    animation: yearSwitch 5s ease-in-out forwards;
+    @media only screen and (max-width: $break-device) {
+        top: 0px
+    }
+    @media only screen and (max-width: $break-device-modal) {
+        transform-origin: left;
+        transform: scale(0.85);
+    }
+}
+
+.js-year-switcher {
+    height: fit-content;
+    >div {
+        width: 20px;
+        height: 50%;
+        border-bottom: 1px solid #ddd;
+        position: absolute;
+        top: 0px;
+        right: -20px;
+    }
+}
+
+@keyframes yearSwitch {
+    0% {
+        opacity: 0
+    }
+    70% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}

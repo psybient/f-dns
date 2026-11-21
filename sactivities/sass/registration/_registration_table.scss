@@ -1,0 +1,285 @@
+$baseColor: #2950a3;
+$borderRadius: 10px;
+$imageBig: 100px;
+$imageSmall: 60px;
+$padding: 7px;
+//
+$header_background_color: #333;
+$header_text_color: #FDFDFD;
+$alternate_row_background_color: #DDD;
+$table_width: 750px;
+$table_body_height: 300px;
+$column_one_width: 200px;
+$column_two_width: 200px;
+$column_three_width: 350px;
+.hidescroll {
+    @media screen and (max-width: 960px) {
+         ::-webkit-scrollbar {
+            display: none;
+            // width: 0px;
+            /* Remove scrollbar space */
+            // background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+        >div {
+             ::-webkit-scrollbar {
+                display: initial;
+                // width: 0px;
+                /* Remove scrollbar space */
+                // background: transparent;
+                /* Optional: just make scrollbar invisible */
+            }
+        }
+    }
+}
+
+.switch-tabs {
+    @media screen and (max-width: 960px) {
+        flex: auto;
+        border-top: 5px solid whitesmoke;
+        width: 100%;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            display: none;
+          }        
+    }
+}
+
+.school-name {
+    @media screen and (max-width: 960px) {
+        font-size: 3vw;
+        flex: 1;
+        text-align: left;
+        width: 1px;
+    }
+}
+
+.table-part {
+    @media screen and (max-width: 960px) {
+        display: contents;
+    }
+}
+
+#registration_table_conteiner {
+    height: calc(100vh - 400px);
+    @media screen and (max-width: 960px) {
+        margin-top: 10px;
+        height: auto;
+        overflow-x: hidden;
+    }
+    img {
+        border-radius: 50%;
+        height: $imageSmall;
+        width: $imageSmall;
+    }
+    >table {
+        @media screen and (max-width: 960px) {
+            box-shadow: none;
+        }
+        //table-users {
+        // border: 1px solid darken($baseColor, 5%);
+        border-radius: $borderRadius;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        max-width: calc(100% - 1em);
+        margin: 0 auto 1em auto;
+        //left:5px;
+        overflow: hidden;
+        //width: 800px;
+        width: 100%;
+    }
+    table {
+        font-size: 13px;
+        width: 100%;
+        @media screen and (max-width: 960px) {
+            font-size: 1.7vw;
+        }
+        @media screen and (max-width: 640px) {
+            font-size: 2vw;
+        }
+        @media screen and (max-width: 340px) {
+            font-size: 8px;
+        }
+        td,
+        th {
+            color: darken($baseColor, 10%);
+            padding: $padding;
+            &:nth-child(7) {
+                padding: 0px !important;
+            }
+        }
+        td {
+            text-align: center;
+            vertical-align: middle;
+            &:nth-child(1) {
+                @media screen and (max-width: 960px) {
+                    padding-right: 5%;
+                }
+                font-size: 0.95em;
+                line-height: 1.4;
+                //text-align: left;
+            }
+            &:nth-child(7) {
+                padding: 0px !important;
+            }
+            &:last-child {
+                font-size: 0.95em;
+                line-height: 1.4;
+                //text-align: left;
+            }
+        }
+        th {
+            //   background: -webkit-linear-gradient(left, #2950a3, #25b7c4);
+            // background: linear-gradient(to right, #2950a3, #25b7c4);
+            //background-color: lighten($baseColor, 50%);
+            //#2289ff
+            background-color: #39f; // darken($baseColor, 5%);
+            // background: -webkit-linear-gradient(left, #39f, #39f);
+            // background: linear-gradient(to right, #39f, #39f);
+            color: white;
+            font-size: 1.1em;
+            // padding: 1rem;
+            text-align: center;
+            //text-transform: uppercase;
+            font-weight: 300;
+        }
+        tr {
+            &:nth-child(2n) {
+                background-color: white;
+            }
+            &:nth-child(2n + 1) {
+                background-color: lighten($baseColor, 55%);
+            }
+            >td:nth-child(2) {
+                >br {
+                    display: none;
+                }
+            }
+            >td:nth-child(3) {
+                >br {
+                    display: none;
+                }
+            }
+            >td:nth-child(4) {
+                >br {
+                    display: none;
+                }
+            }
+            >td:nth-child(6) {
+                >br {
+                    display: none;
+                }
+            }
+        }
+    }
+    // @media screen and (max-width: 960px) {
+    //     thead {
+    //         display: none;
+    //     }
+    //     table,
+    //     tr,
+    //     td {
+    //         display: grid;
+    //     }
+    //     td {
+    //         font-size: 3vw;
+    //         &:first-child {
+    //             position: absolute;
+    //             top: 50%;
+    //             transform: translateY(-50%);
+    //             width: $imageBig;
+    //         }
+    //         &:nth-child(2) {
+    //             &:before {
+    //                 content: "نام: ";
+    //             }
+    //         }
+    //         &:nth-child(3) {
+    //             &:before {
+    //                 content: "نام خانوادگي: ";
+    //             }
+    //         }
+    //         &:nth-child(4) {
+    //             &:before {
+    //                 content: "نام پدر: ";
+    //             }
+    //         }
+    //         &:nth-child(5) {
+    //             &:before {
+    //                 content: "كلاس: ";
+    //             }
+    //         }
+    //         &:not(:first-child) {
+    //             display: inline;
+    //             clear: both;
+    //             margin-left: $imageBig;
+    //             padding: 4px 20px 4px 90px;
+    //             position: relative;
+    //             text-align: right;
+    //             &:before {
+    //                 color: lighten($baseColor, 30%);
+    //                 display: inline;
+    //                 left: 0;
+    //                 position: absolute;
+    //             }
+    //         }
+    //     }
+    //     tr {
+    //         padding: $padding 0;
+    //         position: relative;
+    //     }
+    // }
+    // @media screen and (max-width: 500px) {
+    //     .header {
+    //         background-color: transparent;
+    //         color: lighten($baseColor, 60%);
+    //         font-size: 1.1em;
+    //         font-weight: 500;
+    //         padding: 0;
+    //         text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    //     }
+    //     img {
+    //         border: 3px solid;
+    //         border-color: lighten($baseColor, 50%);
+    //         height: $imageBig;
+    //         margin: 0.5rem 0;
+    //         width: $imageBig;
+    //     }
+    //     td {
+    //         &:first-child {
+    //             background-color: lighten($baseColor, 45%);
+    //             border-bottom: 1px solid lighten($baseColor, 30%);
+    //             border-radius: $borderRadius $borderRadius 0 0;
+    //             position: relative;
+    //             top: 0;
+    //             transform: translateY(0);
+    //             width: auto;
+    //         }
+    //         &:not(:first-child) {
+    //             margin: 0;
+    //             padding: 2px 1em;
+    //             width: 100%;
+    //             &:before {
+    //                 font-size: 0.8em;
+    //                 padding-top: 0.3em;
+    //                 position: relative;
+    //             }
+    //         }
+    //         &:last-child {
+    //             padding-bottom: 1rem !important;
+    //         }
+    //     }
+    //     tr {
+    //         background-color: white !important;
+    //         border: 1px solid lighten($baseColor, 20%);
+    //         border-radius: $borderRadius;
+    //         box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    //         margin: 0.5rem 0;
+    //         padding: 0;
+    //     }
+    //     .table-users {
+    //         border: none;
+    //         box-shadow: none;
+    //         overflow: visible;
+    //     }
+    // }
+}

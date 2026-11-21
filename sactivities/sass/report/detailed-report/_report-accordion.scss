@@ -1,0 +1,106 @@
+.report__inner-level--paddingVertical {
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+.InnerStudentlevelpadding {
+    padding-right: 40px;
+}
+
+.width-30px {
+    width: 30px;
+}
+
+.width-45px {
+    width: 45px;
+    @media only screen and (max-width: 960px) {
+        width: 30px;
+    }
+}
+
+.width-60px {
+    width: 60px;
+}
+
+.width-150px {
+    width: 150px;
+}
+
+.width-200px {
+    width: 200px;
+}
+
+.width-100px {
+    width: 100px;
+}
+
+.level-exam-left-margin {
+    margin-left: 87px;
+}
+
+.user-icon {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+h3.uk-accordion-title {
+    font-family: iran_sans;
+    cursor: pointer;
+}
+
+.mr-percent-text-digit {
+    direction: ltr !important;
+}
+
+.mr-percent-text-digit-primary {
+    font-size: 75%;
+}
+
+@media only screen and (max-width: 1124px) {
+    .uk-accordion.empty:after {
+        right: 56px;
+    }
+    .mr-percent-text-digit-primary {
+        font-size: 68%;
+    }
+}
+
+.uk-accordion.empty>span.report-item-caption {
+    position: absolute;
+    margin-right: 2em;
+    right: 2em;
+    font-weight: 200 !important;
+}
+
+.uk-accordion.empty .uk-accordion-title:before {
+    opacity: 0.2; //0.2;
+}
+
+.uk-accordion.empty>*>* {
+    color: lightgrey !important;
+    cursor: vertical-text;
+    // // // pointer-events:none;
+}
+
+.mr-lastlevel-column-width {
+    width: 187px !important;
+}
+
+.quize-details__row svg.question-circle {
+    height: 20px;
+    //vertical-align: middle;
+    width: 25px;
+    opacity: 0.8;
+    transition: 'opacity' 0.3s ease-in-out;
+}
+
+.quize-details__row:hover svg.question-circle {
+    opacity: 0.6;
+}
+
+.report-details svg.question-circle {
+    fill: gray;
+    opacity: 0.5 !important;
+    vertical-align: middle;
+    height: 25px;
+    width: 100%;
+}

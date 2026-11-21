@@ -1,0 +1,344 @@
+@import '../../common/styles/variables.scss';
+.lock-margin {
+    margin-left: 5px
+}
+
+.alarm-text {
+    font-size: 75%;
+}
+
+.alarm-back {
+    background-color: #39f;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(#39f, #3af);
+    /* Standard syntax (must be last) */
+    @media screen and (max-width: $break-device) {
+        padding-bottom: 200px !important;
+    }
+}
+
+.alarm-table {
+    @media screen and (max-width: $break-device) {
+        display: inline-table;
+        margin: 15px auto;
+    }
+}
+
+.alarm-table td {
+    border-radius: 5px;
+    padding: 2px 5px
+}
+
+.alarm-table thead {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white
+}
+
+.confirmed-row {
+    color: #2f2;
+    >td>a {
+        color: #2f2
+    }
+}
+
+.unconfirmed-row {
+    >td>a {
+        color: #f00;
+    }
+}
+
+.mr-table-sticky th {
+    padding: 6px 2px !important;
+    height: 35px;
+    border: 1 solid #ddd !important;
+    position: sticky;
+    top: -1px;
+    z-index: 979;
+}
+
+.mr-table-sticky1 {
+    border: 1px solid #ddd !important;
+    td {
+        padding: 0px !important;
+        border: 1px solid #ddd !important;
+        font-size: 90%
+    }
+}
+
+.table-col_row-no {
+    width: 50px;
+}
+
+.table-col_family {
+    width: 140px;
+}
+
+.table-col_name {
+    width: 154px;
+}
+
+.mr-background-primary-light {
+    background-color: #d9ebfd;
+}
+
+.input-border {
+    border-color: rgba(255, 255, 255, 0) !important;
+}
+
+.input-border:focus {
+    border-color: #39f !important;
+    border-radius: 3px !important;
+}
+
+.side-panel-width {
+    width: 350px !important;
+    @media screen and (max-width: 960px) {
+        width: 100% !important;
+    }
+    >div {
+        height: calc(100vh - 162px) !important;
+        @media screen and (max-width: 960px) {
+            height: auto !important;
+            width: calc(100% - 28px) !important;
+        }
+    }
+}
+
+.right-panel-width {
+    width: 70px !important;
+    overflow-y: scroll;
+    direction: ltr;
+    >ul {
+        flex-wrap: nowrap !important;
+    }
+    @media screen and (max-width: 960px) {
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    >ul {
+        height: calc(100vh - 142px);
+        @media screen and (max-width: 960px) {
+            height: fit-content !important;
+        }
+    }
+}
+
+.center-width {
+    width: 790px !important
+}
+
+.side-panel-table-title {
+    color: white
+}
+
+.buttons-alternate {
+    width: calc(100% - 72px);
+    border: 1px solid #e5e5e5;
+    line-height: 38px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.side-by-side-buttons {
+    // width: calc(48.7% - 5px);
+    padding: 0;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.pdf {
+    background-color: #fff5f5;
+    margin-left: 5px;
+}
+
+.xls {
+    background-color: #edffed;
+    margin-right: 5px;
+}
+
+.text-area {
+    margin-top: 20px;
+    padding-right: 14px;
+    >p {
+        text-indent: -17px;
+        margin: 0px
+    }
+}
+
+.student-list-padder {
+    scrollbar-color: rgb(42, 147, 255); //rgba(30, 135, 240, 0.50) rgb(199, 199, 199);
+    scrollbar-width: thin;
+}
+
+.disable-button {
+    pointer-events: none !important;
+    color: #ddd !important;
+    >span {
+        color: #ddd !important;
+    }
+}
+
+.disable-download-button {
+    pointer-events: none !important;
+    color: gray !important;
+    background-color: whitesmoke !important;
+}
+
+select {
+    width: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    text-align-last: center;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    @media screen and (max-width: 960px) {
+        display: inline;
+        width: auto;
+    }
+    >option {
+        text-align: center;
+        text-align-last: center;
+        font-family: inherit !important
+    }
+}
+
+.registration_status-conteiner {
+    margin: 8px 0px -20px 0px !important;
+}
+
+.registration_hint-conteiner {
+    font-size: 70% !important;
+    margin-top: -17px;
+    bottom: 20px;
+    &>span {
+        //position: absolute;
+        top: 50px !important;
+        //left:100px;
+    }
+    >div>p {
+        margin: 5px;
+        color: yellow;
+        // padding-left: 36px;
+        position: relative;
+        >span {
+            letter-spacing: -0.3px;
+        }
+    }
+}
+
+// #anim_dnl_3 {
+//     >span {
+//         color: yellow !important
+//     }
+// }
+.user-pass-info {
+    background-color: white;
+    direction: rtl;
+    text-align: right;
+    padding: 10px;
+    @media only screen and (max-width: 960px) {
+        width: 70%;
+        margin-right: 20%;
+    }
+    >p {
+        color: #1f3c7a;
+        margin: 2px;
+        >span {
+            color: #39f;
+        }
+    }
+    .entrance{
+        text-align: left;
+        margin-top: 10px;
+        font-size: 93%;
+        letter-spacing: -0.3px;
+        >a{
+            text-decoration: underline !important;
+        }
+    }
+}
+
+.notice-text {
+    color: #39f;
+    background-color: #fefefe;
+    padding: 10px;
+    text-align: justify;
+    margin: 0px 0px 20px 0px !important;
+    border: 1px dashed #39f;
+    font-size: 75%;
+    >button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: red;
+        padding: 5px;
+        border-radius: 50%;
+        color: white;
+        transform: translateX(50%) translateY(-50%);
+    }
+    @media only screen and (max-width: $break-device) {
+        margin: 15px !important
+    }
+}
+
+#registration_status_table {
+    >colgroup {
+         :nth-child(1) {
+            width: 102px
+        }
+         :nth-child(2) {
+            width: 75px
+        }
+         :nth-child(3) {
+            width: 60px
+        }
+         :nth-child(4) {
+            width: 73px
+        }
+    }
+    >tbody>tr {
+        >td {
+            position: relative;
+        }
+        >td:nth-child(2) {
+            padding-left: 29px !important;
+        }
+    }
+}
+
+.add-1 {
+    position: absolute;
+    top: 50%;
+    transition: 0.2s;
+    transform: scale(1) translateY(-50%);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #39f;
+    border-radius: 3px;
+    left: 5px;
+}
+
+.confirm-add-1 {
+    font-family: inherit;
+    font-size: 80%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #39f;
+    border-radius: 3px;
+}
+
+.split-help {
+    display: inline-block;
+    position: relative;
+    top: -28px !important;
+    color: yellow !important;
+    float: left;
+}

@@ -1,0 +1,9 @@
+[data-toggle*=customReportModal][visited=true]{
+    fill:greenyellow;
+    //font-size: 60px;
+}
+
+[data-toggle*=customReportModal][data-media-id=""]{
+  fill:gray;
+  //font-size: 60px;
+}
