@@ -1,0 +1,171 @@
+//usecase:
+// <button class="btn btn__primary">Click Me!</button>
+// <button class="btn btn__alt">Me too!</button>
+// <button class="btn btn__focus">And me :)</button>
+// <button class="btn btn__attn"><i class="far fa-sticky-note"></i> Reminder!</button>
+// <button class="btn btn__special">Surprise!</button>
+// <button class="btn btn__success"><i class="fas fa-plus"></i> Add Some more!</button>
+// <button class="btn btn__error"><i class="fas fa-minus-circle"></i> Halt! Who goes there?</button>
+
+// ----------------------------
+.combo-box {
+    display: inline-flex;
+    
+    & > div-button:first-child {
+      border-right: 0; /* bug in postcss: border-inline-end wont work */
+      border-radius: .5ch 0 0 .5ch;
+    }
+    
+    & > div-button:last-child {
+      border-radius: 0 .5ch .5ch 0;
+    }
+  }
+  div-button {
+    --btn-hue: 0;
+    --btn-saturation: 0%;
+    --btn-lightness: 75%;
+    --btn-bg-lightness: 100%;
+    
+    --btn-color: hsl(var(--btn-hue) var(--btn-saturation) var(--btn-lightness));
+    --btn-color-active: hsl(var(--btn-hue) var(--btn-saturation) calc(var(--btn-lightness) - 20%));
+    --btn-border-radius: .5ch;
+    
+    --btn-bg: hsl(var(--btn-hue) var(--btn-saturation) var(--btn-bg-lightness));
+    --btn-text: hsl(var(--btn-hue) var(--btn-saturation) calc(var(--btn-lightness) - 40%));
+    
+    --btn-icon-color: var(--btn-color);
+    
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 1ch;
+    
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    
+    border: 1px solid var(--btn-color);
+    border-radius: var(--btn-border-radius);
+    box-shadow: 0 2px 0 0 var(--btn-color);
+    
+    min-block-size: 6ch;
+    padding-inline: 2ch;
+    
+    font-size: 1rem;
+    font-family: system-ui;
+    font-weight: normal;
+    line-height: 1.1;
+    
+    &:matches(:hover, :focus) {
+      border-color: var(--btn-color-active);
+      --btn-icon-color: var(--btn-color-active);
+      top: 1px;
+      box-shadow: 0 1px 0 0 var(--btn-color);
+      outline: none;
+    }
+    
+    &:active {
+      top: 2px;
+      box-shadow: 0 0 0 0 var(--btn-color);
+    }
+    
+    & > svg {
+      width: 2.5ch;
+      fill: var(--btn-icon-color);
+    }
+  }
+  
+  //---------------------------
+  .btn {
+    margin: 5px 5px;
+    font-size: 0.9em;
+    height: 45px;
+    padding: 0 21px;
+    background: none;
+    border: none;
+    font-family: Open Sans;
+    transition: all .4s ease-in;
+    
+    &__primary {
+      color: #fff;
+      border: 2px solid #fff;
+      
+      &:hover {
+        background: #fff;
+        color: #000;
+      }
+    }
+    
+    &__alt {
+      background: #fff;
+      border: 2px solid #fff;
+      
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+    
+    &__focus {
+      background: #14b5ff;
+      border: 2px solid #14b5ff;
+      color: #fff;
+      
+      &:hover {
+        background: #000;
+      }
+    }
+    
+    &__attn {
+      background: #FF9414;
+      color: #fff;
+      border: 2px solid #FF9414;
+      
+      &:hover {
+        background: #000;
+        color: #FF9414;
+      }
+    }
+    
+    &__success {
+      background: #048000;
+      color: #fff;
+      border: 2px solid #048000;
+      
+      &:hover {
+        background: #fff;
+        color: #048000;
+        border: 2px solid #048000;
+      }
+    }
+    
+    &__error {
+      background: #D1270D;
+      color: #fff;
+      border: 2px solid #D1270D;
+      
+      &:hover {
+        color: #D1270D;
+        background: #fff;
+      }
+    }
+    
+    &__special {
+      background: #783FFF;
+      color: #fff;
+      border: 2px solid #783FFF;
+      
+      &:hover {
+        color: #783FFF;
+        background: #fff;
+        border-color: #fff;
+      }
+    }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }

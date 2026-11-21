@@ -1,0 +1,14 @@
+@font-face {
+  font-family: iran_sans;
+   src: url("../../assets/fonts/iransans-webfont.ttf"),
+       url("../../assets/fonts/iransans-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../../assets/fonts/iransans-webfont.woff") format("woff"), url("../../assets/fonts/iransans-webfont.ttf") format("truetype"); 
+
+  font-weight: 300;
+  font-style: normal;
+}
+
+body
+{
+  font-family: iran_sans
+}

@@ -1,0 +1,25 @@
+  .report-loader {
+    width: 100;
+    height: 100%;
+    z-index: 99999;
+    background-color: white;
+  }
+  
+  .report-loader.loaded {
+    display: none;
+  }
+  
+  .report-loader {
+    .loaded {
+      display: none;
+    }
+  
+    .uk-progress {
+      height: 3px;
+      border-radius: 0px !important;
+      progress {
+        border-radius: 0px !important;
+      }
+    }
+  }
+  

@@ -1,0 +1,185 @@
+@import "../../../node_modules/uikit/dist/css/uikit.min.css";
+@import "./variables.scss";
+
+@font-face {
+  font-family: iran_sans;
+  src: url("../../assets/fonts/iransans-webfont.ttf"),
+    url("../../assets/fonts/iransans-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/iransans-webfont.woff") format("woff"),
+    url("../../assets/fonts/iransans-webfont.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: iran_sans;
+}
+
+.item__bg-muted {
+  background-color: #f8f8f8;
+}
+
+// * {
+//     scrollbar-width: thin !important;
+//     scrollbar-color: rgba(30, 135, 240, 0.5) #ececec !important;
+// }
+.uk-notification-message-primary {
+  background-color: #1e87f0 !important;
+  color: white !important;
+  > div > span {
+    direction: rtl !important;
+    text-align: right;
+    display: flex;
+    > span.uk-icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+.uk-notification-message-warning {
+  background-color: #faa05a !important;
+  color: white !important;
+  > div > span {
+    direction: rtl !important;
+    text-align: right;
+    display: flex;
+    > span.uk-icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+.uk-notification-message-success {
+  background-color: #32d296 !important;
+  color: white !important;
+  > div > span {
+    direction: rtl !important;
+    text-align: right;
+    display: flex;
+    > span.uk-icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+.uk-notification-message-danger {
+  background-color: #f0506e !important;
+  color: white !important;
+  > div > span {
+    direction: rtl !important;
+    text-align: right;
+    display: flex;
+    > span.uk-icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+jdp-container {
+  @media only screen and (max-width: $break-device-medium) {
+    transform-origin: top left;
+    transform: scale(0.7) !important;
+  }
+  @media only screen and (max-width: 481px) {
+    transform-origin: center;
+    transform: scale(1) !important;
+    left: 0px !important;
+    bottom: 0px !important;
+  }
+}
+
+.jdp-years {
+  display: inline-flex !important;
+  height: 34px !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+  color: #39f !important;
+  font-size: 100% !important;
+  > div {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  > div.jdp-year > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  div.jdp-icon-plus,
+  div.jdp-icon-minus {
+    border: 1px solid rgb(206, 229, 253);
+    > svg > g > path {
+      fill: #39f;
+    }
+  }
+}
+.jdp-months {
+  display: inline-flex !important;
+  height: 34px !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+  color: green !important;
+  font-size: 100% !important;
+  > div {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  > div.jdp-month > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  div.jdp-icon-plus,
+  div.jdp-icon-minus {
+    border: 1px solid #00800026;
+    > svg > g > path {
+      fill: green;
+    }
+  }
+}
+.jdp-days {
+  > div.jdp-day-name {
+    font-size: 65%;
+    font-weight: 100;
+    line-height: 29px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  > div.jdp-day:empty {
+    border-radius: 5px;
+  }
+  > div:nth-child(1) {
+    &::after {
+      content: "نبه";
+    }
+  }
+  > div:nth-child(2) {
+    &::after {
+      content: "کشنبه";
+    }
+  }
+  > div:nth-child(3) {
+    &::after {
+      content: "وشنبه";
+    }
+  }
+  > div:nth-child(4) {
+    &::after {
+      content: "ه‌شنبه";
+    }
+  }
+  > div:nth-child(5) {
+    letter-spacing: -0.1px;
+    &::after {
+      content: "هارشنبه";
+    }
+  }
+  > div:nth-child(6) {
+    letter-spacing: -0.1px;
+    &::after {
+      content: "نج‌شنبه";
+    }
+  }
+  > div:nth-child(7) {
+    &::after {
+      content: "معه";
+    }
+  }
+}

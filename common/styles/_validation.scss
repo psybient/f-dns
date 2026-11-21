@@ -1,0 +1,7 @@
+input,
+select:invalid {
+    border-color: red;
+    &:focus {
+        border-color: red;
+    }
+}

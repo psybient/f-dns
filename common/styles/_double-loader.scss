@@ -1,0 +1,48 @@
+// registration detail section reload sign
+$reload-color:#39f;
+.reloadDouble-conteiner{
+    height: 100%;
+    background-color: white;
+    z-index: 5003;
+    width: 100%;
+}
+.reloadDouble {
+    border-color: transparent $reload-color;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.125em;
+    height: 1.5em;
+    margin: 0.25em;
+    width: 1.5em;
+    animation: spinIt 0.75s infinite linear;
+    &:before,
+    &:after {
+      border-style: solid;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    &:after {
+      border-color: transparent transparent transparent $reload-color;
+      border-width: 0.3125em 0 0.3125em 0.5em;
+      top: -0.3125em;
+      left: 0.0625em;
+    }
+    &:before {
+      border-color: transparent $reload-color transparent transparent;
+      border-width: 0.3125em 0.5em 0.3125em 0;
+      bottom: -0.3125em;
+      right: 0.0625em;
+    }
+  }
+  @keyframes spinIt {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
